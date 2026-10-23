@@ -129,19 +129,26 @@ def _live_bbox(south: float, west: float, north: float, east: float, amenities) 
 # Saved snapshots (real OpenStreetMap data saved by scripts/fetch_resource_snapshots.py)
 # ---------------------------------------------------------------------------
 
-_snapshots: Optional[List[Dict[str, Any]]] = None
+_snapshots: List[Dict[str, Any]] = []
+_snapshot_signature: Optional[tuple] = None
 
 
 def _load_snapshots() -> List[Dict[str, Any]]:
-    global _snapshots
-    if _snapshots is None:
+    """Load saved areas, re-reading only when files are added or changed (no restart needed)."""
+    global _snapshots, _snapshot_signature
+    paths = sorted(SNAPSHOT_DIR.glob("*.json"))
+    try:
+        signature = tuple((p.name, p.stat().st_mtime_ns) for p in paths)
+    except OSError:
+        return _snapshots
+    if signature != _snapshot_signature:
         loaded = []
-        for path in sorted(SNAPSHOT_DIR.glob("*.json")):
+        for path in paths:
             try:
                 loaded.append(json.loads(path.read_text(encoding="utf-8")))
             except (OSError, ValueError) as e:
                 print(f"[Snapshot] could not read {path.name}: {e}")
-        _snapshots = loaded
+        _snapshots, _snapshot_signature = loaded, signature
         print(f"[Snapshot] loaded {len(loaded)} saved area(s): {[s.get('area') for s in loaded]}")
     return _snapshots
 

@@ -142,7 +142,7 @@ cd backend
 .\venv\Scripts\python.exe scripts\fetch_resource_snapshots.py           # all 7 cities
 .\venv\Scripts\python.exe scripts\fetch_resource_snapshots.py mumbai    # just one
 ```
-Restart the backend afterwards so it loads the new files.
+The running backend picks up new or refreshed files automatically (no restart needed).
 
 ---
 

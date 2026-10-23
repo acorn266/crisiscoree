@@ -518,7 +518,7 @@ function DisasterMap({
                 <Marker key={h.id} position={[h.lat, h.lon]} icon={hospitalIcon}>
                   <Popup>
                     <strong>🏥 {h.name}</strong><br />
-                    Distance: {h.distance_km} km<br />
+                    {h.distance_km != null && <>Distance: {h.distance_km} km<br /></>}
                     <small>Source: OpenStreetMap{h.data_source === 'snapshot' ? ' (saved data)' : ''}</small>
                   </Popup>
                 </Marker>
@@ -532,7 +532,7 @@ function DisasterMap({
                 <Marker key={s.id} position={[s.lat, s.lon]} icon={shelterIcon}>
                   <Popup>
                     <strong>🏠 {s.name}</strong><br />
-                    Distance: {s.distance_km} km<br />
+                    {s.distance_km != null && <>Distance: {s.distance_km} km<br /></>}
                     <small>Source: OpenStreetMap{s.data_source === 'snapshot' ? ' (saved data)' : ''}</small>
                   </Popup>
                 </Marker>
