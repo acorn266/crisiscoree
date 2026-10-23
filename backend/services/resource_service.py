@@ -8,6 +8,7 @@ data_source="snapshot" so the UI can say it is saved data.
 import json
 import math
 import time
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeout
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional
 from urllib.parse import urlencode
@@ -40,8 +41,30 @@ SHELTER_NAME_HINTS = ("shelter", "relief", "refuge", "emergency")
 # Live Overpass
 # ---------------------------------------------------------------------------
 
+# After a failed live lookup, skip live Overpass for a while so map panning during an
+# outage goes straight to saved snapshots instead of waiting the full budget each time.
+LIVE_RETRY_AFTER_SECONDS = 60
+_live_down_until = 0.0
+_live_pool = ThreadPoolExecutor(max_workers=4, thread_name_prefix="overpass")
+
+
 def _overpass_post(query: str) -> Dict[str, Any]:
     """POST to the first mirror that answers within the overall live budget; raises if none do."""
+    global _live_down_until
+    if time.monotonic() < _live_down_until:
+        raise RuntimeError("live Overpass recently unavailable; using saved data")
+    try:
+        # urlopen's timeout applies per socket read, so enforce the overall budget here
+        return _live_pool.submit(_overpass_post_live, query).result(timeout=OVERPASS_LIVE_BUDGET_SECONDS + 0.5)
+    except FutureTimeout:
+        _live_down_until = time.monotonic() + LIVE_RETRY_AFTER_SECONDS
+        raise TimeoutError(f"live Overpass exceeded {OVERPASS_LIVE_BUDGET_SECONDS}s budget")
+    except Exception:
+        _live_down_until = time.monotonic() + LIVE_RETRY_AFTER_SECONDS
+        raise
+
+
+def _overpass_post_live(query: str) -> Dict[str, Any]:
     deadline = time.monotonic() + OVERPASS_LIVE_BUDGET_SECONDS
     last_error: Exception = RuntimeError("no Overpass endpoints configured")
     for url in OVERPASS_URLS:
