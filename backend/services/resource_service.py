@@ -2,13 +2,53 @@
 import json
 import math
 from typing import Any, Dict, List, Optional
-from urllib.error import URLError
+from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 from config import CACHE_TTL_SECONDS
-from services.cache_utils import cached_fetch
+from services.cache_utils import get_cached, set_cached
 
-OVERPASS_URL = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
+# Free public Overpass instances, tried in order until one answers
+OVERPASS_URLS = [
+    "https://overpass-api.de/api/interpreter",
+    "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+]
+OVERPASS_TIMEOUT_SECONDS = 15
+# Failed lookups are cached briefly so a dead mirror doesn't slow every page load
+FAILED_LOOKUP_TTL_SECONDS = 120
+
+
+def _overpass_post(query: str) -> Dict[str, Any]:
+    """POST a query to the first Overpass mirror that responds; raises if all fail."""
+    last_error: Exception = RuntimeError("no Overpass endpoints configured")
+    for url in OVERPASS_URLS:
+        try:
+            req = Request(
+                url,
+                data=urlencode({"data": query}).encode("utf-8"),
+                headers={
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "User-Agent": "CrisisCore-Disaster-Preparedness/2.0",
+                },
+                method="POST",
+            )
+            with urlopen(req, timeout=OVERPASS_TIMEOUT_SECONDS) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except Exception as e:
+            print(f"[Overpass] {url} failed: {type(e).__name__}: {e}")
+            last_error = e
+    raise last_error
+
+
+def _cached_lookup(cache_key: str, fetch) -> Dict[str, Any]:
+    cached = get_cached(cache_key, CACHE_TTL_SECONDS)
+    if cached is not None:
+        return cached
+    result = fetch()
+    ttl = CACHE_TTL_SECONDS if result.get("status") == "ok" else FAILED_LOOKUP_TTL_SECONDS
+    set_cached(cache_key, result, ttl)
+    return result
 
 
 def _haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
@@ -24,7 +64,7 @@ def _haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
 
 def _overpass_query(lat: float, lon: float, amenity: str, radius_m: int = 10000) -> List[Dict]:
     query = f"""
-    [out:json][timeout:25];
+    [out:json][timeout:15];
     (
       node["amenity"="{amenity}"](around:{radius_m},{lat},{lon});
       way["amenity"="{amenity}"](around:{radius_m},{lat},{lon});
@@ -32,17 +72,7 @@ def _overpass_query(lat: float, lon: float, amenity: str, radius_m: int = 10000)
     out center 30;
     """
     try:
-        req = Request(
-            OVERPASS_URL,
-            data=f"data={query}".encode("utf-8"),
-            headers={
-                "Content-Type": "application/x-www-form-urlencoded",
-                "User-Agent": "CrisisCore-Disaster-Preparedness/2.0",
-            },
-            method="POST",
-        )
-        with urlopen(req, timeout=45) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
+        data = _overpass_post(query)
     except Exception as e:
         print(f"[Overpass] {amenity} lookup failed: {type(e).__name__}: {e}")
         return []
@@ -79,7 +109,7 @@ def _overpass_bbox_query(
 ) -> List[Dict]:
 
     query = f"""
-    [out:json][timeout:30];
+    [out:json][timeout:15];
     (
       node["amenity"="{amenity}"]({south},{west},{north},{east});
       way["amenity"="{amenity}"]({south},{west},{north},{east});
@@ -88,18 +118,7 @@ def _overpass_bbox_query(
     """
 
     try:
-        req = Request(
-            OVERPASS_URL,
-            data=f"data={query}".encode("utf-8"),
-            headers={
-                "Content-Type": "application/x-www-form-urlencoded",
-                "User-Agent": "CrisisCore-Disaster-Preparedness/2.0",
-            },
-            method="POST",
-        )
-
-        with urlopen(req, timeout=45) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
+        data = _overpass_post(query)
 
         results = []
 
@@ -165,7 +184,7 @@ def get_hospitals_in_bbox(
             "source": "OpenStreetMap",
         }
 
-    return cached_fetch(cache_key, CACHE_TTL_SECONDS, fetch)
+    return _cached_lookup(cache_key, fetch)
 
 
 def get_shelters_in_bbox(
@@ -222,7 +241,7 @@ def get_shelters_in_bbox(
             "source": "OpenStreetMap",
         }
 
-    return cached_fetch(cache_key, CACHE_TTL_SECONDS, fetch)
+    return _cached_lookup(cache_key, fetch)
 
 
 def get_hospitals(lat: float, lon: float) -> Dict[str, Any]:
@@ -237,7 +256,7 @@ def get_hospitals(lat: float, lon: float) -> Dict[str, Any]:
             "source": "OpenStreetMap",
         }
 
-    return cached_fetch(cache_key, CACHE_TTL_SECONDS, fetch)
+    return _cached_lookup(cache_key, fetch)
 
 
 def get_shelters(lat: float, lon: float) -> Dict[str, Any]:
@@ -257,4 +276,4 @@ def get_shelters(lat: float, lon: float) -> Dict[str, Any]:
             "source": "OpenStreetMap",
         }
 
-    return cached_fetch(cache_key, CACHE_TTL_SECONDS, fetch)
+    return _cached_lookup(cache_key, fetch)

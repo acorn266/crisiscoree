@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from typing import Optional
 
@@ -100,8 +101,7 @@ def analyze_flood_risk(request: FloodAnalysisRequest):
     if not flood_service.check_ready():
         return FloodAnalysisResponse(
             success=False,
-            error="Flood detection service not initialized. "
-                  "Check Google Earth Engine configuration and logs.",
+            error=flood_service.status_message,
         )
 
     result = flood_service.analyze_flood(
@@ -120,9 +120,20 @@ def flood_service_status():
         "message": (
             "Flood detection service ready (Google Earth Engine initialized)"
             if flood_service.check_ready()
-            else "Flood detection service not ready (see backend logs)"
+            else flood_service.status_message
         ),
     }
+
+
+def _get_flood_regions():
+    flood_service = get_flood_service()
+    if not flood_service.check_ready():
+        return flood_service.monitor_regions(INDIA_FLOOD_MONITOR_REGIONS)
+    return cached_fetch(
+        "floods_india_regions",
+        CACHE_TTL_SECONDS,
+        lambda: flood_service.monitor_regions(INDIA_FLOOD_MONITOR_REGIONS),
+    )
 
 
 @app.get("/api/disasters/floods")
@@ -132,8 +143,7 @@ def get_floods(refresh: bool = Query(False, description="Bypass cache and refres
         clear_cache("floods_india")
 
     def fetch():
-        flood_service = get_flood_service()
-        floods = flood_service.monitor_regions(INDIA_FLOOD_MONITOR_REGIONS)
+        floods = _get_flood_regions()
         return {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "country": "India",
@@ -190,26 +200,23 @@ def get_cyclones(refresh: bool = Query(False)):
 def get_india_disasters(refresh: bool = Query(False)):
     """Aggregate all disaster types for India."""
     if refresh:
-        clear_cache(None)
+        # Raw OpenWeather responses stay cached (WEATHER_CACHE_TTL) to respect free-tier limits
+        for prefix in ("earthquakes_india", "droughts_india", "heatwaves_india", "cyclones_india", "floods_india"):
+            clear_cache(prefix)
 
-    eq_data = get_india_earthquakes()
-    drought_data = get_india_droughts()
-    heat_data = get_india_heatwaves()
-    cyclone_data = get_india_cyclones()
+    # Independent sources — fetch concurrently
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        eq_future = pool.submit(get_india_earthquakes)
+        drought_future = pool.submit(get_india_droughts)
+        heat_future = pool.submit(get_india_heatwaves)
+        cyclone_future = pool.submit(get_india_cyclones)
+        eq_data = eq_future.result()
+        drought_data = drought_future.result()
+        heat_data = heat_future.result()
+        cyclone_data = cyclone_future.result()
 
-    # Flood monitoring is expensive — use cache unless refresh requested
-    if refresh:
-        clear_cache("floods_india")
-    flood_service = get_flood_service()
-    floods = flood_service.monitor_regions(INDIA_FLOOD_MONITOR_REGIONS) if flood_service.check_ready() else [{
-        "disaster_type": "flood",
-        "status": "unavailable",
-        "severity": "UNAVAILABLE",
-        "score": None,
-        "source": "Sentinel-1/GEE",
-        "message": "Earth Engine not initialized",
-        "data_note": "Latest available Sentinel-1 satellite data",
-    }]
+    # Flood monitoring is expensive — cached; returns "unavailable" instantly when GEE is off
+    floods = _get_flood_regions()
 
     earthquakes = eq_data.get("earthquakes", [])
     droughts = drought_data.get("droughts", [])
@@ -364,7 +371,12 @@ def get_ai_risk(
     flood_service = get_flood_service()
     flood_sat_data = None
     if flood_service.check_ready():
-        flood_sat_data = flood_service.analyze_flood(resolved_lat, resolved_lon)
+        # Satellite analysis takes 20-40s — cache per location instead of running every load
+        flood_sat_data = cached_fetch(
+            f"flood_point_{resolved_lat:.2f}_{resolved_lon:.2f}",
+            CACHE_TTL_SECONDS,
+            lambda: flood_service.analyze_flood(resolved_lat, resolved_lon),
+        )
         
     # 4. Extract features
     flood_feats = FloodFeatureExtractor.extract_features(

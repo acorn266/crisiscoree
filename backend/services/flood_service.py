@@ -5,22 +5,28 @@ Provides REST endpoints to analyze satellite-based flooding for any geographic
 location using Sentinel-1 SAR imagery via Google Earth Engine.
 """
 
-import sys
 import os
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from typing import Optional, Dict, Any, List
 
-FLOOD_DETECTION_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "flood-detection")
-if os.path.exists(FLOOD_DETECTION_PATH):
-    sys.path.insert(0, FLOOD_DETECTION_PATH)
+from config import FLOOD_DETECTION_ENABLED
 
-try:
-    import ee
-    import geemap
-    HAS_EE = True
-except ImportError:
-    HAS_EE = False
-    print("Warning: earthengine-api/geemap not installed.")
+FLOOD_DETECTION_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "flood-detection")
+
+DISABLED_MESSAGE = (
+    "Satellite flood detection is disabled "
+    "(set FLOOD_DETECTION_ENABLED=true in backend/.env to enable)"
+)
+
+# Earth Engine is optional: only import it when explicitly enabled, so the
+# backend starts fast and never depends on GEE credentials.
+HAS_EE = False
+if FLOOD_DETECTION_ENABLED:
+    try:
+        import ee
+        HAS_EE = True
+    except ImportError:
+        print("Warning: earthengine-api not installed (pip install -r requirements-flood.txt).")
 
 
 def _bbox_geometry(lat: float, lon: float, buffer_deg: float) -> dict:
@@ -55,10 +61,14 @@ class FloodDetectionService:
     def __init__(self, project_id: Optional[str] = None):
         self.ee_initialized = False
         self.project_id = project_id
+        self.status_message = DISABLED_MESSAGE
         self._init_earth_engine()
 
     def _init_earth_engine(self):
+        if not FLOOD_DETECTION_ENABLED:
+            return
         if not HAS_EE:
+            self.status_message = "earthengine-api not installed"
             return
         try:
             if not self.project_id:
@@ -75,6 +85,7 @@ class FloodDetectionService:
         except Exception as e:
             print(f"Could not initialize Earth Engine: {e}")
             self.ee_initialized = False
+            self.status_message = "Earth Engine not initialized (run `earthengine authenticate`)"
 
     def check_ready(self) -> bool:
         return self.ee_initialized
@@ -200,7 +211,7 @@ class FloodDetectionService:
         if not self.ee_initialized:
             return {
                 "success": False,
-                "error": "Earth Engine not initialized. Check configuration."
+                "error": self.status_message
             }
         try:
             region = self.get_region(lat, lon, buffer_deg)
@@ -293,7 +304,7 @@ class FloodDetectionService:
                 "severity": "UNAVAILABLE",
                 "score": None,
                 "source": "Sentinel-1/GEE",
-                "message": "Earth Engine not initialized",
+                "message": self.status_message,
                 "data_note": "Latest available Sentinel-1 satellite data",
             }]
         return [

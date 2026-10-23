@@ -1,31 +1,10 @@
 """Cyclone risk assessment architecture — no fabricated cyclone events."""
 from datetime import datetime, timezone
 from typing import Any, Dict, Optional
-from urllib.error import URLError
-from urllib.parse import urlencode
-from urllib.request import urlopen
-import json
 
-from config import OPENWEATHER_API_KEY, INDIA_COASTAL_CITIES, CACHE_TTL_SECONDS
+from config import INDIA_COASTAL_CITIES, WEATHER_CACHE_TTL_SECONDS
 from services.cache_utils import cached_fetch
-
-
-def _fetch_weather(lat: float, lon: float) -> Optional[Dict[str, Any]]:
-    if not OPENWEATHER_API_KEY:
-        return None
-    params = urlencode({
-        "lat": lat,
-        "lon": lon,
-        "appid": OPENWEATHER_API_KEY,
-        "units": "metric",
-    })
-    url = f"https://api.openweathermap.org/data/2.5/weather?{params}"
-    try:
-        with urlopen(url, timeout=10) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-            return data if data.get("cod") == 200 else None
-    except (URLError, TimeoutError, json.JSONDecodeError):
-        return None
+from services.weather_service import fetch_weather as _fetch_weather, map_parallel
 
 
 def _assess_cyclone_conditions(weather: Dict[str, Any]) -> Dict[str, Any]:
@@ -111,7 +90,7 @@ def assess_coastal_cyclone(city: Dict[str, Any]) -> Dict[str, Any]:
 
 def get_india_cyclones() -> Dict[str, Any]:
     def fetch():
-        results = [assess_coastal_cyclone(c) for c in INDIA_COASTAL_CITIES]
+        results = map_parallel(assess_coastal_cyclone, INDIA_COASTAL_CITIES)
         return {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "source": "OpenWeather",
@@ -120,4 +99,4 @@ def get_india_cyclones() -> Dict[str, Any]:
             "note": "No fabricated cyclone events; wind/pressure conditions from OpenWeather",
         }
 
-    return cached_fetch("cyclones_india", CACHE_TTL_SECONDS, fetch)
+    return cached_fetch("cyclones_india", WEATHER_CACHE_TTL_SECONDS, fetch)
