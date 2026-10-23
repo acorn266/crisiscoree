@@ -51,7 +51,7 @@ export function buildAssistantContext({
 
   return {
     location: locationLabel,
-    weather_now: weather?.status === 'ok'
+    weather_now: !weather ? 'still loading' : weather.status === 'ok'
       ? `${weather.temperature}°C, ${weather.description || weather.condition}, humidity ${weather.humidity}%, `
         + `wind ${weather.wind_speed_ms} m/s, rain last hour ${weather.rainfall_1h_mm ?? 0} mm (live OpenWeather)`
       : 'unavailable',
@@ -59,11 +59,13 @@ export function buildAssistantContext({
       ? `${risk.overall.level} (${risk.overall.score}/100) — CrisisCore AI estimate = highest hazard score below`
       : 'unavailable',
     hazard_estimates: riskLines,
-    earthquakes_summary: quakes.length
-      ? `${quakes.length} USGS earthquakes (M2.5+) in the India region: ${inIndia.length} INSIDE India, `
-        + `${border.length} in India border regions, ${outside.length} OUTSIDE India `
-        + `(${Object.entries(outsideByCountry).map(([c, n]) => `${c} ${n}`).join(', ') || 'none'}).`
-      : 'USGS earthquake data unavailable',
+    earthquakes_summary: !disasters
+      ? 'still loading (not yet known)'
+      : disasters.source_status?.usgs?.status === 'unavailable'
+        ? 'USGS earthquake feed unavailable — earthquake activity unknown'
+        : `${quakes.length} USGS earthquakes (M2.5+) in the India region: ${inIndia.length} INSIDE India, `
+          + `${border.length} in India border regions, ${outside.length} OUTSIDE India `
+          + `(${Object.entries(outsideByCountry).map(([c, n]) => `${c} ${n}`).join(', ') || 'none'}).`,
     earthquakes_inside_india: inIndia.slice(0, 10).map(fmtQuake),
     strongest_inside_india: inIndia.length ? fmtQuake(strongest(inIndia)) : 'none in current USGS data',
     strongest_outside_india: outside.length

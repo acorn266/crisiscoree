@@ -60,14 +60,20 @@ function App() {
   );
   const [aiRisk, setAiRisk] = useState(null);
   const [userLocation, setUserLocation] = useState(null);
-  const [locationLabel, setLocationLabel] = useState('India (default)');
+  const [locationLabel, setLocationLabel] = useState('Detecting location…');
   const [error, setError] = useState(null);
   const [mapFocusTarget, setMapFocusTarget] = useState(null);
   const [demoMode, setDemoMode] = useState(false);
   const [lastUpdated, setLastUpdated] = useState(null);
   const focusSeq = useRef(0);
+  const loadSeq = useRef(0);
+  const userPickedLocation = useRef(false);
 
   const loadData = useCallback(async (refresh = false, lat = null, lon = null) => {
+    // Only the latest load may update state: a slower, older request (e.g. the initial
+    // load still running when the user picks a city) must not overwrite newer results.
+    const seq = ++loadSeq.current;
+    const isCurrent = () => seq === loadSeq.current;
     setLoading(true);
     setError(null);
     try {
@@ -79,19 +85,24 @@ function App() {
       // Each source loads independently: one slow/failed call must not blank the dashboard.
       // Hospitals/shelters and official warnings can be slow, so they don't hold up the main loading state.
       const failed = [];
-      const track = (label, promise, onSuccess) => promise.then(onSuccess).catch((err) => {
-        console.warn(`${label} failed:`, err);
-        failed.push(label);
-      });
+      const track = (label, promise, onSuccess) => promise
+        .then((data) => { if (isCurrent()) onSuccess(data); })
+        .catch((err) => {
+          console.warn(`${label} failed:`, err);
+          failed.push(label);
+        });
 
       setResourcesLoading(true);
+      setHospitalResponse(null);
+      setShelterResponse(null);
       Promise.allSettled([
         track('hospitals', getHospitals(coords.lat, coords.lon), setHospitalResponse),
         track('shelters', getShelters(coords.lat, coords.lon), setShelterResponse),
-      ]).then(() => setResourcesLoading(false));
+      ]).then(() => { if (isCurrent()) setResourcesLoading(false); });
 
       setOfficialLoading(true);
-      track('official warnings', getOfficialAlerts(), setOfficial).finally(() => setOfficialLoading(false));
+      track('official warnings', getOfficialAlerts(), setOfficial)
+        .finally(() => { if (isCurrent()) setOfficialLoading(false); });
 
       await Promise.allSettled([
         track('disasters', getIndiaDisasters(refresh), setDisasters),
@@ -99,38 +110,43 @@ function App() {
         track('risk', getRisk(refresh, coords.lat, coords.lon), setAiRisk),
       ]);
 
+      if (!isCurrent()) return;
       if (failed.length > 0) {
         setError(`Could not load: ${failed.join(', ')}`);
       }
       setLastUpdated(new Date().toISOString());
     } finally {
-      setLoading(false);
+      if (isCurrent()) setLoading(false);
     }
   }, [userLocation]);
 
   useEffect(() => {
-    if (typeof navigator !== 'undefined' && navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          const loc = [pos.coords.latitude, pos.coords.longitude];
-          setUserLocation(loc);
-          setLocationLabel(`${loc[0].toFixed(2)}, ${loc[1].toFixed(2)}`);
-          loadData(false, loc[0], loc[1]);
-        },
-        () => {
-          setLocationLabel('India (centre) — location not shared');
-          loadData(false, INDIA_CENTER.lat, INDIA_CENTER.lon);
-        },
-        { enableHighAccuracy: true, timeout: 8000 },
-      );
-    } else {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time initial load on mount
-      loadData(false, INDIA_CENTER.lat, INDIA_CENTER.lon);
+    // Show the dashboard straight away for India's centre; switch to the browser location
+    // if the user allows it — unless they have already picked a location themselves.
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time initial load on mount
+    loadData(false, INDIA_CENTER.lat, INDIA_CENTER.lon);
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      setLocationLabel('India (centre)');
+      return;
     }
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        if (userPickedLocation.current) return;
+        const loc = [pos.coords.latitude, pos.coords.longitude];
+        setUserLocation(loc);
+        setLocationLabel(`My location (${loc[0].toFixed(2)}, ${loc[1].toFixed(2)})`);
+        loadData(false, loc[0], loc[1]);
+      },
+      () => {
+        if (!userPickedLocation.current) setLocationLabel('India (centre) — location not shared');
+      },
+      { enableHighAccuracy: true, timeout: 8000 },
+    );
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const [locationChoice, setLocationChoice] = useState('auto');
   const chooseLocation = (key) => {
+    userPickedLocation.current = true;
     setLocationChoice(key);
     if (key === 'gps') {
       navigator.geolocation?.getCurrentPosition(
