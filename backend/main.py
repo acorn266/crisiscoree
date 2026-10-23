@@ -28,6 +28,7 @@ from services.ai_risk_engine import (
 )
 from services.ai_context import build_crisis_context
 from services.chat_service import answer_chat, check_rate_limit
+from services.risk_guards import apply_guard
 
 app = FastAPI(
     title="India Disaster Intelligence Map API",
@@ -421,7 +422,9 @@ def get_ai_risk(
                 "available": False,
                 "reason": "Live weather data unavailable for this location",
             }
-        return ai_engine.predict_risk(disaster_type, feats)
+        return apply_guard(
+            disaster_type, ai_engine.predict_risk(disaster_type, feats), weather, flood_sat_data
+        )
 
     risks = {
         "flood": _predict("flood", flood_feats, weather_ok or satellite_ok),

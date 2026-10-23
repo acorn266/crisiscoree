@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from typing import Dict, Any, List, Optional
 
 from services.weather_service import get_weather
+from services.risk_guards import apply_guard
 from services.earthquake_service import get_india_earthquakes
 from services.drought_service import get_india_droughts
 from services.heatwave_service import get_india_heatwaves
@@ -106,11 +107,11 @@ def build_crisis_context(lat: float, lon: float) -> Dict[str, Any]:
     # 6. Predict Risks using AI Engine
     ai_engine = get_ai_risk_engine()
     
-    flood_risk = ai_engine.predict_risk("flood", flood_feats)
+    flood_risk = apply_guard("flood", ai_engine.predict_risk("flood", flood_feats), weather, flood_sat_data)
     eq_risk = ai_engine.predict_risk("earthquake", eq_feats)
-    heat_risk = ai_engine.predict_risk("heatwave", heat_feats)
-    drought_risk = ai_engine.predict_risk("drought", drought_feats)
-    cyclone_risk = ai_engine.predict_risk("cyclone", cyclone_feats)
+    heat_risk = apply_guard("heatwave", ai_engine.predict_risk("heatwave", heat_feats), weather)
+    drought_risk = apply_guard("drought", ai_engine.predict_risk("drought", drought_feats), weather)
+    cyclone_risk = apply_guard("cyclone", ai_engine.predict_risk("cyclone", cyclone_feats), weather)
     
     risks = {
         "flood": flood_risk,
