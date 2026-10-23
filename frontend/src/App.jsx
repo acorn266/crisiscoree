@@ -5,6 +5,7 @@ import RiskCards from './components/RiskCards';
 import RiskAnalysis from './components/RiskAnalysis';
 import AlertPanel from './components/AlertPanel';
 import ResourceCard from './components/ResourceCard';
+import ChatAssistant from './components/ChatAssistant';
 import {
   getIndiaDisasters,
   getWeather,
@@ -109,16 +110,19 @@ function App() {
   const nearestHospital = hospitals[0];
   const nearestShelter = shelters[0];
 
+  // Compact, human-readable snapshot of the dashboard sent with each chat question
   const assistantContext = {
     location: locationLabel,
-    disasters: disasters ? {
-      floods: disasters.floods?.length ?? 0,
-      earthquakes: disasters.earthquakes?.length ?? 0,
-      alerts: alerts.length,
-    } : null,
-    risk,
-    weather,
-    userLocation,
+    weather: weather?.status === 'ok'
+      ? `${weather.temperature}°C, ${weather.description || weather.condition}, humidity ${weather.humidity}%`
+      : 'unavailable',
+    overall_risk: risk?.overall?.level ?? 'unavailable',
+    active_alerts: alerts.length,
+    top_alerts: alerts.slice(0, 5).map((a) => a.title),
+    earthquakes_tracked: disasters?.earthquakes?.length ?? 0,
+    satellite_flood_detection: disasters?.floods?.[0]?.status === 'unavailable' ? 'not enabled' : 'enabled',
+    nearest_hospital: nearestHospital ? `${nearestHospital.name} (${nearestHospital.distance_km} km)` : 'unknown',
+    nearest_shelter: nearestShelter ? `${nearestShelter.name} (${nearestShelter.distance_km} km)` : 'unknown',
   };
 
   return (
@@ -220,28 +224,7 @@ function App() {
         />
       </section>
 
-      <section className="card assistant">
-        <div className="assistant-icon">🤖</div>
-        <div className="assistant-content">
-          <h2>CrisisCore AI Assistant</h2>
-          <p>
-            Ask about current disaster conditions, safety, emergency resources, or preparedness.
-            LLM integration coming soon — context is prepared from live disaster data.
-          </p>
-          <div className="assistant-context-preview">
-            <small>
-              Context ready: location={assistantContext.location},
-              alerts={assistantContext.disasters?.alerts ?? 0},
-              earthquakes={assistantContext.disasters?.earthquakes ?? 0},
-              weather={weather?.status === 'ok' ? `${weather.temperature}°C` : 'unavailable'}
-            </small>
-          </div>
-          <div className="chat-input">
-            <input type="text" placeholder="Ask: Is my area safe right now?" disabled />
-            <button disabled title="LLM not connected yet">Ask AI</button>
-          </div>
-        </div>
-      </section>
+      <ChatAssistant context={assistantContext} />
 
       <footer>
         CrisisCore 2.0 · India Disaster Intelligence Map ·

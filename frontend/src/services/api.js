@@ -69,4 +69,23 @@ export async function analyzeFloodRisk(lat, lon, bufferDeg = 0.15) {
   });
 }
 
+export async function sendChat(message, history = [], context = null, timeoutMs = 30000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(`${BACKEND_URL}/api/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message, history, context }),
+      signal: controller.signal,
+    });
+    const data = await response.json().catch(() => null);
+    // 429 (rate limit) still carries a friendly `reply` to show
+    if (data?.reply) return data;
+    throw new Error(`Chat error ${response.status}`);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export { BACKEND_URL };
