@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Click-to-Analyze Flood Detection</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body { margin: 0; font-family: -apple-system, Segoe UI, Arial, sans-serif; }
+        #header {
+            background: #1a2b3c; color: white; padding: 14px 20px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        #header h1 { font-size: 17px; margin: 0; font-weight: 600; }
+        #header p { font-size: 13px; margin: 2px 0 0; color: #9fb3c8; }
+        #map { height: calc(100vh - 60px); width: 100%; }
+        #status {
+            position: absolute; top: 75px; left: 50%; transform: translateX(-50%);
+            background: white; padding: 10px 18px; border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 1000;
+            font-size: 14px; display: none;
+        }
+        #status.visible { display: block; }
+        .result-popup { font-size: 13px; line-height: 1.5; }
+        .result-popup b { color: #c0392b; }
+        .legend {
+            position: absolute; bottom: 25px; left: 15px; background: white;
+            padding: 10px 14px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-size: 13px; z-index: 1000;
+        }
+        .legend span { display: inline-block; width: 12px; height: 12px; margin-right: 6px; border-radius: 2px; }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div>
+            <h1>Click-to-Analyze Flood Detection</h1>
+            <p>Click anywhere on the map to check for recent flooding at that location</p>
+        </div>
+    </div>
+    <div id="map"></div>
+    <div id="status"></div>
+    <div class="legend">
+        <span style="background:red;"></span> Detected flood extent
+    </div>
+
+    <script>
+        const map = L.map('map').setView([26.75, 94.2], 6); // starts centered on Assam
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+        }).addTo(map);
+
+        const statusBox = document.getElementById('status');
+        let currentSarLayer = null;
+        let currentFloodLayer = null;
+        let currentMarker = null;
+        let isLoading = false;
+
+        function showStatus(msg, isError) {
+            statusBox.innerText = msg;
+            statusBox.style.color = isError ? '#c0392b' : '#1a2b3c';
+            statusBox.classList.add('visible');
+        }
+
+        function hideStatus() {
+            statusBox.classList.remove('visible');
+        }
+
+        map.on('click', async function(e) {
+            if (isLoading) {
+                showStatus('Still analyzing the previous spot — please wait for it to finish before clicking again.', true);
+                return;
+            }
+            isLoading = true;
+
+            const lat = e.latlng.lat;
+            const lon = e.latlng.lng;
+
+            if (currentMarker) map.removeLayer(currentMarker);
+            if (currentSarLayer) map.removeLayer(currentSarLayer);
+            if (currentFloodLayer) map.removeLayer(currentFloodLayer);
+
+            currentMarker = L.marker([lat, lon]).addTo(map);
+            showStatus('Analyzing this location... this can take 20-40 seconds. Please wait.', false);
+
+            try {
+                const response = await fetch('/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ lat: lat, lon: lon })
+                });
+                const data = await response.json();
+
+                if (!data.success) {
+                    showStatus('Could not analyze this spot: ' + data.error, true);
+                    isLoading = false;
+                    return;
+                }
+
+                hideStatus();
+
+                currentSarLayer = L.tileLayer(data.sar_tile_url, { opacity: 0.9 }).addTo(map);
+                currentFloodLayer = L.tileLayer(data.flood_tile_url, { opacity: 0.85 }).addTo(map);
+
+                const areaText = data.area_km2 !== null
+                    ? data.area_km2 + ' km\u00B2 of new flooding detected'
+                    : 'Area estimate unavailable';
+
+                currentMarker.bindPopup(
+                    `<div class="result-popup">
+                        <b>${areaText}</b><br>
+                        Satellite image date: ${data.image_date}<br>
+                        <small>Compared against ~30-45 day baseline</small>
+                    </div>`
+                ).openPopup();
+
+            } catch (err) {
+                showStatus('Error: ' + err.message, true);
+            } finally {
+                isLoading = false;
+            }
+        });
+    </script>
+</body>
+</html>

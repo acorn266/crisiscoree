@@ -1,0 +1,45 @@
+{
+  "models": {
+    "flood": {
+      "model": "IsolationForest",
+      "method": "anomaly_detection",
+      "version": "2.0",
+      "trained_at": "2026-08-16T16:18:03.536357+00:00",
+      "n_samples": 50,
+      "note": "Unsupervised flood anomaly risk model combining weather and GEE satellite backscatter"
+    },
+    "earthquake": {
+      "model": "IsolationForest",
+      "method": "anomaly_detection",
+      "version": "2.0",
+      "trained_at": "2026-08-16T16:18:03.673972+00:00",
+      "n_samples": 50,
+      "note": "Assesses unusual seismic event distributions relative to local populations"
+    },
+    "heatwave": {
+      "model": "IsolationForest",
+      "method": "anomaly_detection",
+      "version": "2.0",
+      "trained_at": "2026-08-16T16:18:03.800589+00:00",
+      "n_samples": 50,
+      "note": "Temperature anomaly index detecting extreme meteorological departures"
+    },
+    "drought": {
+      "model": "IsolationForest",
+      "method": "anomaly_detection",
+      "version": "2.0",
+      "trained_at": "2026-08-16T16:18:03.940868+00:00",
+      "n_samples": 50,
+      "note": "Drought stress indicators. Limited by lack of 30-year historical baseline"
+    },
+    "cyclone": {
+      "model": "IsolationForest",
+      "method": "anomaly_detection",
+      "version": "2.0",
+      "trained_at": "2026-08-16T16:18:04.082331+00:00",
+      "n_samples": 50,
+      "note": "Coastal cyclone condition anomaly detector, measuring deviations in wind and pressure"
+    }
+  },
+  "last_updated": "2026-08-16T16:18:04.240443+00:00"
+}

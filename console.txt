@@ -1,0 +1,4 @@
+cd C:\Users\sheri\Downloads\DISASTER
+python weather_to_json.py
+python -m http.server 8000
+browser:http://localhost:8000/map.html

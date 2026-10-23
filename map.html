@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Disaster Risk Map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        #map {
+            height: 90vh;
+        }
+
+        .header {
+            padding: 12px;
+            background: #1f1f1f;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .legend {
+            background: white;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .legend i {
+            width: 14px;
+            height: 14px;
+            float: left;
+            margin-right: 8px;
+        }
+
+        /* 🚨 ALERT PANEL */
+        #alertPanel {
+            position: absolute;
+            top: 80px;
+            right: 10px;
+            width: 280px;
+            max-height: 300px;
+            overflow-y: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+            z-index: 999;
+            padding: 10px;
+        }
+
+        .alertItem {
+            padding: 8px;
+            margin-bottom: 6px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .high {
+            background: #ffcccc;
+            border-left: 5px solid red;
+        }
+
+        .medium {
+            background: #fff3cd;
+            border-left: 5px solid orange;
+        }
+
+        #alertHeader {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        #clearBtn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 8px;
+            cursor: pointer;
+            float: right;
+        }
+
+        #projectInfo {
+            background: #0d6efd;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #statsBar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f0f0f0;
+        }
+
+        .statCard {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            min-width: 120px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #emergencyPanel {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            width: 250px;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            z-index: 999;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+
+    <div class="header">
+        Multi-Disaster Prediction System + Alert Panel
+    </div>
+    <div id="projectInfo">
+        AI-Powered Multi-Disaster Preparedness and Prediction System
+        with Real-Time Alerts, Emergency Resource Mapping and Live Location Risk Assessment
+    </div>
+    <div id="statsBar">
+
+        <div class="statCard">
+            Cities
+            <div id="cityCount">0</div>
+        </div>
+
+        <div class="statCard">
+            High Risk
+            <div id="highRiskCount">0</div>
+        </div>
+
+        <div class="statCard">
+            Hospitals
+            <div id="hospitalCount">0</div>
+        </div>
+
+        <div class="statCard">
+            Earthquakes
+            <div id="eqCount">0</div>
+        </div>
+
+    </div>
+
+
+    <div id="map"></div>
+
+    <!-- 🚨 ALERT PANEL -->
+    <div id="alertPanel">
+        <div id="alertHeader">
+            🚨 Alerts
+            <button id="clearBtn" onclick="clearAlerts()">Clear</button>
+        </div>
+        <div id="alerts"></div>
+    </div>
+
+    <div id="emergencyPanel">
+
+        <h3>Emergency Contacts</h3>
+
+        <p>🚨 National Emergency : 112</p>
+        <p>🚑 Ambulance : 108</p>
+        <p>🚒 Fire : 101</p>
+        <p>👮 Police : 100</p>
+        <p>🌊 Disaster Management : 1070</p>
+
+    </div>
+
+    <script>
+
+        // 🌍 MAP INIT
+        var map = L.map('map').setView([20.5937, 78.9629], 5);
+
+        // TILE
+        L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // 🔔 Notification permission
+        if ("Notification" in window) {
+            Notification.requestPermission();
+        }
+
+        // 🧠 ALERT SYSTEM
+        let shownAlerts = new Set();
+
+        function addAlert(message, level) {
+
+            if (shownAlerts.has(message)) return; // avoid duplicates
+            shownAlerts.add(message);
+
+            let alertBox = document.createElement("div");
+            alertBox.className = "alertItem " + level;
+            alertBox.innerText = message;
+
+            document.getElementById("alerts").prepend(alertBox);
+
+            // Browser notification
+            if (Notification.permission === "granted") {
+                new Notification("🚨 Disaster Alert", { body: message });
+            }
+        }
+
+        function clearAlerts() {
+            document.getElementById("alerts").innerHTML = "";
+            shownAlerts.clear();
+        }
+
+        // 🌍 SELECT DISASTER
+        let disasterType = "flood";
+
+        // STYLE (FIXED)
+        function getStyle(city) {
+
+            let highCount = 0;
+            let mediumCount = 0;
+
+            // Count HIGH
+            if (city.flood === "High") highCount++;
+            if (city.cyclone === "High") highCount++;
+            if (city.drought === "High") highCount++;
+
+            // Count MEDIUM
+            if (city.flood === "Medium") mediumCount++;
+            if (city.cyclone === "Medium") mediumCount++;
+            if (city.drought === "Medium") mediumCount++;
+
+            // RULES
+            if (highCount > 0) {
+                return { color: "red", radius: 15 };
+            }
+
+            if (mediumCount >= 2) {  // IMPORTANT CHANGE
+                return { color: "orange", radius: 10 };
+            }
+
+            return { color: "green", radius: 7 };
+        }
+
+        // 📍 LOCATION
+        // 📍 LOCATION
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(pos => {
+
+                let lat = pos.coords.latitude;
+
+                let lng = pos.coords.longitude;
+
+                L.marker([lat, lng]).addTo(map)
+                    .bindPopup(`
+                    📍 <b>Your Current Location</b><br>
+                    Latitude: ${lat.toFixed(4)}<br>
+                    Longitude: ${lng.toFixed(4)}
+`                    )
+                    .openPopup();
+                map.setView([lat, lng], 7);
+
+                // 🏥 HOSPITAL LOCATOR
+                fetch(`https://overpass-api.de/api/interpreter?data=[out:json];node["amenity"="hospital"](around:5000,${lat},${lng});out;`)
+                    .then(res => res.json())
+                    .then(hospitalData => {
+
+                        document.getElementById("hospitalCount").innerHTML =
+                            Math.min(hospitalData.elements.length, 10);
+
+                        hospitalData.elements.slice(0, 10).forEach(hospital => {
+
+                            L.marker([hospital.lat, hospital.lon])
+                                .addTo(map)
+                                .bindPopup(`
+                🏥 Hospital<br>
+                ${hospital.tags.name || "Nearby Hospital"}
+                `);
+
+                        });
+
+                    });
+
+            });
+        }
+        // 🌦 WEATHER DATA
+
+        function preparednessTips(city) {
+
+            let tips = "";
+
+            if (city.flood === "High") {
+                tips += `
+<b>🌊 Flood Preparedness</b><br>
+• Move valuables to higher floors<br>
+• Avoid flooded roads<br>
+• Keep emergency kit ready<br><br>
+`;
+            }
+
+            if (city.cyclone === "High") {
+                tips += `
+<b>🌪 Cyclone Preparedness</b><br>
+• Stay indoors<br>
+• Secure loose objects<br>
+• Follow weather alerts<br><br>
+`;
+            }
+
+            if (city.drought === "High") {
+                tips += `
+<b>🌵 Drought Preparedness</b><br>
+• Store drinking water<br>
+• Reduce water consumption<br>
+• Follow government advisories<br><br>
+`;
+            }
+
+            tips += `
+<b>🌍 Earthquake Safety</b><br>
+• Drop, Cover and Hold<br>
+• Stay away from glass windows<br>
+`;
+
+            return tips;
+        }
+
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+
+                let heatPoints = [];
+                let highRiskCities = 0;
+
+                data.cities.forEach(city => {
+                    if (city.flood === "High" || city.cyclone === "High" || city.drought === "High"
+                    ) {
+                        highRiskCities++;
+                    }
+
+                    let style = getStyle(city);
+
+                    L.circleMarker([city.lat, city.lng], {
+                        color: style.color,
+                        radius: style.radius,
+                        fillOpacity: 0.8
+                    }).addTo(map)
+                        .bindPopup(`
+<b>${city.name}</b><br>
+
+🌧 Rain: ${city.rain}<br>
+🌡 Temp: ${city.temp}<br>
+💧 Humidity: ${city.humidity}<br>
+🌬 Wind: ${city.wind}<br><br>
+
+🌊 Flood: ${city.flood}<br>
+🌪 Cyclone: ${city.cyclone}<br>
+🌵 Drought: ${city.drought}<br>
+🌍 Earthquake: ${city.earthquake}<br><br>
+
+<hr>
+
+${preparednessTips(city)}
+`);
+                    // 🚨 ALERTS
+                    if (city.flood === "High") addAlert(`${city.name}: Flood Risk HIGH`, "high");
+                    if (city.cyclone === "High") addAlert(`${city.name}: Cyclone Risk HIGH`, "high");
+                    if (city.drought === "High") addAlert(`${city.name}: Drought Risk HIGH`, "high");
+
+                    let intensity = 0.4;
+                    if (city[disasterType] === "High") intensity = 1;
+                    else if (city[disasterType] === "Medium") intensity = 0.7;
+
+                    heatPoints.push([city.lat, city.lng, intensity * 2]);
+                });
+
+                L.heatLayer(heatPoints, {
+                    radius: 40,
+                    blur: 30,
+                    gradient: {
+                        0.2: 'green',
+                        0.4: 'yellow',
+                        0.7: 'orange',
+                        1.0: 'red'
+                    }
+                }).addTo(map);
+                document.getElementById("cityCount").innerHTML =
+                    data.cities.length;
+
+                document.getElementById("highRiskCount").innerHTML =
+                    highRiskCities;
+            });
+
+        // 🌍 EARTHQUAKE API
+        fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
+            .then(res => res.json())
+            .then(eqData => {
+                let earthquakeCount = 0;
+                eqData.features.forEach(eq => {
+                    earthquakeCount++;
+                    let coords = eq.geometry.coordinates;
+                    let mag = eq.properties.mag;
+                    let place = eq.properties.place;
+
+                    let lat = coords[1];
+                    let lng = coords[0];
+
+                    if (lat < 5 || lat > 40 || lng < 65 || lng > 100) return;
+
+                    let color = "green";
+                    if (mag > 5) color = "red";
+                    else if (mag > 3) color = "orange";
+
+                    L.circleMarker([lat, lng], {
+                        color: color,
+                        radius: mag * 2,
+                        fillOpacity: 0.7
+                    }).addTo(map)
+                        .bindPopup(`🌍 Earthquake<br>${place}<br>Mag: ${mag}`);
+
+                    // 🚨 EARTHQUAKE ALERT
+                    if (mag > 5) {
+                        addAlert(`Earthquake: ${place} (Mag ${mag})`, "high");
+                    }
+                });
+                document.getElementById("eqCount").innerHTML = earthquakeCount;
+            });
+
+        // LEGEND
+        var legend = L.control({ position: 'bottomright' });
+        legend.onAdd = function () {
+            var div = L.DomUtil.create('div', 'legend');
+            div.innerHTML += "<b>Risk Levels</b><br>";
+            div.innerHTML += '<i style="background:green"></i> Low<br>';
+            div.innerHTML += '<i style="background:orange"></i> Medium<br>';
+            div.innerHTML += '<i style="background:red"></i> High<br>';
+            return div;
+        };
+        legend.addTo(map);
+
+        // 🔄 AUTO REFRESH
+        setInterval(() => {
+            location.reload();
+        }, 30000);
+
+    </script>
+
+    </body>
+
+</html>
