@@ -7,6 +7,6 @@ numpy>=1.26.0
 scipy>=1.11.0
 httpx>=0.27.0
 requests>=2.31.0
-scikit-learn>=1.4.0
+scikit-learn==1.9.0  # must match the version the saved models in models/ were trained with
 joblib>=1.3.0
 # Optional satellite flood detection (Google Earth Engine): see requirements-flood.txt

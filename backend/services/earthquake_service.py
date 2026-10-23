@@ -19,6 +19,32 @@ USGS_QUERY_URL = (
 )
 
 
+COUNTRY_ALIASES = {
+    "burma (myanmar)": "Myanmar",
+    "myanmar": "Myanmar",
+    "xizang": "China (Tibet / Xizang)",
+    "china": "China",
+}
+
+
+def classify_place(place: str) -> Dict[str, Any]:
+    """Country from USGS's own place text, e.g. '184 km ENE of Nagqu, China'.
+
+    in_india: True (India), "border" (an India border region), or False (another country).
+    The query box around India also covers Tibet, Nepal, Myanmar, Pakistan, etc.
+    """
+    tail = (place or "").rsplit(",", 1)[-1].strip()
+    low = tail.lower()
+    if "india" in low and "border" in low:
+        return {"country": tail, "in_india": "border"}
+    if low in ("india", "india region") or low.endswith(" india"):
+        return {"country": "India", "in_india": True}
+    for key, name in COUNTRY_ALIASES.items():
+        if key in low:
+            return {"country": name, "in_india": False}
+    return {"country": tail or "Unknown", "in_india": False}
+
+
 def _fetch_usgs_events() -> List[Dict[str, Any]]:
     bounds = INDIA_BOUNDS
     url = USGS_QUERY_URL.format(
@@ -56,6 +82,7 @@ def _fetch_usgs_events() -> List[Dict[str, Any]]:
             "magnitude": mag,
             "depth_km": depth,
             "place": props.get("place", "Unknown location"),
+            **classify_place(props.get("place", "")),
             "time": props.get("time"),
             "time_iso": datetime.fromtimestamp(
                 props.get("time", 0) / 1000, tz=timezone.utc

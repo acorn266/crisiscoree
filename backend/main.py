@@ -1,4 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
+from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
@@ -29,8 +30,17 @@ from services.ai_risk_engine import (
 from services.ai_context import build_crisis_context
 from services.chat_service import answer_chat, check_rate_limit
 from services.risk_guards import apply_guard
+from services.official_alerts_service import get_official_alerts, warm_up as warm_up_official_alerts
+
+@asynccontextmanager
+async def lifespan(_app):
+    # Start fetching official warnings in the background so the first page load is instant
+    warm_up_official_alerts()
+    yield
+
 
 app = FastAPI(
+    lifespan=lifespan,
     title="India Disaster Intelligence Map API",
     description="India-wide disaster intelligence platform powered by real data sources",
     version="2.1.0",
@@ -241,6 +251,19 @@ def get_india_disasters(refresh: bool = Query(False)):
         "cyclones": cyclones,
         "alerts": alerts,
         "risk": risk,
+        "source_status": {
+            "usgs": {"name": "USGS earthquakes", "status": eq_data.get("status", "ok"), "count": len(earthquakes)},
+            "openweather": {
+                "name": "OpenWeather (heat / drought / wind indicators)",
+                "status": "ok" if any(h.get("status") != "unavailable" for h in heatwaves) else "unavailable",
+                "count": sum(1 for h in heatwaves if h.get("status") != "unavailable"),
+            },
+            "satellite_floods": {
+                "name": "Sentinel-1 satellite flood detection",
+                "status": "ok" if get_flood_service().check_ready() else "disabled",
+                "count": 0,
+            },
+        },
         "sources": {
             "floods": "Sentinel-1/GEE",
             "earthquakes": "USGS",
@@ -441,6 +464,32 @@ def get_ai_risk(
         "cyclone": _predict("cyclone", cyclone_feats, weather_ok),
     }
     
+    # Describe honestly what each score is computed from
+    weather_inputs = "live OpenWeather readings at this location"
+    bases = {
+        "flood": (
+            "Isolation Forest anomaly score on Sentinel-1 satellite + " + weather_inputs
+            if satellite_ok else
+            "Isolation Forest anomaly score on " + weather_inputs + " (rain, humidity, pressure, wind). "
+            "No satellite data: Earth Engine is disabled."
+        ),
+        "earthquake": "Isolation Forest anomaly score on the nearest USGS earthquake (magnitude, depth, distance).",
+        "heatwave": "Isolation Forest anomaly score on " + weather_inputs + " (temperature, humidity, heat index).",
+        "drought": "Isolation Forest anomaly score on " + weather_inputs + " (single reading, no rainfall history).",
+        "cyclone": "Isolation Forest anomaly score on " + weather_inputs + " (wind, pressure).",
+    }
+    input_sources = {
+        "flood": "OpenWeather (live)" + (" + Sentinel-1" if satellite_ok else ""),
+        "earthquake": "USGS (live)",
+        "heatwave": "OpenWeather (live)",
+        "drought": "OpenWeather (live)",
+        "cyclone": "OpenWeather (live)",
+    }
+    for hazard, result in risks.items():
+        result["data_type"] = "ai_estimate" if result.get("score") is not None else "unavailable"
+        result["basis"] = bases[hazard]
+        result["input_source"] = input_sources[hazard]
+
     # 6. Aggregate overall risk score
     scores = [r["score"] for r in risks.values() if r.get("score") is not None]
     overall_score = max(scores) if scores else 0
@@ -468,7 +517,8 @@ def get_ai_risk(
         "overall": {
             "score": overall_score,
             "level": overall_level,
-            "confidence": overall_confidence
+            "confidence": overall_confidence,
+            "basis": "Highest of the individual hazard estimates (AI anomaly scores, capped by IMD-style thresholds)",
         },
         "engine": {
             "name": "CrisisCore AI Risk Engine",
@@ -503,6 +553,16 @@ def overall_risk(
         "status": "active",
         "message": "AI risk models loaded and running",
     }
+
+
+# ============================================================================
+# Official warnings & verified events (NDMA SACHET, GDACS)
+# ============================================================================
+
+@app.get("/api/alerts/official")
+def official_alerts():
+    """Official warnings (NDMA SACHET / IMD / CWC) and verified events (GDACS) for India."""
+    return get_official_alerts(wait_seconds=25)
 
 
 # ============================================================================
