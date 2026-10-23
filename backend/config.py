@@ -1,10 +1,32 @@
 """Shared configuration for India Disaster Intelligence Map."""
 import os
+from pathlib import Path
 
-# OpenWeather API key (from existing weather_to_json.py)
-OPENWEATHER_API_KEY = os.getenv(
-    "OPENWEATHER_API_KEY", "4b85e0446e7fef03754bd783c58f39c2"
-)
+from dotenv import load_dotenv
+
+# Load secrets from backend/.env (never committed — see .env.example)
+load_dotenv(Path(__file__).resolve().parent / ".env")
+
+
+def _env_bool(name: str, default: bool = False) -> bool:
+    return os.getenv(name, str(default)).strip().lower() in ("1", "true", "yes", "on")
+
+
+# OpenWeather API key (free tier) — set in backend/.env
+OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY", "").strip()
+
+# Raw OpenWeather responses are cached per location to stay within free-tier limits
+WEATHER_CACHE_TTL_SECONDS = int(os.getenv("WEATHER_CACHE_TTL", "600"))
+WEATHER_MAX_WORKERS = int(os.getenv("WEATHER_MAX_WORKERS", "8"))
+
+# Satellite flood detection (Google Earth Engine) is optional and off by default
+FLOOD_DETECTION_ENABLED = _env_bool("FLOOD_DETECTION_ENABLED", False)
+
+# Chatbot (Google Gemini free tier) — chat falls back to canned answers without a key
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash").strip()
+GEMINI_TIMEOUT_SECONDS = float(os.getenv("GEMINI_TIMEOUT_SECONDS", "15"))
+CHAT_RATE_LIMIT_PER_MINUTE = int(os.getenv("CHAT_RATE_LIMIT_PER_MINUTE", "10"))
 
 # India geographic bounds
 INDIA_BOUNDS = {

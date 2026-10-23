@@ -1,6 +1,10 @@
-import requests, json
+import requests, json, os, sys
 
-API_KEY = "4b85e0446e7fef03754bd783c58f39c2"
+# Legacy static-map script. Reads the key from the environment, never from code:
+#   set OPENWEATHER_API_KEY=your_key   (Windows)  /  export OPENWEATHER_API_KEY=your_key
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
+if not API_KEY:
+    sys.exit("OPENWEATHER_API_KEY is not set")
 
 cities = [
 "Bengaluru","Chennai","Mumbai","Hyderabad","Delhi",
