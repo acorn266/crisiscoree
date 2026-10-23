@@ -1,10 +1,11 @@
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
-from typing import Optional
+from typing import Any, Dict, List, Optional
 
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, Request
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from config import INDIA_BOUNDS, INDIA_FLOOD_MONITOR_REGIONS, CACHE_TTL_SECONDS
 from services.flood_service import get_flood_service
@@ -26,6 +27,7 @@ from services.ai_risk_engine import (
     CycloneAnomalyExtractor,
 )
 from services.ai_context import build_crisis_context
+from services.chat_service import answer_chat, check_rate_limit
 
 app = FastAPI(
     title="India Disaster Intelligence Map API",
@@ -491,6 +493,43 @@ def overall_risk(
         "status": "active",
         "message": "AI risk models loaded and running",
     }
+
+
+# ============================================================================
+# AI Assistant (Gemini free tier + offline fallback)
+# ============================================================================
+
+class ChatTurn(BaseModel):
+    role: str = Field(..., pattern="^(user|assistant)$")
+    text: str = Field(..., max_length=4000)
+
+
+class ChatRequest(BaseModel):
+    message: str = Field(..., min_length=1, max_length=1000)
+    history: List[ChatTurn] = Field(default_factory=list, max_length=20)
+    context: Optional[Dict[str, Any]] = None
+
+
+@app.post("/api/chat")
+def chat(request: Request, body: ChatRequest):
+    client_ip = request.client.host if request.client else "unknown"
+    retry_after = check_rate_limit(client_ip)
+    if retry_after is not None:
+        return JSONResponse(
+            status_code=429,
+            headers={"Retry-After": str(retry_after)},
+            content={
+                "error": "rate_limited",
+                "reply": f"You're sending messages quickly. Please wait {retry_after} seconds and try again.",
+                "source": "rate_limit",
+                "retry_after": retry_after,
+            },
+        )
+    return answer_chat(
+        body.message,
+        history=[t.model_dump() for t in body.history],
+        context=body.context,
+    )
 
 
 @app.post("/api/cache/clear")
