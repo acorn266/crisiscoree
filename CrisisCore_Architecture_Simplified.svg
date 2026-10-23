@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Segoe UI, Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="960" y="110" text-anchor="middle" font-size="50" font-weight="700" fill="#0f172a">CrisisCore 2.0 — System Architecture</text>
+  <text x="960" y="165" text-anchor="middle" font-size="25" fill="#64748b">Multi-hazard disaster intelligence for India · built on free data sources and APIs</text>
+
+  <!-- Arrows (drawn first, behind boxes) -->
+  <g stroke="#334155" stroke-width="4" fill="none">
+    <line x1="394" y1="430" x2="562" y2="430" marker-end="url(#arrow)"/>
+    <line x1="874" y1="430" x2="1042" y2="430" marker-end="url(#arrow)"/>
+    <line x1="1358" y1="430" x2="1522" y2="430" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <line x1="720" y1="568" x2="720" y2="716" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+  <g font-size="21" fill="#334155" text-anchor="middle">
+    <text x="480" y="384">live disaster &amp;</text>
+    <text x="480" y="410">weather data</text>
+    <text x="960" y="384">REST API</text>
+    <text x="960" y="410">JSON</text>
+    <text x="1440" y="384">interactive</text>
+    <text x="1440" y="410">dashboard</text>
+  </g>
+  <g font-size="21" fill="#334155">
+    <text x="742" y="634">risk estimates</text>
+    <text x="742" y="660">&amp; chat answers</text>
+  </g>
+
+  <!-- Box 1: Data Sources -->
+  <g filter="url(#shadow)">
+    <rect x="90" y="300" width="300" height="264" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="3"/>
+  </g>
+  <path d="M90,366 V318 A18,18 0 0 1 108,300 H372 A18,18 0 0 1 390,318 V366 Z" fill="#7c3aed"/>
+  <text x="240" y="342" text-anchor="middle" font-size="29" font-weight="700" fill="#ffffff">Data Sources</text>
+  <g font-size="23" fill="#1e293b" text-anchor="middle">
+    <text x="240" y="402">USGS</text>
+    <text x="240" y="436">OpenWeather</text>
+    <text x="240" y="470">NDMA SACHET</text>
+    <text x="240" y="504">GDACS</text>
+    <text x="240" y="538">OpenStreetMap</text>
+  </g>
+
+  <!-- Box 2: Backend -->
+  <g filter="url(#shadow)">
+    <rect x="570" y="300" width="300" height="264" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="3"/>
+  </g>
+  <path d="M570,366 V318 A18,18 0 0 1 588,300 H852 A18,18 0 0 1 870,318 V366 Z" fill="#16a34a"/>
+  <text x="720" y="342" text-anchor="middle" font-size="29" font-weight="700" fill="#ffffff">Backend</text>
+  <g font-size="23" fill="#1e293b" text-anchor="middle">
+    <text x="720" y="419">Python · FastAPI</text>
+    <text x="720" y="453">Data processing</text>
+    <text x="720" y="487">Caching</text>
+    <text x="720" y="521">Alerts &amp; risk</text>
+  </g>
+
+  <!-- Box 3: Frontend -->
+  <g filter="url(#shadow)">
+    <rect x="1050" y="300" width="300" height="264" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+  </g>
+  <path d="M1050,366 V318 A18,18 0 0 1 1068,300 H1332 A18,18 0 0 1 1350,318 V366 Z" fill="#2563eb"/>
+  <text x="1200" y="342" text-anchor="middle" font-size="29" font-weight="700" fill="#ffffff">Frontend</text>
+  <g font-size="23" fill="#1e293b" text-anchor="middle">
+    <text x="1200" y="436">React</text>
+    <text x="1200" y="470">Leaflet map</text>
+    <text x="1200" y="504">Dashboard &amp; chat</text>
+  </g>
+
+  <!-- Box 4: User -->
+  <g filter="url(#shadow)">
+    <rect x="1530" y="300" width="300" height="264" rx="18" fill="#f8fafc" stroke="#1e293b" stroke-width="3"/>
+  </g>
+  <path d="M1530,366 V318 A18,18 0 0 1 1548,300 H1812 A18,18 0 0 1 1830,318 V366 Z" fill="#1e293b"/>
+  <text x="1680" y="342" text-anchor="middle" font-size="29" font-weight="700" fill="#ffffff">User</text>
+  <g font-size="23" fill="#1e293b" text-anchor="middle">
+    <text x="1680" y="436">Web browser</text>
+    <text x="1680" y="470">Alerts · map · risk</text>
+    <text x="1680" y="504">Asks the AI assistant</text>
+  </g>
+
+  <!-- Box 5: AI/ML Engine (below Backend) -->
+  <g filter="url(#shadow)">
+    <rect x="570" y="720" width="300" height="264" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+  </g>
+  <path d="M570,786 V738 A18,18 0 0 1 588,720 H852 A18,18 0 0 1 870,738 V786 Z" fill="#ea580c"/>
+  <text x="720" y="762" text-anchor="middle" font-size="29" font-weight="700" fill="#ffffff">AI / ML Engine</text>
+  <g text-anchor="middle" fill="#1e293b">
+    <text x="720" y="838" font-size="24" font-weight="700">Isolation Forest</text>
+    <text x="720" y="870" font-size="21" fill="#475569">risk estimates</text>
+    <text x="720" y="918" font-size="24" font-weight="700">Google Gemini</text>
+    <text x="720" y="950" font-size="21" fill="#475569">AI assistant</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="1350" y="860" text-anchor="middle" font-size="22" fill="#64748b">All data sources and AI services used are free</text>
+  <text x="1350" y="896" text-anchor="middle" font-size="22" fill="#64748b">(public feeds · free API tiers · open-source ML)</text>
+</svg>
