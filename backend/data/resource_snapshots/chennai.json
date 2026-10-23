@@ -1,0 +1,7808 @@
+{
+ "area": "Chennai",
+ "center": {
+  "lat": 13.0827,
+  "lon": 80.2707
+ },
+ "bbox": {
+  "south": 12.8327,
+  "west": 80.0207,
+  "north": 13.3327,
+  "east": 80.5207
+ },
+ "fetched_at": "2026-10-23T15:44:55+00:00",
+ "source": "OpenStreetMap via Overpass API",
+ "source_url": "https://overpass.private.coffee/api/interpreter",
+ "license": "© OpenStreetMap contributors, ODbL 1.0",
+ "counts": {
+  "hospital": 892,
+  "social_facility": 11,
+  "community_centre": 70
+ },
+ "items": [
+  {
+   "id": "1021331581",
+   "osm_type": "way",
+   "name": "Vivekananda Cultural Centre",
+   "lat": 13.0499246,
+   "lon": 80.2804026,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "1126031841",
+   "osm_type": "way",
+   "name": "St. Thomas Community Hall",
+   "lat": 13.0170217,
+   "lon": 80.2278268,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "1130609524",
+   "osm_type": "way",
+   "name": "Memorial Hall",
+   "lat": 13.0828251,
+   "lon": 80.2783209,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "11521276770",
+   "osm_type": "node",
+   "name": "Community Centre #11521276770",
+   "lat": 12.9135314,
+   "lon": 80.1918796,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "11695898569",
+   "osm_type": "node",
+   "name": "Community Centre #11695898569",
+   "lat": 12.9152689,
+   "lon": 80.1918825,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "11699821870",
+   "osm_type": "node",
+   "name": "Community Centre #11699821870",
+   "lat": 12.9223656,
+   "lon": 80.1480506,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "12103741413",
+   "osm_type": "node",
+   "name": "Magizh Mahal Thirumana Mandapam",
+   "lat": 12.9581488,
+   "lon": 80.1422422,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "12458295540",
+   "osm_type": "node",
+   "name": "Amma Arangam",
+   "lat": 13.0825153,
+   "lon": 80.2197811,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "12458738606",
+   "osm_type": "node",
+   "name": "Ashok Leyland Community Hall Kasi Koil Kuppam",
+   "lat": 13.191354,
+   "lon": 80.3137518,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "12458756395",
+   "osm_type": "node",
+   "name": "Community Stage",
+   "lat": 13.1885268,
+   "lon": 80.3147845,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "12458790380",
+   "osm_type": "node",
+   "name": "கே. பரசுராமன் Ex. Member Of Council கலையரங்கம்",
+   "lat": 13.1769504,
+   "lon": 80.3131363,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "12513296201",
+   "osm_type": "node",
+   "name": "Medavakkam Cooperative Society",
+   "lat": 12.9147924,
+   "lon": 80.1922426,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "1267840671",
+   "osm_type": "way",
+   "name": "Nalur Community Hall",
+   "lat": 13.2853469,
+   "lon": 80.2455975,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "13712036201",
+   "osm_type": "node",
+   "name": "சமுதாய நலக்கூடம்",
+   "lat": 12.9148633,
+   "lon": 80.192248,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "1424951155",
+   "osm_type": "way",
+   "name": "SPACES",
+   "lat": 13.0024783,
+   "lon": 80.2716945,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "1508224694",
+   "osm_type": "way",
+   "name": "Amma Arangam",
+   "lat": 13.0824926,
+   "lon": 80.219811,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "1760696030",
+   "osm_type": "node",
+   "name": "Karthikeyapuran Co-operative Community Hall",
+   "lat": 12.9622746,
+   "lon": 80.193572,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "234104731",
+   "osm_type": "way",
+   "name": "Manapakkam Community Hall",
+   "lat": 13.0158209,
+   "lon": 80.1750672,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "23885061",
+   "osm_type": "way",
+   "name": "Victoria Public Hall",
+   "lat": 13.0820074,
+   "lon": 80.2726366,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "354262443",
+   "osm_type": "way",
+   "name": "Sam Mahal",
+   "lat": 13.1029067,
+   "lon": 80.1568317,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "354736399",
+   "osm_type": "way",
+   "name": "Kanthimathi Kalyana Mandapam",
+   "lat": 13.0464393,
+   "lon": 80.2461876,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "354748230",
+   "osm_type": "way",
+   "name": "Karthikeyapuram Co-Operative Community Hall",
+   "lat": 12.9622774,
+   "lon": 80.1935672,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "354751871",
+   "osm_type": "way",
+   "name": "K.S.R. Hall",
+   "lat": 13.1053631,
+   "lon": 80.2089318,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "354767727",
+   "osm_type": "way",
+   "name": "Rajalakshmi Kalyana Mandapam",
+   "lat": 12.9849882,
+   "lon": 80.2239728,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "354775532",
+   "osm_type": "way",
+   "name": "Meenavar Palnokku Maiya Kattidam",
+   "lat": 12.9602576,
+   "lon": 80.2632931,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "355014887",
+   "osm_type": "way",
+   "name": "Kone Krishna Reddiyar Marriage Hall",
+   "lat": 12.9254403,
+   "lon": 80.1068656,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "355074680",
+   "osm_type": "way",
+   "name": "NPR Thirumana Mandapam Chennai\nஎன்பிஆர் திருமண மண்டபம் சென்னை",
+   "lat": 12.8518545,
+   "lon": 80.0669532,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "355085375",
+   "osm_type": "way",
+   "name": "Hindu Colony Community Center",
+   "lat": 12.9781931,
+   "lon": 80.1844918,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "355610397",
+   "osm_type": "way",
+   "name": "Sun Shine Party Hall",
+   "lat": 12.9248158,
+   "lon": 80.1137835,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "355717461",
+   "osm_type": "way",
+   "name": "Inayath Mahal",
+   "lat": 12.9698025,
+   "lon": 80.1457034,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "369718053",
+   "osm_type": "way",
+   "name": "Kalyani Kalyana Mandapam",
+   "lat": 13.0293941,
+   "lon": 80.1118593,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "370546681",
+   "osm_type": "way",
+   "name": "Sulochana Kalyana Mandapam",
+   "lat": 12.9733181,
+   "lon": 80.1384201,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "3744461963",
+   "osm_type": "node",
+   "name": "Mahal",
+   "lat": 13.0281256,
+   "lon": 80.2192144,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "3750671376",
+   "osm_type": "node",
+   "name": "Mars Marriage Hall",
+   "lat": 12.9705654,
+   "lon": 80.1446668,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4056624163",
+   "osm_type": "node",
+   "name": "PRN Wedding hall",
+   "lat": 12.8650618,
+   "lon": 80.0721834,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4148799190",
+   "osm_type": "node",
+   "name": "Jai Nagar Community Hall",
+   "lat": 13.0723326,
+   "lon": 80.2068718,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4238565190",
+   "osm_type": "node",
+   "name": "Madras United Club",
+   "lat": 13.0856146,
+   "lon": 80.2814171,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4262044189",
+   "osm_type": "node",
+   "name": "Andhra Social Club",
+   "lat": 13.0438561,
+   "lon": 80.2429363,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4271007589",
+   "osm_type": "node",
+   "name": "Ramlakshmi Paradise",
+   "lat": 13.1463058,
+   "lon": 80.2182801,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4338130031",
+   "osm_type": "node",
+   "name": "MOHANAMBAL KALYANA MANDABAM",
+   "lat": 13.0241341,
+   "lon": 80.2175909,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4411852991",
+   "osm_type": "node",
+   "name": "Community Centre #4411852991",
+   "lat": 13.0105608,
+   "lon": 80.1957762,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4438519491",
+   "osm_type": "node",
+   "name": "Community Centre #4438519491",
+   "lat": 13.2547145,
+   "lon": 80.2770546,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4623114495",
+   "osm_type": "node",
+   "name": "Community Centre #4623114495",
+   "lat": 12.9790011,
+   "lon": 80.2003464,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4672611189",
+   "osm_type": "node",
+   "name": "Sree Amruthaa Palace",
+   "lat": 12.9111841,
+   "lon": 80.1610274,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4707360804",
+   "osm_type": "node",
+   "name": "Community Centre #4707360804",
+   "lat": 13.037191,
+   "lon": 80.265593,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4720481590",
+   "osm_type": "node",
+   "name": "AG-DMS Metro",
+   "lat": 13.0455148,
+   "lon": 80.2484363,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "4740540121",
+   "osm_type": "node",
+   "name": "Community Centre #4740540121",
+   "lat": 13.0735338,
+   "lon": 80.2010076,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5258898323",
+   "osm_type": "node",
+   "name": "Community Centre #5258898323",
+   "lat": 12.9167242,
+   "lon": 80.1445979,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5258898326",
+   "osm_type": "node",
+   "name": "Community Centre #5258898326",
+   "lat": 12.9105302,
+   "lon": 80.1433321,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5306605011",
+   "osm_type": "node",
+   "name": "Kalyan Kendra Community Hall",
+   "lat": 13.0873874,
+   "lon": 80.2046738,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5313567021",
+   "osm_type": "node",
+   "name": "Dhamma Setu Vipassana Center",
+   "lat": 12.9649935,
+   "lon": 80.0936155,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5321370166",
+   "osm_type": "node",
+   "name": "Community Centre #5321370166",
+   "lat": 12.8345148,
+   "lon": 80.2285832,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5321370601",
+   "osm_type": "node",
+   "name": "Community Centre #5321370601",
+   "lat": 12.8356951,
+   "lon": 80.2283224,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5474584419",
+   "osm_type": "node",
+   "name": "Square space",
+   "lat": 13.081808,
+   "lon": 80.1798957,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5487610049",
+   "osm_type": "node",
+   "name": "Community Centre #5487610049",
+   "lat": 13.0555141,
+   "lon": 80.2712694,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5714965849",
+   "osm_type": "node",
+   "name": "Kallukuttai Community Network Place II",
+   "lat": 12.9698305,
+   "lon": 80.2330226,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5724412721",
+   "osm_type": "node",
+   "name": "இக்சா அரங்கம்",
+   "lat": 13.0683427,
+   "lon": 80.2565851,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5756218859",
+   "osm_type": "node",
+   "name": "Community Network Possible Places",
+   "lat": 12.8710918,
+   "lon": 80.2055283,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5850471689",
+   "osm_type": "node",
+   "name": "ராணி மஹால்",
+   "lat": 12.9397977,
+   "lon": 80.2563514,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "5963981285",
+   "osm_type": "node",
+   "name": "பகிர்ந்து உண்",
+   "lat": 12.9271815,
+   "lon": 80.1286389,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "6087420486",
+   "osm_type": "node",
+   "name": "Community Centre #6087420486",
+   "lat": 12.9226473,
+   "lon": 80.0953569,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "6125974285",
+   "osm_type": "node",
+   "name": "Community Centre #6125974285",
+   "lat": 13.06801,
+   "lon": 80.13179,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "6354645937",
+   "osm_type": "node",
+   "name": "Gospel Hall",
+   "lat": 13.1263386,
+   "lon": 80.0268469,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "6945677921",
+   "osm_type": "node",
+   "name": "OMR Activists Collective",
+   "lat": 12.9532329,
+   "lon": 80.2334136,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "7006350087",
+   "osm_type": "node",
+   "name": "Community Centre #7006350087",
+   "lat": 13.0770675,
+   "lon": 80.2634442,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "7185733585",
+   "osm_type": "node",
+   "name": "SRS திருமண மண்டபம்",
+   "lat": 13.0606876,
+   "lon": 80.1378102,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "7252136539",
+   "osm_type": "node",
+   "name": "Royapuram Brahma Theertham",
+   "lat": 13.1086733,
+   "lon": 80.2920414,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "7257415985",
+   "osm_type": "node",
+   "name": "Community Centre #7257415985",
+   "lat": 13.0819511,
+   "lon": 80.243808,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "7320949185",
+   "osm_type": "node",
+   "name": "Community Centre #7320949185",
+   "lat": 13.0757587,
+   "lon": 80.2131901,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "778758340",
+   "osm_type": "way",
+   "name": "Uswatham Human Community Hall",
+   "lat": 13.0556606,
+   "lon": 80.2448994,
+   "amenity": "community_centre"
+  },
+  {
+   "id": "100857284",
+   "osm_type": "way",
+   "name": "அறிஞர் அண்ணா அரசு இந்திய,மருத்துவமனை,அரும்பாக்கம்,சென்னை-106",
+   "lat": 13.0772596,
+   "lon": 80.2187728,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1015571498",
+   "osm_type": "node",
+   "name": "Srm Speciality Hospital",
+   "lat": 13.0331325,
+   "lon": 80.1810857,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1015571601",
+   "osm_type": "node",
+   "name": "SRM Dental Hospital",
+   "lat": 13.0321291,
+   "lon": 80.1801201,
+   "amenity": "hospital"
+  },
+  {
+   "id": "10261422409",
+   "osm_type": "node",
+   "name": "Women And Children Foundation Hospital",
+   "lat": 13.1180276,
+   "lon": 80.2126037,
+   "amenity": "hospital"
+  },
+  {
+   "id": "10271805421",
+   "osm_type": "node",
+   "name": "Frame of Mind - SCARF Psychiatric Hospital",
+   "lat": 13.0972767,
+   "lon": 80.1982422,
+   "amenity": "hospital"
+  },
+  {
+   "id": "10294576078",
+   "osm_type": "node",
+   "name": "Vasantha Memorial Cancer Centre",
+   "lat": 13.040756,
+   "lon": 80.2146876,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1104433136",
+   "osm_type": "way",
+   "name": "Chennai National Hospital Speciality Clinics",
+   "lat": 13.094813,
+   "lon": 80.2914574,
+   "amenity": "hospital"
+  },
+  {
+   "id": "11071527636",
+   "osm_type": "node",
+   "name": "KHM",
+   "lat": 13.084556,
+   "lon": 80.2130458,
+   "amenity": "hospital"
+  },
+  {
+   "id": "11081786797",
+   "osm_type": "node",
+   "name": "L Rapha Life Care Hospital",
+   "lat": 12.9580448,
+   "lon": 80.1280036,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1110191307",
+   "osm_type": "way",
+   "name": "SA Hospital",
+   "lat": 13.0991366,
+   "lon": 80.2868807,
+   "amenity": "hospital"
+  },
+  {
+   "id": "11162390408",
+   "osm_type": "node",
+   "name": "Dr. Vijay's Hospital",
+   "lat": 13.0856699,
+   "lon": 80.1797716,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1127285905",
+   "osm_type": "node",
+   "name": "Aakash Fertility Centre & Hospital",
+   "lat": 13.0554597,
+   "lon": 80.2118365,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1129195836",
+   "osm_type": "node",
+   "name": "Hospital #1129195836",
+   "lat": 12.9445695,
+   "lon": 80.1210689,
+   "amenity": "hospital"
+  },
+  {
+   "id": "11468740371",
+   "osm_type": "node",
+   "name": "SMF",
+   "lat": 13.0868727,
+   "lon": 80.1697458,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1152858038",
+   "osm_type": "node",
+   "name": "Rajan Eye Care Hospital",
+   "lat": 13.0508335,
+   "lon": 80.2434416,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1154910967",
+   "osm_type": "way",
+   "name": "Vels Medical College and Hospital",
+   "lat": 13.2675711,
+   "lon": 80.122826,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1155182281",
+   "osm_type": "way",
+   "name": "Prashanth Superspeciality Hospital Kolathur",
+   "lat": 13.1400478,
+   "lon": 80.2176872,
+   "amenity": "hospital"
+  },
+  {
+   "id": "11679595256",
+   "osm_type": "node",
+   "name": "Jananam fertility centre",
+   "lat": 12.9569147,
+   "lon": 80.2513405,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1176875169",
+   "osm_type": "way",
+   "name": "Shaarave Hospital",
+   "lat": 13.0983937,
+   "lon": 80.2798773,
+   "amenity": "hospital"
+  },
+  {
+   "id": "11782793599",
+   "osm_type": "node",
+   "name": "Sugam Hospital",
+   "lat": 12.9622155,
+   "lon": 80.159938,
+   "amenity": "hospital"
+  },
+  {
+   "id": "11804254199",
+   "osm_type": "node",
+   "name": "Dental College & Hospital",
+   "lat": 12.8705153,
+   "lon": 80.2233736,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1180926082",
+   "osm_type": "way",
+   "name": "The Arya Vysya Meternity Home and Child Welfare Centre",
+   "lat": 13.0910905,
+   "lon": 80.2813876,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1182739082",
+   "osm_type": "node",
+   "name": "MMC Govenment Hospital",
+   "lat": 13.1635998,
+   "lon": 80.2435516,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1185699253",
+   "osm_type": "node",
+   "name": "Avadi Hospital",
+   "lat": 13.1174941,
+   "lon": 80.1008132,
+   "amenity": "hospital"
+  },
+  {
+   "id": "11865553974",
+   "osm_type": "node",
+   "name": "Hospital #11865553974",
+   "lat": 12.89188,
+   "lon": 80.1770557,
+   "amenity": "hospital"
+  },
+  {
+   "id": "12146055740",
+   "osm_type": "node",
+   "name": "Commissioner of Police office, Greater chennai Police",
+   "lat": 13.081276,
+   "lon": 80.2631177,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1234813078",
+   "osm_type": "way",
+   "name": "Cherish Hospital",
+   "lat": 13.1297067,
+   "lon": 80.1309846,
+   "amenity": "hospital"
+  },
+  {
+   "id": "12367559381",
+   "osm_type": "node",
+   "name": "Hospital #12367559381",
+   "lat": 13.0920988,
+   "lon": 80.2588062,
+   "amenity": "hospital"
+  },
+  {
+   "id": "12378706312",
+   "osm_type": "node",
+   "name": "Dr Bala's Skin clinic",
+   "lat": 12.9831959,
+   "lon": 80.2013573,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1241298308",
+   "osm_type": "way",
+   "name": "Mint Hospital",
+   "lat": 13.100229,
+   "lon": 80.2837595,
+   "amenity": "hospital"
+  },
+  {
+   "id": "125180726",
+   "osm_type": "way",
+   "name": "Govt Peripheral Hospital KK Nagar",
+   "lat": 13.034006,
+   "lon": 80.2078405,
+   "amenity": "hospital"
+  },
+  {
+   "id": "12560767886",
+   "osm_type": "node",
+   "name": "Hospital #12560767886",
+   "lat": 12.9809491,
+   "lon": 80.1871116,
+   "amenity": "hospital"
+  },
+  {
+   "id": "12581525295",
+   "osm_type": "node",
+   "name": "Meridian Hospitals",
+   "lat": 13.1363242,
+   "lon": 80.2157688,
+   "amenity": "hospital"
+  },
+  {
+   "id": "12581658601",
+   "osm_type": "node",
+   "name": "St Anthony's Hospital",
+   "lat": 13.1396018,
+   "lon": 80.2377389,
+   "amenity": "hospital"
+  },
+  {
+   "id": "12619467462",
+   "osm_type": "node",
+   "name": "Vadivelu Hospital",
+   "lat": 13.1002212,
+   "lon": 80.2400853,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1263441145",
+   "osm_type": "way",
+   "name": "Hospital #1263441145",
+   "lat": 13.0985158,
+   "lon": 80.2796105,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1289802426",
+   "osm_type": "way",
+   "name": "Dr. Mehta's Hospitals - Global Campus",
+   "lat": 13.0617739,
+   "lon": 80.1356616,
+   "amenity": "hospital"
+  },
+  {
+   "id": "13096237915",
+   "osm_type": "node",
+   "name": "Iswarya Fertility Center",
+   "lat": 13.0064894,
+   "lon": 80.2504829,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1314584114",
+   "osm_type": "way",
+   "name": "Government child birth Hospital",
+   "lat": 13.0765495,
+   "lon": 80.2245565,
+   "amenity": "hospital"
+  },
+  {
+   "id": "13155026101",
+   "osm_type": "node",
+   "name": "Good Shepard hospital",
+   "lat": 12.9810842,
+   "lon": 80.2343492,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1315895438",
+   "osm_type": "node",
+   "name": "sree dhanalakshmi family clinic",
+   "lat": 13.0583046,
+   "lon": 80.211745,
+   "amenity": "hospital"
+  },
+  {
+   "id": "131961841",
+   "osm_type": "way",
+   "name": "Ayurveda Hospital",
+   "lat": 12.9705162,
+   "lon": 80.2601162,
+   "amenity": "hospital"
+  },
+  {
+   "id": "132073184",
+   "osm_type": "way",
+   "name": "Apollo Hospital",
+   "lat": 12.9630574,
+   "lon": 80.2457399,
+   "amenity": "hospital"
+  },
+  {
+   "id": "133862451",
+   "osm_type": "way",
+   "name": "Prashanth Hospitals",
+   "lat": 13.0695736,
+   "lon": 80.2363218,
+   "amenity": "hospital"
+  },
+  {
+   "id": "13456132677",
+   "osm_type": "node",
+   "name": "RMS Ropheka Multi Speciality Hospitals",
+   "lat": 13.2035123,
+   "lon": 80.2661437,
+   "amenity": "hospital"
+  },
+  {
+   "id": "13694295601",
+   "osm_type": "node",
+   "name": "Palaniappa Hospital",
+   "lat": 13.0275517,
+   "lon": 80.1832531,
+   "amenity": "hospital"
+  },
+  {
+   "id": "138307630",
+   "osm_type": "way",
+   "name": "Sir Ivan Stedford Hospital",
+   "lat": 13.1253866,
+   "lon": 80.1438996,
+   "amenity": "hospital"
+  },
+  {
+   "id": "13870488102",
+   "osm_type": "node",
+   "name": "Bethesda Hospital & Child Care Centre",
+   "lat": 12.9196657,
+   "lon": 80.1443175,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1410036059",
+   "osm_type": "way",
+   "name": "Govt. Kilpauk Hospital",
+   "lat": 13.0766394,
+   "lon": 80.2430155,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1428318904",
+   "osm_type": "way",
+   "name": "Gynmc PG Block",
+   "lat": 13.0769748,
+   "lon": 80.2174878,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1446415367",
+   "osm_type": "node",
+   "name": "Bhadra Homeo",
+   "lat": 12.9663879,
+   "lon": 80.2474724,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1472969165",
+   "osm_type": "node",
+   "name": "Amma Hospital",
+   "lat": 13.0626045,
+   "lon": 80.2305209,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1474055555",
+   "osm_type": "node",
+   "name": "Right Hospitals",
+   "lat": 13.0787952,
+   "lon": 80.2405731,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1560720462",
+   "osm_type": "node",
+   "name": "Vasan Eye Care Hospital",
+   "lat": 13.0015307,
+   "lon": 80.2552541,
+   "amenity": "hospital"
+  },
+  {
+   "id": "156240637",
+   "osm_type": "way",
+   "name": "Udhi Eye Hospitals",
+   "lat": 13.0391602,
+   "lon": 80.2571596,
+   "amenity": "hospital"
+  },
+  {
+   "id": "156250603",
+   "osm_type": "way",
+   "name": "Agarwal Eye Hospital",
+   "lat": 13.0460706,
+   "lon": 80.2557204,
+   "amenity": "hospital"
+  },
+  {
+   "id": "156250608",
+   "osm_type": "way",
+   "name": "Aswene Soundarya Hospital",
+   "lat": 13.044707,
+   "lon": 80.256162,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1597151538",
+   "osm_type": "node",
+   "name": "Hospital #1597151538",
+   "lat": 13.0584072,
+   "lon": 80.2011738,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1621246558",
+   "osm_type": "node",
+   "name": "Ashwini Eye Care",
+   "lat": 13.1187083,
+   "lon": 80.1572422,
+   "amenity": "hospital"
+  },
+  {
+   "id": "170104584",
+   "osm_type": "way",
+   "name": "Global Hospitals",
+   "lat": 13.0098114,
+   "lon": 80.2515183,
+   "amenity": "hospital"
+  },
+  {
+   "id": "178747899",
+   "osm_type": "way",
+   "name": "Government Rsrm Lying Hospital",
+   "lat": 13.1090673,
+   "lon": 80.288719,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1789987574",
+   "osm_type": "node",
+   "name": "Prime Care Nursing Home",
+   "lat": 12.9799192,
+   "lon": 80.2044922,
+   "amenity": "hospital"
+  },
+  {
+   "id": "180145742",
+   "osm_type": "way",
+   "name": "Sree Balaji Medical College And Hospital",
+   "lat": 12.9549137,
+   "lon": 80.1381689,
+   "amenity": "hospital"
+  },
+  {
+   "id": "181579506",
+   "osm_type": "way",
+   "name": "Health Centre",
+   "lat": 13.0136347,
+   "lon": 80.2393232,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1833926660",
+   "osm_type": "node",
+   "name": "ACS Medical College And Hospital",
+   "lat": 13.0575206,
+   "lon": 80.127824,
+   "amenity": "hospital"
+  },
+  {
+   "id": "188445646",
+   "osm_type": "way",
+   "name": "Apollo Clinic & Pharmacy",
+   "lat": 13.0360972,
+   "lon": 80.2572646,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1896330825",
+   "osm_type": "node",
+   "name": "Hospital #1896330825",
+   "lat": 13.1340563,
+   "lon": 80.1037102,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1896330827",
+   "osm_type": "node",
+   "name": "Hospital #1896330827",
+   "lat": 13.1333249,
+   "lon": 80.1033668,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1948616260",
+   "osm_type": "node",
+   "name": "Apollo Free Emergency Clinic",
+   "lat": 13.0677233,
+   "lon": 80.2050055,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1955943159",
+   "osm_type": "node",
+   "name": "Agarwal Hospital",
+   "lat": 13.0385656,
+   "lon": 80.2165845,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1957903721",
+   "osm_type": "node",
+   "name": "Senthil Nursing Home",
+   "lat": 13.0849671,
+   "lon": 80.2004752,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1957904106",
+   "osm_type": "node",
+   "name": "I K Hospital",
+   "lat": 13.0868667,
+   "lon": 80.1991661,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1979247767",
+   "osm_type": "node",
+   "name": "B.P. Jain Hospital (Sri Sankara Health Centre)",
+   "lat": 12.9730642,
+   "lon": 80.1339663,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1993266486",
+   "osm_type": "node",
+   "name": "Ortho clinic",
+   "lat": 12.9800456,
+   "lon": 80.2286587,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2072479943",
+   "osm_type": "node",
+   "name": "JK Hospital",
+   "lat": 13.0358564,
+   "lon": 80.1644897,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2086712439",
+   "osm_type": "node",
+   "name": "Hospital #2086712439",
+   "lat": 12.9559409,
+   "lon": 80.1855637,
+   "amenity": "hospital"
+  },
+  {
+   "id": "209413524",
+   "osm_type": "way",
+   "name": "Trinity Acute Care",
+   "lat": 13.0385579,
+   "lon": 80.2578675,
+   "amenity": "hospital"
+  },
+  {
+   "id": "209546207",
+   "osm_type": "way",
+   "name": "Sankara Nethralaya",
+   "lat": 13.0667961,
+   "lon": 80.2493986,
+   "amenity": "hospital"
+  },
+  {
+   "id": "211260239",
+   "osm_type": "way",
+   "name": "Apollo Hospital",
+   "lat": 13.0631198,
+   "lon": 80.2515186,
+   "amenity": "hospital"
+  },
+  {
+   "id": "211274279",
+   "osm_type": "way",
+   "name": "CSI Kalyani Hospital",
+   "lat": 13.0433307,
+   "lon": 80.2724017,
+   "amenity": "hospital"
+  },
+  {
+   "id": "211423255",
+   "osm_type": "way",
+   "name": "EV Kalyani Hospital",
+   "lat": 13.0423476,
+   "lon": 80.2709401,
+   "amenity": "hospital"
+  },
+  {
+   "id": "211423281",
+   "osm_type": "way",
+   "name": "Kasturibai Gandhi Hospital",
+   "lat": 13.0594053,
+   "lon": 80.2784271,
+   "amenity": "hospital"
+  },
+  {
+   "id": "211436948",
+   "osm_type": "way",
+   "name": "Hospital #211436948",
+   "lat": 13.0527537,
+   "lon": 80.280639,
+   "amenity": "hospital"
+  },
+  {
+   "id": "211900029",
+   "osm_type": "way",
+   "name": "Cancer Hospital",
+   "lat": 13.0090564,
+   "lon": 80.2484946,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2120763195",
+   "osm_type": "node",
+   "name": "SP Hospital",
+   "lat": 12.9933638,
+   "lon": 80.2009134,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2124734395",
+   "osm_type": "node",
+   "name": "Fourtts India Laboratories",
+   "lat": 12.9321684,
+   "lon": 80.2337388,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2126461371",
+   "osm_type": "node",
+   "name": "Rotary Central Margaret Sidney Hospital",
+   "lat": 12.9837958,
+   "lon": 80.1932105,
+   "amenity": "hospital"
+  },
+  {
+   "id": "214188197",
+   "osm_type": "way",
+   "name": "சைதாப்பேட்டை அரசு மருத்துவமனை",
+   "lat": 13.0204577,
+   "lon": 80.2240451,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2145405955",
+   "osm_type": "node",
+   "name": "Sri Chakra Hospital",
+   "lat": 12.9786524,
+   "lon": 80.1850278,
+   "amenity": "hospital"
+  },
+  {
+   "id": "217726810",
+   "osm_type": "way",
+   "name": "ஆந்திர மாநில சபா",
+   "lat": 13.0176759,
+   "lon": 80.2598878,
+   "amenity": "hospital"
+  },
+  {
+   "id": "217797428",
+   "osm_type": "way",
+   "name": "Mehta Hospital",
+   "lat": 13.0719905,
+   "lon": 80.2408853,
+   "amenity": "hospital"
+  },
+  {
+   "id": "217846762",
+   "osm_type": "way",
+   "name": "Corporation Baby Hospital",
+   "lat": 13.0971804,
+   "lon": 80.2754276,
+   "amenity": "hospital"
+  },
+  {
+   "id": "217864765",
+   "osm_type": "way",
+   "name": "C.S.I. Rainy Multi Speciality Hospital",
+   "lat": 13.1179059,
+   "lon": 80.2910031,
+   "amenity": "hospital"
+  },
+  {
+   "id": "217864797",
+   "osm_type": "way",
+   "name": "Government Peripheral Hospital",
+   "lat": 13.1260276,
+   "lon": 80.2866925,
+   "amenity": "hospital"
+  },
+  {
+   "id": "217868140",
+   "osm_type": "way",
+   "name": "ESI",
+   "lat": 13.1269596,
+   "lon": 80.2912215,
+   "amenity": "hospital"
+  },
+  {
+   "id": "217960574",
+   "osm_type": "way",
+   "name": "Tamil Nadu Government Multi Super Speciality Hospital",
+   "lat": 13.0693752,
+   "lon": 80.2741496,
+   "amenity": "hospital"
+  },
+  {
+   "id": "218149507",
+   "osm_type": "way",
+   "name": "Billroth Hospital",
+   "lat": 13.0273509,
+   "lon": 80.2567528,
+   "amenity": "hospital"
+  },
+  {
+   "id": "218163938",
+   "osm_type": "way",
+   "name": "Fortis Malar Hospital",
+   "lat": 13.0101605,
+   "lon": 80.2585641,
+   "amenity": "hospital"
+  },
+  {
+   "id": "220821765",
+   "osm_type": "way",
+   "name": "Gowri Nursing Home",
+   "lat": 12.9773885,
+   "lon": 80.1883328,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2210056220",
+   "osm_type": "node",
+   "name": "Rajan Hospital",
+   "lat": 12.8928496,
+   "lon": 80.1835976,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2253361647",
+   "osm_type": "node",
+   "name": "Dr. Janardhanan Multispeciality Dental Clinic",
+   "lat": 12.9842586,
+   "lon": 80.1886083,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2296731456",
+   "osm_type": "node",
+   "name": "Dr Venugopals' Sundaram Clini",
+   "lat": 13.076782,
+   "lon": 80.268345,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2296731781",
+   "osm_type": "node",
+   "name": "Dr Kabir's Clinic",
+   "lat": 13.0768734,
+   "lon": 80.2678381,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2296732187",
+   "osm_type": "node",
+   "name": "Dr Sridhars'Clinic",
+   "lat": 13.0764345,
+   "lon": 80.2672427,
+   "amenity": "hospital"
+  },
+  {
+   "id": "231052536",
+   "osm_type": "way",
+   "name": "Vasan Dental Care",
+   "lat": 13.0920868,
+   "lon": 80.218563,
+   "amenity": "hospital"
+  },
+  {
+   "id": "240472123",
+   "osm_type": "way",
+   "name": "Police Hospital",
+   "lat": 13.0744047,
+   "lon": 80.2592982,
+   "amenity": "hospital"
+  },
+  {
+   "id": "240501607",
+   "osm_type": "way",
+   "name": "The Child Trust Medical Research Foundation",
+   "lat": 13.0573425,
+   "lon": 80.2458975,
+   "amenity": "hospital"
+  },
+  {
+   "id": "240869141",
+   "osm_type": "way",
+   "name": "Hospital #240869141",
+   "lat": 13.0922878,
+   "lon": 80.2593357,
+   "amenity": "hospital"
+  },
+  {
+   "id": "248420920",
+   "osm_type": "node",
+   "name": "Kalaignar Karunanidhi Nagar",
+   "lat": 13.0386493,
+   "lon": 80.2052158,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2485567524",
+   "osm_type": "node",
+   "name": "Vepery Hospital",
+   "lat": 13.0921812,
+   "lon": 80.2594411,
+   "amenity": "hospital"
+  },
+  {
+   "id": "248560797",
+   "osm_type": "node",
+   "name": "Kasimedu",
+   "lat": 13.122775,
+   "lon": 80.2960584,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2517035814",
+   "osm_type": "node",
+   "name": "Vasan Eye care",
+   "lat": 12.9658002,
+   "lon": 80.191882,
+   "amenity": "hospital"
+  },
+  {
+   "id": "254986491",
+   "osm_type": "way",
+   "name": "Divya Hospital",
+   "lat": 13.2771647,
+   "lon": 80.261075,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2559180846",
+   "osm_type": "node",
+   "name": "Jaws Dental Foundation",
+   "lat": 13.0929667,
+   "lon": 80.2236256,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2587530810",
+   "osm_type": "node",
+   "name": "Chennai Skin Foundation",
+   "lat": 13.0205681,
+   "lon": 80.2594702,
+   "amenity": "hospital"
+  },
+  {
+   "id": "258978416",
+   "osm_type": "node",
+   "name": "Amrit Hospital",
+   "lat": 13.0922007,
+   "lon": 80.2792912,
+   "amenity": "hospital"
+  },
+  {
+   "id": "258978417",
+   "osm_type": "node",
+   "name": "Vikram Hospital",
+   "lat": 13.0985007,
+   "lon": 80.2796178,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2607437437",
+   "osm_type": "node",
+   "name": "Venkata rathnam Hospital",
+   "lat": 13.2772938,
+   "lon": 80.2598649,
+   "amenity": "hospital"
+  },
+  {
+   "id": "262012749",
+   "osm_type": "way",
+   "name": "Chennai Corporation 24 Hours Maternity Hospital",
+   "lat": 13.0208732,
+   "lon": 80.2241344,
+   "amenity": "hospital"
+  },
+  {
+   "id": "262452334",
+   "osm_type": "node",
+   "name": "City Tower Hospitals",
+   "lat": 13.08438,
+   "lon": 80.2160862,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2669702938",
+   "osm_type": "node",
+   "name": "Sukrthi Nursing Home",
+   "lat": 12.9710287,
+   "lon": 80.2082964,
+   "amenity": "hospital"
+  },
+  {
+   "id": "27618339",
+   "osm_type": "way",
+   "name": "Rajiv Gandhi Government General Hospital",
+   "lat": 13.0808972,
+   "lon": 80.2773284,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2794348661",
+   "osm_type": "node",
+   "name": "A.N.N Hospital",
+   "lat": 13.0405941,
+   "lon": 80.1784622,
+   "amenity": "hospital"
+  },
+  {
+   "id": "28345285",
+   "osm_type": "way",
+   "name": "Stanley Medical College and Hospital",
+   "lat": 13.1063871,
+   "lon": 80.2841452,
+   "amenity": "hospital"
+  },
+  {
+   "id": "28404807",
+   "osm_type": "way",
+   "name": "Hospital #28404807",
+   "lat": 13.005416,
+   "lon": 80.2396935,
+   "amenity": "hospital"
+  },
+  {
+   "id": "28493363",
+   "osm_type": "way",
+   "name": "Sri Ramachandra Institute of Higher Education and Research",
+   "lat": 13.0410329,
+   "lon": 80.1425261,
+   "amenity": "hospital"
+  },
+  {
+   "id": "289486820",
+   "osm_type": "node",
+   "name": "Apollo Hospitals, Tondiarpet",
+   "lat": 13.1289367,
+   "lon": 80.2905623,
+   "amenity": "hospital"
+  },
+  {
+   "id": "29046387",
+   "osm_type": "way",
+   "name": "Tt Ranganathan Clinical Research Foundation",
+   "lat": 12.9923667,
+   "lon": 80.2550102,
+   "amenity": "hospital"
+  },
+  {
+   "id": "29046742",
+   "osm_type": "way",
+   "name": "IMPCOPS Traditional Hospital",
+   "lat": 12.9930805,
+   "lon": 80.2572794,
+   "amenity": "hospital"
+  },
+  {
+   "id": "29116157",
+   "osm_type": "way",
+   "name": "Egmore Eye Hospital",
+   "lat": 13.0702235,
+   "lon": 80.2599829,
+   "amenity": "hospital"
+  },
+  {
+   "id": "295544111",
+   "osm_type": "node",
+   "name": "K.H.M.Hospital",
+   "lat": 13.0844424,
+   "lon": 80.2130723,
+   "amenity": "hospital"
+  },
+  {
+   "id": "295552091",
+   "osm_type": "node",
+   "name": "Sundaram Medical Foundation",
+   "lat": 13.08217,
+   "lon": 80.2069819,
+   "amenity": "hospital"
+  },
+  {
+   "id": "295552092",
+   "osm_type": "node",
+   "name": "Sri Devi Speciality Hospial",
+   "lat": 13.0887983,
+   "lon": 80.1994692,
+   "amenity": "hospital"
+  },
+  {
+   "id": "2966142809",
+   "osm_type": "node",
+   "name": "Appolo Speciality Hospital Vanagram",
+   "lat": 13.0705042,
+   "lon": 80.150612,
+   "amenity": "hospital"
+  },
+  {
+   "id": "303590777",
+   "osm_type": "node",
+   "name": "Corporation Hospital",
+   "lat": 13.0336624,
+   "lon": 80.2572467,
+   "amenity": "hospital"
+  },
+  {
+   "id": "308811614",
+   "osm_type": "node",
+   "name": "Hindu Mission Health Services, Kanchipuram",
+   "lat": 12.9787682,
+   "lon": 80.1846471,
+   "amenity": "hospital"
+  },
+  {
+   "id": "30973308",
+   "osm_type": "way",
+   "name": "ESI Hospital",
+   "lat": 13.0950575,
+   "lon": 80.2397713,
+   "amenity": "hospital"
+  },
+  {
+   "id": "310015097",
+   "osm_type": "node",
+   "name": "Military Hospital",
+   "lat": 13.0194622,
+   "lon": 80.1972947,
+   "amenity": "hospital"
+  },
+  {
+   "id": "310504820",
+   "osm_type": "node",
+   "name": "Goverment dental hospital & collage",
+   "lat": 13.0829605,
+   "lon": 80.281264,
+   "amenity": "hospital"
+  },
+  {
+   "id": "310732936",
+   "osm_type": "node",
+   "name": "Kilpauk Medical College",
+   "lat": 13.0785984,
+   "lon": 80.2433369,
+   "amenity": "hospital"
+  },
+  {
+   "id": "310909754",
+   "osm_type": "node",
+   "name": "Hariharan Hospital",
+   "lat": 12.9847145,
+   "lon": 80.1905906,
+   "amenity": "hospital"
+  },
+  {
+   "id": "310910945",
+   "osm_type": "node",
+   "name": "BM Hospital",
+   "lat": 12.9887616,
+   "lon": 80.1904116,
+   "amenity": "hospital"
+  },
+  {
+   "id": "311429396",
+   "osm_type": "node",
+   "name": "K.F. Hospital",
+   "lat": 12.973463,
+   "lon": 80.1841397,
+   "amenity": "hospital"
+  },
+  {
+   "id": "3118864398",
+   "osm_type": "node",
+   "name": "Kauvery Hospital",
+   "lat": 13.0381705,
+   "lon": 80.2573008,
+   "amenity": "hospital"
+  },
+  {
+   "id": "312000326",
+   "osm_type": "node",
+   "name": "Cancer Institute",
+   "lat": 13.0061338,
+   "lon": 80.239884,
+   "amenity": "hospital"
+  },
+  {
+   "id": "31240956",
+   "osm_type": "way",
+   "name": "Government Hospital of Thoracic Medicine",
+   "lat": 12.9418907,
+   "lon": 80.1293774,
+   "amenity": "hospital"
+  },
+  {
+   "id": "313027868",
+   "osm_type": "node",
+   "name": "Sri Ramachandra Medical Centre and Hospital",
+   "lat": 13.0380979,
+   "lon": 80.1428047,
+   "amenity": "hospital"
+  },
+  {
+   "id": "315499682",
+   "osm_type": "way",
+   "name": "Apollo Speciality Hospital - Block A",
+   "lat": 13.0336469,
+   "lon": 80.2451684,
+   "amenity": "hospital"
+  },
+  {
+   "id": "315499747",
+   "osm_type": "way",
+   "name": "Apollo Speciality Hospital - Block B",
+   "lat": 13.0336169,
+   "lon": 80.2456392,
+   "amenity": "hospital"
+  },
+  {
+   "id": "315499965",
+   "osm_type": "way",
+   "name": "Apollo Speciality Hospital - Block C",
+   "lat": 13.0339285,
+   "lon": 80.245666,
+   "amenity": "hospital"
+  },
+  {
+   "id": "3157617785",
+   "osm_type": "node",
+   "name": "Dr Mohan's Diabetes Hospital",
+   "lat": 12.9255743,
+   "lon": 80.1281333,
+   "amenity": "hospital"
+  },
+  {
+   "id": "320275820",
+   "osm_type": "node",
+   "name": "Govt Maternity Hospital",
+   "lat": 13.0720996,
+   "lon": 80.2589871,
+   "amenity": "hospital"
+  },
+  {
+   "id": "320275824",
+   "osm_type": "node",
+   "name": "Institute of Child Health",
+   "lat": 13.0735496,
+   "lon": 80.257025,
+   "amenity": "hospital"
+  },
+  {
+   "id": "320275839",
+   "osm_type": "node",
+   "name": "Institute of Obstetrics and Gynaecology dd",
+   "lat": 13.0735431,
+   "lon": 80.2591463,
+   "amenity": "hospital"
+  },
+  {
+   "id": "328706398",
+   "osm_type": "way",
+   "name": "Chennai Clinical Centres",
+   "lat": 12.9941997,
+   "lon": 80.2516271,
+   "amenity": "hospital"
+  },
+  {
+   "id": "32896904",
+   "osm_type": "way",
+   "name": "Cantonment General Hospital",
+   "lat": 13.0095756,
+   "lon": 80.1950144,
+   "amenity": "hospital"
+  },
+  {
+   "id": "332525434",
+   "osm_type": "way",
+   "name": "Public Health Centre (In Patient Block)",
+   "lat": 13.0359986,
+   "lon": 80.2218494,
+   "amenity": "hospital"
+  },
+  {
+   "id": "332525519",
+   "osm_type": "way",
+   "name": "Public Health Centre (Out Patient Block)",
+   "lat": 13.0363842,
+   "lon": 80.2219385,
+   "amenity": "hospital"
+  },
+  {
+   "id": "33630155",
+   "osm_type": "way",
+   "name": "Government Hospital, Poonamallee",
+   "lat": 13.0504416,
+   "lon": 80.099468,
+   "amenity": "hospital"
+  },
+  {
+   "id": "3372786283",
+   "osm_type": "node",
+   "name": "Velachery SABA Hospital",
+   "lat": 12.9862735,
+   "lon": 80.2298924,
+   "amenity": "hospital"
+  },
+  {
+   "id": "337923794",
+   "osm_type": "way",
+   "name": "Chitra Maternity andSurgival Centre",
+   "lat": 13.0234391,
+   "lon": 80.2229133,
+   "amenity": "hospital"
+  },
+  {
+   "id": "337929079",
+   "osm_type": "way",
+   "name": "Bora Hospital",
+   "lat": 13.0223109,
+   "lon": 80.2222779,
+   "amenity": "hospital"
+  },
+  {
+   "id": "34097016",
+   "osm_type": "way",
+   "name": "Communicable Diseases Hospital",
+   "lat": 13.1287163,
+   "lon": 80.2925206,
+   "amenity": "hospital"
+  },
+  {
+   "id": "343141649",
+   "osm_type": "way",
+   "name": "Vasan",
+   "lat": 13.0217319,
+   "lon": 80.2257691,
+   "amenity": "hospital"
+  },
+  {
+   "id": "350538223",
+   "osm_type": "way",
+   "name": "SRM Hospital",
+   "lat": 13.0418111,
+   "lon": 80.2246322,
+   "amenity": "hospital"
+  },
+  {
+   "id": "35312695",
+   "osm_type": "way",
+   "name": "புனித இஸ்பேல் மருத்துவமனை",
+   "lat": 13.0384509,
+   "lon": 80.2622475,
+   "amenity": "hospital"
+  },
+  {
+   "id": "354243595",
+   "osm_type": "way",
+   "name": "Guest Hospital",
+   "lat": 13.0772245,
+   "lon": 80.2387532,
+   "amenity": "hospital"
+  },
+  {
+   "id": "354278944",
+   "osm_type": "way",
+   "name": "Frontier Lifeline Hospital",
+   "lat": 13.0875243,
+   "lon": 80.1857322,
+   "amenity": "hospital"
+  },
+  {
+   "id": "354293689",
+   "osm_type": "way",
+   "name": "Hande Medical Centre",
+   "lat": 13.0611783,
+   "lon": 80.2466206,
+   "amenity": "hospital"
+  },
+  {
+   "id": "354540004",
+   "osm_type": "way",
+   "name": "Balaji Hospital (P) Ltd",
+   "lat": 13.0074019,
+   "lon": 80.2060853,
+   "amenity": "hospital"
+  },
+  {
+   "id": "354562297",
+   "osm_type": "way",
+   "name": "Sugam Hospitals",
+   "lat": 12.9617858,
+   "lon": 80.1467001,
+   "amenity": "hospital"
+  },
+  {
+   "id": "354572408",
+   "osm_type": "way",
+   "name": "Chennai Medical Centre",
+   "lat": 13.0381039,
+   "lon": 80.1890642,
+   "amenity": "hospital"
+  },
+  {
+   "id": "354810486",
+   "osm_type": "way",
+   "name": "Hospital #354810486",
+   "lat": 12.9856604,
+   "lon": 80.228913,
+   "amenity": "hospital"
+  },
+  {
+   "id": "354814307",
+   "osm_type": "way",
+   "name": "Chennai Fertility Center",
+   "lat": 13.0690367,
+   "lon": 80.2257614,
+   "amenity": "hospital"
+  },
+  {
+   "id": "354839873",
+   "osm_type": "way",
+   "name": "J.V. Hospitals Llp",
+   "lat": 13.0505664,
+   "lon": 80.2299034,
+   "amenity": "hospital"
+  },
+  {
+   "id": "354840226",
+   "osm_type": "way",
+   "name": "R.R Dental Hospital",
+   "lat": 13.0519005,
+   "lon": 80.2292607,
+   "amenity": "hospital"
+  },
+  {
+   "id": "354840384",
+   "osm_type": "way",
+   "name": "JV Hospital",
+   "lat": 13.0505634,
+   "lon": 80.2297492,
+   "amenity": "hospital"
+  },
+  {
+   "id": "355052484",
+   "osm_type": "way",
+   "name": "Viganesh Hospital",
+   "lat": 13.0308661,
+   "lon": 80.1717417,
+   "amenity": "hospital"
+  },
+  {
+   "id": "355067576",
+   "osm_type": "way",
+   "name": "Chennai Heritage Hospital",
+   "lat": 13.0653715,
+   "lon": 80.2119909,
+   "amenity": "hospital"
+  },
+  {
+   "id": "355074781",
+   "osm_type": "way",
+   "name": "Xcellent Care Hospital",
+   "lat": 12.9856288,
+   "lon": 80.2183869,
+   "amenity": "hospital"
+  },
+  {
+   "id": "355658593",
+   "osm_type": "way",
+   "name": "Be Well Hospitals",
+   "lat": 13.0794481,
+   "lon": 80.1983283,
+   "amenity": "hospital"
+  },
+  {
+   "id": "355954822",
+   "osm_type": "way",
+   "name": "HomeoCare International Hospital",
+   "lat": 12.924879,
+   "lon": 80.1126812,
+   "amenity": "hospital"
+  },
+  {
+   "id": "361224706",
+   "osm_type": "way",
+   "name": "MN Eye Hospital",
+   "lat": 13.1229398,
+   "lon": 80.2875069,
+   "amenity": "hospital"
+  },
+  {
+   "id": "363930311",
+   "osm_type": "way",
+   "name": "Chennai National Hospital",
+   "lat": 13.0963673,
+   "lon": 80.2914373,
+   "amenity": "hospital"
+  },
+  {
+   "id": "364356223",
+   "osm_type": "way",
+   "name": "Diha Clinic",
+   "lat": 12.9809453,
+   "lon": 80.1871143,
+   "amenity": "hospital"
+  },
+  {
+   "id": "364483211",
+   "osm_type": "way",
+   "name": "Nirmal Eye Hospital",
+   "lat": 12.929765,
+   "lon": 80.1161656,
+   "amenity": "hospital"
+  },
+  {
+   "id": "364650995",
+   "osm_type": "node",
+   "name": "MIOT International",
+   "lat": 13.0211808,
+   "lon": 80.1858412,
+   "amenity": "hospital"
+  },
+  {
+   "id": "364721502",
+   "osm_type": "way",
+   "name": "Athipathy Hospitals",
+   "lat": 12.976434,
+   "lon": 80.2221909,
+   "amenity": "hospital"
+  },
+  {
+   "id": "3664004950",
+   "osm_type": "node",
+   "name": "Chellam Hospital",
+   "lat": 12.9012946,
+   "lon": 80.1583761,
+   "amenity": "hospital"
+  },
+  {
+   "id": "367795605",
+   "osm_type": "node",
+   "name": "St. Thomas Hospital",
+   "lat": 13.0122733,
+   "lon": 80.196428,
+   "amenity": "hospital"
+  },
+  {
+   "id": "3687711447",
+   "osm_type": "node",
+   "name": "Kaya Skin clinic",
+   "lat": 12.9767775,
+   "lon": 80.2223505,
+   "amenity": "hospital"
+  },
+  {
+   "id": "3702797921",
+   "osm_type": "node",
+   "name": "Madras Medical Mission Hospital - Institute of Cardio Vascular Diseases",
+   "lat": 13.0859961,
+   "lon": 80.1870589,
+   "amenity": "hospital"
+  },
+  {
+   "id": "370967673",
+   "osm_type": "node",
+   "name": "Hospital #370967673",
+   "lat": 13.009781,
+   "lon": 80.1949734,
+   "amenity": "hospital"
+  },
+  {
+   "id": "371970672",
+   "osm_type": "way",
+   "name": "Dr.Kamakshi Memorial Hospital",
+   "lat": 12.9492371,
+   "lon": 80.2091585,
+   "amenity": "hospital"
+  },
+  {
+   "id": "374048313",
+   "osm_type": "way",
+   "name": "Shivasundar Hospital",
+   "lat": 12.9977694,
+   "lon": 80.2574762,
+   "amenity": "hospital"
+  },
+  {
+   "id": "375668400",
+   "osm_type": "node",
+   "name": "Venkataeswara Hospitals",
+   "lat": 13.0293624,
+   "lon": 80.2440921,
+   "amenity": "hospital"
+  },
+  {
+   "id": "3982078512",
+   "osm_type": "node",
+   "name": "Pavithra Hospital",
+   "lat": 13.1260907,
+   "lon": 80.2488406,
+   "amenity": "hospital"
+  },
+  {
+   "id": "4221573903",
+   "osm_type": "node",
+   "name": "Shankara Netralaya Eye Hospital",
+   "lat": 13.0642564,
+   "lon": 80.2497746,
+   "amenity": "hospital"
+  },
+  {
+   "id": "428432216",
+   "osm_type": "way",
+   "name": "Government Primary Health Center",
+   "lat": 12.9550873,
+   "lon": 80.0432574,
+   "amenity": "hospital"
+  },
+  {
+   "id": "4329387869",
+   "osm_type": "node",
+   "name": "Srinivasan Rajalakshmi Memorial Hospital",
+   "lat": 12.9733792,
+   "lon": 80.187599,
+   "amenity": "hospital"
+  },
+  {
+   "id": "44034276",
+   "osm_type": "way",
+   "name": "Parvathy Hospital",
+   "lat": 12.946075,
+   "lon": 80.1367453,
+   "amenity": "hospital"
+  },
+  {
+   "id": "44034282",
+   "osm_type": "way",
+   "name": "Chennai Krishna Hospital",
+   "lat": 12.9463677,
+   "lon": 80.1369815,
+   "amenity": "hospital"
+  },
+  {
+   "id": "4411855589",
+   "osm_type": "node",
+   "name": "Hospital #4411855589",
+   "lat": 13.026489,
+   "lon": 80.1829882,
+   "amenity": "hospital"
+  },
+  {
+   "id": "442508332",
+   "osm_type": "node",
+   "name": "Sarswathi Hospital",
+   "lat": 12.9653846,
+   "lon": 80.2067733,
+   "amenity": "hospital"
+  },
+  {
+   "id": "4486583996",
+   "osm_type": "node",
+   "name": "Chennai Medical Centre Hospital",
+   "lat": 13.0380047,
+   "lon": 80.1889685,
+   "amenity": "hospital"
+  },
+  {
+   "id": "4488082604",
+   "osm_type": "node",
+   "name": "SRM Institutes For Medical Science",
+   "lat": 13.0515961,
+   "lon": 80.2114304,
+   "amenity": "hospital"
+  },
+  {
+   "id": "451681464",
+   "osm_type": "way",
+   "name": "CMC Hospital",
+   "lat": 13.0380763,
+   "lon": 80.1889033,
+   "amenity": "hospital"
+  },
+  {
+   "id": "4554279725",
+   "osm_type": "node",
+   "name": "Vivekanandha",
+   "lat": 13.1108976,
+   "lon": 80.0952836,
+   "amenity": "hospital"
+  },
+  {
+   "id": "459635161",
+   "osm_type": "node",
+   "name": "Apollo Clinic & Pharmacy",
+   "lat": 13.05244,
+   "lon": 80.2041657,
+   "amenity": "hospital"
+  },
+  {
+   "id": "459648701",
+   "osm_type": "node",
+   "name": "Vijaya Heart Centre",
+   "lat": 13.0483819,
+   "lon": 80.2070144,
+   "amenity": "hospital"
+  },
+  {
+   "id": "462740006",
+   "osm_type": "way",
+   "name": "corporation hospital",
+   "lat": 12.9846941,
+   "lon": 80.2573424,
+   "amenity": "hospital"
+  },
+  {
+   "id": "469672997",
+   "osm_type": "way",
+   "name": "Annai Arul Hospital",
+   "lat": 12.9207052,
+   "lon": 80.0880949,
+   "amenity": "hospital"
+  },
+  {
+   "id": "469945922",
+   "osm_type": "way",
+   "name": "Hospital #469945922",
+   "lat": 13.1235594,
+   "lon": 80.2662176,
+   "amenity": "hospital"
+  },
+  {
+   "id": "4740298624",
+   "osm_type": "node",
+   "name": "government child health center",
+   "lat": 12.9241666,
+   "lon": 80.1274453,
+   "amenity": "hospital"
+  },
+  {
+   "id": "4740298625",
+   "osm_type": "node",
+   "name": "Christdas hospital",
+   "lat": 12.9229715,
+   "lon": 80.1298204,
+   "amenity": "hospital"
+  },
+  {
+   "id": "47416302",
+   "osm_type": "way",
+   "name": "Stanley Medical College and Hospital",
+   "lat": 13.1042167,
+   "lon": 80.283195,
+   "amenity": "hospital"
+  },
+  {
+   "id": "4764302980",
+   "osm_type": "node",
+   "name": "HEALTH",
+   "lat": 13.0135999,
+   "lon": 80.2395364,
+   "amenity": "hospital"
+  },
+  {
+   "id": "4813324323",
+   "osm_type": "node",
+   "name": "Hospital #4813324323",
+   "lat": 13.1133021,
+   "lon": 80.2905249,
+   "amenity": "hospital"
+  },
+  {
+   "id": "48737654",
+   "osm_type": "way",
+   "name": "Hospital #48737654",
+   "lat": 13.0978041,
+   "lon": 80.2457004,
+   "amenity": "hospital"
+  },
+  {
+   "id": "48741356",
+   "osm_type": "way",
+   "name": "ICF Hospital",
+   "lat": 13.0998913,
+   "lon": 80.2138748,
+   "amenity": "hospital"
+  },
+  {
+   "id": "48753841",
+   "osm_type": "way",
+   "name": "Anna Nagar Government Hospital",
+   "lat": 13.0954447,
+   "lon": 80.2197148,
+   "amenity": "hospital"
+  },
+  {
+   "id": "4911075821",
+   "osm_type": "node",
+   "name": "Hospital #4911075821",
+   "lat": 12.9261223,
+   "lon": 80.1265186,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5087493136",
+   "osm_type": "node",
+   "name": "Sugam homeopathic hospital",
+   "lat": 12.9230989,
+   "lon": 80.130824,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5087493227",
+   "osm_type": "node",
+   "name": "Dr. KK eye care center",
+   "lat": 12.9220657,
+   "lon": 80.1381329,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5087493324",
+   "osm_type": "node",
+   "name": "Be Well Hospital",
+   "lat": 12.9220102,
+   "lon": 80.1417788,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5090924224",
+   "osm_type": "node",
+   "name": "Chellam Super Speciality Center",
+   "lat": 12.9237851,
+   "lon": 80.1589529,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5090926024",
+   "osm_type": "node",
+   "name": "New Life Hospital",
+   "lat": 12.9225168,
+   "lon": 80.1522357,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5225824334",
+   "osm_type": "node",
+   "name": "Sri Ramachandra Hospital",
+   "lat": 13.0852758,
+   "lon": 80.0674867,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5227833113",
+   "osm_type": "node",
+   "name": "Grace Hospital",
+   "lat": 13.1232827,
+   "lon": 80.0591826,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5227836679",
+   "osm_type": "node",
+   "name": "Abirami Nursing Home",
+   "lat": 13.1217696,
+   "lon": 80.0634217,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5229996823",
+   "osm_type": "node",
+   "name": "Gov Sub Urban Health Center",
+   "lat": 13.1155685,
+   "lon": 80.0632561,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5258976324",
+   "osm_type": "node",
+   "name": "Government Health Center",
+   "lat": 12.885562,
+   "lon": 80.151595,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5259008321",
+   "osm_type": "node",
+   "name": "Annai Therasa Hospital",
+   "lat": 12.8917407,
+   "lon": 80.1412614,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5259088422",
+   "osm_type": "node",
+   "name": "Government Veterinary Hospital",
+   "lat": 12.8855161,
+   "lon": 80.1522823,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5259129922",
+   "osm_type": "node",
+   "name": "Hospital #5259129922",
+   "lat": 12.9207467,
+   "lon": 80.1437903,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5259141323",
+   "osm_type": "node",
+   "name": "Hospital #5259141323",
+   "lat": 12.9201133,
+   "lon": 80.1443788,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5263563022",
+   "osm_type": "node",
+   "name": "Hospital #5263563022",
+   "lat": 13.1131363,
+   "lon": 80.2429369,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5302938624",
+   "osm_type": "node",
+   "name": "Kottakkal Arya Vaidhyasala",
+   "lat": 12.9203722,
+   "lon": 80.1443905,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5321368440",
+   "osm_type": "node",
+   "name": "Marhura hospital",
+   "lat": 12.8369284,
+   "lon": 80.2275731,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5336542921",
+   "osm_type": "node",
+   "name": "The Cresent Hospital",
+   "lat": 13.0527235,
+   "lon": 80.2727336,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5367950021",
+   "osm_type": "node",
+   "name": "Biocosmo Healthcare",
+   "lat": 13.0590329,
+   "lon": 80.2375326,
+   "amenity": "hospital"
+  },
+  {
+   "id": "540658116",
+   "osm_type": "node",
+   "name": "B.M.Orthopaedic Hospital",
+   "lat": 13.1181104,
+   "lon": 80.1499411,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5492573024",
+   "osm_type": "node",
+   "name": "VSR Hospital",
+   "lat": 13.0799682,
+   "lon": 80.1805593,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5492577281",
+   "osm_type": "node",
+   "name": "New Life Family Hospitals",
+   "lat": 13.0800478,
+   "lon": 80.1804976,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5500158687",
+   "osm_type": "node",
+   "name": "Vijaya Group of Hospital",
+   "lat": 13.0497391,
+   "lon": 80.2083222,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5547728024",
+   "osm_type": "node",
+   "name": "ஹிபா சிறப்பு மருத்துவமனை",
+   "lat": 13.0615207,
+   "lon": 80.275747,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5570522545",
+   "osm_type": "node",
+   "name": "ARK Hospital",
+   "lat": 12.9856999,
+   "lon": 80.2293536,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5631872266",
+   "osm_type": "node",
+   "name": "Annamalai Hospital",
+   "lat": 13.031147,
+   "lon": 80.2228983,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5631872277",
+   "osm_type": "node",
+   "name": "Ezhil Hospital",
+   "lat": 13.0319539,
+   "lon": 80.2207913,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5792664046",
+   "osm_type": "node",
+   "name": "Qure Ortho Clinic, Physiotherapy, X Ray & Pharmacy",
+   "lat": 12.9794,
+   "lon": 80.2043658,
+   "amenity": "hospital"
+  },
+  {
+   "id": "5892971290",
+   "osm_type": "node",
+   "name": "Point B",
+   "lat": 13.0258358,
+   "lon": 80.039844,
+   "amenity": "hospital"
+  },
+  {
+   "id": "591555028",
+   "osm_type": "node",
+   "name": "skandan nursing home",
+   "lat": 12.9447938,
+   "lon": 80.1405596,
+   "amenity": "hospital"
+  },
+  {
+   "id": "59359967",
+   "osm_type": "way",
+   "name": "Hospital #59359967",
+   "lat": 13.0933659,
+   "lon": 80.2403777,
+   "amenity": "hospital"
+  },
+  {
+   "id": "595706154",
+   "osm_type": "node",
+   "name": "Vasan Eye Care Hospital, Vadapalani",
+   "lat": 13.0495316,
+   "lon": 80.211027,
+   "amenity": "hospital"
+  },
+  {
+   "id": "597590621",
+   "osm_type": "node",
+   "name": "JJ Hospital",
+   "lat": 13.0571293,
+   "lon": 80.1942138,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6138546488",
+   "osm_type": "node",
+   "name": "Dr.Agarwal's Eye Hospital Ltd, Tambaram",
+   "lat": 12.929761,
+   "lon": 80.1200478,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6185882385",
+   "osm_type": "node",
+   "name": "Nivas Skin Clinic",
+   "lat": 13.0289663,
+   "lon": 80.2085951,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6886285320",
+   "osm_type": "node",
+   "name": "Apollo Cancer Centres",
+   "lat": 13.0337515,
+   "lon": 80.2451004,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914280086",
+   "osm_type": "node",
+   "name": "Raju Hospitals",
+   "lat": 13.0329888,
+   "lon": 80.230346,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914280093",
+   "osm_type": "node",
+   "name": "Rakshith Hospitals",
+   "lat": 13.042307,
+   "lon": 80.177473,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914764645",
+   "osm_type": "node",
+   "name": "Dr. A. L. Annamalais Ent Care Centre",
+   "lat": 12.9439622,
+   "lon": 80.1388438,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914764653",
+   "osm_type": "node",
+   "name": "Sri Kalyan Hospital",
+   "lat": 13.0063976,
+   "lon": 80.2507134,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914767985",
+   "osm_type": "node",
+   "name": "A G Chrompet Health And Maternity Centre",
+   "lat": 12.9504411,
+   "lon": 80.1438314,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914768001",
+   "osm_type": "node",
+   "name": "Sen Hospital",
+   "lat": 13.1105649,
+   "lon": 80.2418775,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914768046",
+   "osm_type": "node",
+   "name": "Billroth Hospitals",
+   "lat": 13.0757435,
+   "lon": 80.2272588,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914768062",
+   "osm_type": "node",
+   "name": "Mano Hospital",
+   "lat": 12.9223261,
+   "lon": 80.0961417,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914768063",
+   "osm_type": "node",
+   "name": "Cauvery Trust Hospital",
+   "lat": 13.1026603,
+   "lon": 80.2112943,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914768069",
+   "osm_type": "node",
+   "name": "Kedar Hospital",
+   "lat": 13.0229098,
+   "lon": 80.1670808,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914768085",
+   "osm_type": "node",
+   "name": "Srinivas Eye Hospital",
+   "lat": 13.0829726,
+   "lon": 80.1796965,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914768086",
+   "osm_type": "node",
+   "name": "Soundarapandian Bone and Joint Hospital Research Institute Pvt. Ltd.",
+   "lat": 13.0838202,
+   "lon": 80.2156412,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914768088",
+   "osm_type": "node",
+   "name": "Dr. U. Mohan Rau Memorial Hospital - Chennai",
+   "lat": 13.079494,
+   "lon": 80.2572808,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914880538",
+   "osm_type": "node",
+   "name": "Chennai Cancer Care",
+   "lat": 13.0762935,
+   "lon": 80.234026,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914880539",
+   "osm_type": "node",
+   "name": "Chennai Eye Care Hospital",
+   "lat": 12.9789449,
+   "lon": 80.2246302,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914880540",
+   "osm_type": "node",
+   "name": "Chennai Heart Centre",
+   "lat": 13.0917939,
+   "lon": 80.2410534,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914880546",
+   "osm_type": "node",
+   "name": "Chennai Kaliappa Hospital",
+   "lat": 13.0268492,
+   "lon": 80.2558082,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914880552",
+   "osm_type": "node",
+   "name": "Mots Hospital",
+   "lat": 13.0833606,
+   "lon": 80.2341561,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914880584",
+   "osm_type": "node",
+   "name": "Vasanthi Orthopaedic Hospital",
+   "lat": 13.0723588,
+   "lon": 80.2157642,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914896212",
+   "osm_type": "node",
+   "name": "R.K. Gynaec And Maternity Hospital",
+   "lat": 13.0788127,
+   "lon": 80.2481786,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914896214",
+   "osm_type": "node",
+   "name": "R.G. Stone Urological Research Institute",
+   "lat": 13.0240792,
+   "lon": 80.2278288,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914896215",
+   "osm_type": "node",
+   "name": "R. K. Eye Centre",
+   "lat": 13.0485912,
+   "lon": 80.2311788,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914896269",
+   "osm_type": "node",
+   "name": "Psymed Hospiyal",
+   "lat": 13.0714757,
+   "lon": 80.2317998,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914911759",
+   "osm_type": "node",
+   "name": "Vanaja Hospital",
+   "lat": 13.1990395,
+   "lon": 80.1760313,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914911764",
+   "osm_type": "node",
+   "name": "Vasanthram Hospital (P) Ltd.,",
+   "lat": 13.0433091,
+   "lon": 80.2187696,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914927162",
+   "osm_type": "node",
+   "name": "Vadapalani Multispeciality Hospital",
+   "lat": 13.0516559,
+   "lon": 80.2133146,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6914937617",
+   "osm_type": "node",
+   "name": "Sri Ramachandra Hospital",
+   "lat": 13.0378713,
+   "lon": 80.1402023,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6915117046",
+   "osm_type": "node",
+   "name": "M N Eye Hospital Private Limited, Tondiarpet",
+   "lat": 13.1232306,
+   "lon": 80.2876528,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6915134068",
+   "osm_type": "node",
+   "name": "Doctor Rexs Hospitals",
+   "lat": 13.0838812,
+   "lon": 80.2502386,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6915201226",
+   "osm_type": "node",
+   "name": "Helios Hospital Pvt Ltd",
+   "lat": 12.9855882,
+   "lon": 80.2189144,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6915218991",
+   "osm_type": "node",
+   "name": "Deepam Muthu Hospital",
+   "lat": 13.0995855,
+   "lon": 80.2605303,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6915231638",
+   "osm_type": "node",
+   "name": "Devibala Maternity",
+   "lat": 12.971439,
+   "lon": 80.1378152,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6915413133",
+   "osm_type": "node",
+   "name": "S K Nursing Home Pvt Ltd",
+   "lat": 12.9289316,
+   "lon": 80.1170864,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6915463333",
+   "osm_type": "node",
+   "name": "Malligai Hospital",
+   "lat": 13.1238765,
+   "lon": 80.2899749,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6915520031",
+   "osm_type": "node",
+   "name": "D.R.R. Eye Hospital",
+   "lat": 13.0459064,
+   "lon": 80.1136042,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6915563707",
+   "osm_type": "node",
+   "name": "Deepam Hospital",
+   "lat": 12.9294095,
+   "lon": 80.1174378,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6915836812",
+   "osm_type": "node",
+   "name": "Huma Specialists Hospital and Research Centre Pvt Ltd",
+   "lat": 13.0282655,
+   "lon": 80.235353,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6916036803",
+   "osm_type": "node",
+   "name": "Divya Hospital",
+   "lat": 12.9644392,
+   "lon": 80.187601,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6916178396",
+   "osm_type": "node",
+   "name": "Noor`S Hospital",
+   "lat": 13.1418442,
+   "lon": 80.2485046,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6916205172",
+   "osm_type": "node",
+   "name": "Vasan Eye Care Hospital, Perambur",
+   "lat": 13.1177888,
+   "lon": 80.2287099,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926045326",
+   "osm_type": "node",
+   "name": "Sri Sai Krs Hospital",
+   "lat": 13.0379757,
+   "lon": 80.2162984,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926049961",
+   "osm_type": "node",
+   "name": "Gowri Nursing Home, Kanchipuram",
+   "lat": 12.9779713,
+   "lon": 80.1883923,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926055599",
+   "osm_type": "node",
+   "name": "Christudas Orthopaedic Speciality Hospital",
+   "lat": 12.9214137,
+   "lon": 80.127482,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926055600",
+   "osm_type": "node",
+   "name": "Satish Eye Hospital",
+   "lat": 13.0813959,
+   "lon": 80.2469972,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926055920",
+   "osm_type": "node",
+   "name": "A.K. Hospital, Chennai",
+   "lat": 13.0741442,
+   "lon": 80.220515,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926055921",
+   "osm_type": "node",
+   "name": "Gajanan Hospitals Pvt Ltd",
+   "lat": 12.9264396,
+   "lon": 80.1117714,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926055922",
+   "osm_type": "node",
+   "name": "Ammayi Eye Hospital",
+   "lat": 13.0331935,
+   "lon": 80.2159045,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926055923",
+   "osm_type": "node",
+   "name": "K.M. Speciality Hospital",
+   "lat": 13.0379671,
+   "lon": 80.2013517,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926060954",
+   "osm_type": "node",
+   "name": "Subha Hospital",
+   "lat": 13.1113868,
+   "lon": 80.2923493,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926082101",
+   "osm_type": "node",
+   "name": "I Care Eye Care Eye Institute",
+   "lat": 12.943659,
+   "lon": 80.1437791,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926107781",
+   "osm_type": "node",
+   "name": "Radhatri Nethralaya",
+   "lat": 13.0339283,
+   "lon": 80.2394965,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926113511",
+   "osm_type": "node",
+   "name": "Sayee Hospitals",
+   "lat": 12.8881721,
+   "lon": 80.0259362,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926118208",
+   "osm_type": "node",
+   "name": "S M Hospital, Chennai",
+   "lat": 13.0400969,
+   "lon": 80.2044211,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926173267",
+   "osm_type": "node",
+   "name": "Cu Shah Sankara Netralaya",
+   "lat": 13.0012687,
+   "lon": 80.2001283,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926280322",
+   "osm_type": "node",
+   "name": "Aashiana Hospital",
+   "lat": 13.0924039,
+   "lon": 80.2090184,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926411928",
+   "osm_type": "node",
+   "name": "Ayesha Hospital, Kilpauk",
+   "lat": 13.0847009,
+   "lon": 80.2498054,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926437405",
+   "osm_type": "node",
+   "name": "Frontline Eye Hospital",
+   "lat": 13.0323531,
+   "lon": 80.2517212,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926437416",
+   "osm_type": "node",
+   "name": "Fousiya Hospital",
+   "lat": 13.0477722,
+   "lon": 80.2744473,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926437428",
+   "osm_type": "node",
+   "name": "Hande Hospital",
+   "lat": 13.0764653,
+   "lon": 80.2274586,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926437454",
+   "osm_type": "node",
+   "name": "Dr Gurusekaran Hospital Pvt Ltd",
+   "lat": 13.0374924,
+   "lon": 80.2381137,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926437476",
+   "osm_type": "node",
+   "name": "Grace Multipeciality Hospital",
+   "lat": 12.9569773,
+   "lon": 80.1867561,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926494055",
+   "osm_type": "node",
+   "name": "G. R. Hospital & Fertility Centre",
+   "lat": 12.9952982,
+   "lon": 80.2068955,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926494067",
+   "osm_type": "node",
+   "name": "G K M Hospital Pvt Ltd",
+   "lat": 13.0899919,
+   "lon": 80.2585199,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926808792",
+   "osm_type": "node",
+   "name": "Starlight Hospitals Pvt Ltd",
+   "lat": 12.9864526,
+   "lon": 80.2601581,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926953017",
+   "osm_type": "node",
+   "name": "Kaliappa Renal Center",
+   "lat": 13.0274616,
+   "lon": 80.2566481,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6926953024",
+   "osm_type": "node",
+   "name": "K P Childrens Hospital And Neuro Centre",
+   "lat": 12.9911179,
+   "lon": 80.1986745,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6927054448",
+   "osm_type": "node",
+   "name": "Mangalam Hospital, Tiruvallur",
+   "lat": 13.050709,
+   "lon": 80.0960022,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6927267098",
+   "osm_type": "node",
+   "name": "Ayur Kshetra ( A Unit Of Institute Of Ayurvedic Research Pvt Ltd)",
+   "lat": 13.0760812,
+   "lon": 80.2107431,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6927292449",
+   "osm_type": "node",
+   "name": "Krishna Eye And Ent Hospitals",
+   "lat": 13.0343985,
+   "lon": 80.2339764,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6927308315",
+   "osm_type": "node",
+   "name": "Vishnu Eye Clinic and Laser Foundation",
+   "lat": 13.0842894,
+   "lon": 80.2230605,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6927359623",
+   "osm_type": "node",
+   "name": "Kanaga Hospital",
+   "lat": 13.0099884,
+   "lon": 80.1223294,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6927380447",
+   "osm_type": "node",
+   "name": "Santhigiri Ayurveda and Siddha Hospital, Chennai",
+   "lat": 13.0476871,
+   "lon": 80.2646568,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6927647007",
+   "osm_type": "node",
+   "name": "Vijaya Heart Foundation - Vijaya Hospital",
+   "lat": 13.054729,
+   "lon": 80.2110462,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6927769046",
+   "osm_type": "node",
+   "name": "Santosh Hospital Pvt Ltd",
+   "lat": 12.995229,
+   "lon": 80.2691898,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928030150",
+   "osm_type": "node",
+   "name": "Dr. Agarwal's Eye Hospital",
+   "lat": 13.1162231,
+   "lon": 80.0967247,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928042666",
+   "osm_type": "node",
+   "name": "Dr.Agarwal's Eye Hospital Ltd., Anna Nagar",
+   "lat": 13.0847414,
+   "lon": 80.2219681,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928094720",
+   "osm_type": "node",
+   "name": "Athipathi Hospital and Research Centre",
+   "lat": 12.9762711,
+   "lon": 80.2222002,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928167787",
+   "osm_type": "node",
+   "name": "Girishwari Hospital Pvt Ltd",
+   "lat": 13.0349787,
+   "lon": 80.2519137,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928327073",
+   "osm_type": "node",
+   "name": "Sri Kumaran Multi Speciality Hospital",
+   "lat": 13.1152895,
+   "lon": 80.2923614,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928330765",
+   "osm_type": "node",
+   "name": "Sri Kumaran Hospital",
+   "lat": 12.9278474,
+   "lon": 80.1118621,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928330859",
+   "osm_type": "node",
+   "name": "Dr. Arvind Vision Care",
+   "lat": 13.0840124,
+   "lon": 80.1691809,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928384708",
+   "osm_type": "node",
+   "name": "Dr. K Ravi Eye Care",
+   "lat": 13.0407013,
+   "lon": 80.2618016,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928444701",
+   "osm_type": "node",
+   "name": "SKS Hospital, Chennai",
+   "lat": 13.0896987,
+   "lon": 80.1877418,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928481484",
+   "osm_type": "node",
+   "name": "Dr. K.K. Surgical and Paediatric Centre Pvt Ltd",
+   "lat": 12.9220372,
+   "lon": 80.1382443,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928727073",
+   "osm_type": "node",
+   "name": "Madras Ent Research Foundation",
+   "lat": 13.0268688,
+   "lon": 80.2541439,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928752799",
+   "osm_type": "node",
+   "name": "Dr. Mohans Mv Diabetes Specialities Centre - Chennai",
+   "lat": 13.0541946,
+   "lon": 80.257671,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928779096",
+   "osm_type": "node",
+   "name": "Chettinad Super Speciality Hospital",
+   "lat": 12.9109406,
+   "lon": 80.228211,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928800365",
+   "osm_type": "node",
+   "name": "Dr.Bhats Eye Hospital",
+   "lat": 13.1175413,
+   "lon": 80.1539406,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928878284",
+   "osm_type": "node",
+   "name": "Lifeline Rigid Hospital",
+   "lat": 13.0780204,
+   "lon": 80.2336988,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928899364",
+   "osm_type": "node",
+   "name": "Dr. Seshiah Diabetes Research Institute and Dr. Balaji Diabetes Care Centre",
+   "lat": 13.0748591,
+   "lon": 80.2299839,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928920472",
+   "osm_type": "node",
+   "name": "Dr.Kamakshi Memorial Hospital",
+   "lat": 13.0022187,
+   "lon": 80.2520867,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928920473",
+   "osm_type": "node",
+   "name": "Dr.Duraiswami Eye Hospital",
+   "lat": 13.034051,
+   "lon": 80.2279374,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928936148",
+   "osm_type": "node",
+   "name": "Dr.Agarwals Eye Hospital - Velacherry",
+   "lat": 12.9832366,
+   "lon": 80.217509,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928936149",
+   "osm_type": "node",
+   "name": "Dr.Agarwal's Eye Hospital Ltd, Nanganallur",
+   "lat": 12.9827844,
+   "lon": 80.1891661,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6928936160",
+   "osm_type": "node",
+   "name": "Dr. Udhaya Rajas Dental Centre",
+   "lat": 13.0465492,
+   "lon": 80.2422899,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929229178",
+   "osm_type": "node",
+   "name": "National Institute Of Siddha Department Of Ayush",
+   "lat": 12.9393262,
+   "lon": 80.1279768,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929250392",
+   "osm_type": "node",
+   "name": "Dhanvantari Eye Care",
+   "lat": 13.0973284,
+   "lon": 80.1942193,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929255218",
+   "osm_type": "node",
+   "name": "Sri Bala Nursing Home",
+   "lat": 13.1183119,
+   "lon": 80.2318051,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929257550",
+   "osm_type": "node",
+   "name": "Anand Hospital, Chennai",
+   "lat": 13.1638346,
+   "lon": 80.2581659,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929259906",
+   "osm_type": "node",
+   "name": "Lakshmi Hospital",
+   "lat": 13.0314888,
+   "lon": 80.2218689,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929266356",
+   "osm_type": "node",
+   "name": "Nanthini Hospital",
+   "lat": 12.9326457,
+   "lon": 80.2320063,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929359056",
+   "osm_type": "node",
+   "name": "B.M. Silver Jubilee Multi Speciality Hospital",
+   "lat": 12.9646856,
+   "lon": 80.1522294,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929359057",
+   "osm_type": "node",
+   "name": "Bharathirajaa Hospital and Research centre",
+   "lat": 13.0480981,
+   "lon": 80.245015,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929359073",
+   "osm_type": "node",
+   "name": "Bethany Health Care Centre",
+   "lat": 13.0699812,
+   "lon": 80.2444142,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929359074",
+   "osm_type": "node",
+   "name": "Bethesda Hospital and Child Care Centre",
+   "lat": 12.9217796,
+   "lon": 80.1450997,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929359084",
+   "osm_type": "node",
+   "name": "Bhagwan Mahaveer Eye Hospital",
+   "lat": 13.1105084,
+   "lon": 80.2917197,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929372896",
+   "osm_type": "node",
+   "name": "Bharath Hospital",
+   "lat": 12.9823277,
+   "lon": 80.1937835,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929398895",
+   "osm_type": "node",
+   "name": "Trinity Acute Care Hospital - Chennai",
+   "lat": 13.0382607,
+   "lon": 80.2582785,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929592168",
+   "osm_type": "node",
+   "name": "Balakrishna Eye Hospital",
+   "lat": 13.0274436,
+   "lon": 80.2269866,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929599461",
+   "osm_type": "node",
+   "name": "Dr Rabindran's Health Care Center",
+   "lat": 13.1190773,
+   "lon": 80.1504859,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929625889",
+   "osm_type": "node",
+   "name": "Babu's Maternity Hospital",
+   "lat": 12.9294917,
+   "lon": 80.1194769,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929625895",
+   "osm_type": "node",
+   "name": "B.S.S. Hospital",
+   "lat": 13.026013,
+   "lon": 80.2655232,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929625900",
+   "osm_type": "node",
+   "name": "B.S. Hospital",
+   "lat": 12.9343227,
+   "lon": 80.1384374,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929625901",
+   "osm_type": "node",
+   "name": "B.R.S. Hospital Pvt. Ltd.",
+   "lat": 13.0519442,
+   "lon": 80.2454831,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929731466",
+   "osm_type": "node",
+   "name": "Harvey Healthcare Limited",
+   "lat": 13.037303,
+   "lon": 80.2558136,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929737121",
+   "osm_type": "node",
+   "name": "Chitra's Ent Laser Hospital",
+   "lat": 13.0518247,
+   "lon": 80.2476483,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6929969774",
+   "osm_type": "node",
+   "name": "Kottakkal Arya Vaidya Sala",
+   "lat": 13.0395483,
+   "lon": 80.2313016,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6930080547",
+   "osm_type": "node",
+   "name": "Rohit Hospital, Tiruvallur",
+   "lat": 13.1512288,
+   "lon": 80.2998984,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6930163091",
+   "osm_type": "node",
+   "name": "Je Nesam Hospital",
+   "lat": 13.0405732,
+   "lon": 80.2146873,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6930163175",
+   "osm_type": "node",
+   "name": "Chennai Meenakshi Multispeciality Hospital Ltd",
+   "lat": 13.0376198,
+   "lon": 80.2619625,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6930188138",
+   "osm_type": "node",
+   "name": "Chennai Skin Foundation and Yesudian Research Institute",
+   "lat": 13.0210394,
+   "lon": 80.2592924,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6930464973",
+   "osm_type": "node",
+   "name": "Chinnammal Ent Hospital",
+   "lat": 13.0459338,
+   "lon": 80.1131429,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6930467954",
+   "osm_type": "node",
+   "name": "Dr.Mu.Va.Hospital",
+   "lat": 13.0743327,
+   "lon": 80.228278,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6930489015",
+   "osm_type": "node",
+   "name": "Cholayil Sanjeevanam Ayurveda",
+   "lat": 13.0844527,
+   "lon": 80.1798642,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6931010523",
+   "osm_type": "node",
+   "name": "Vandana Hospital, Tiruvallur",
+   "lat": 13.1456863,
+   "lon": 80.2927141,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6931566251",
+   "osm_type": "node",
+   "name": "Mysaan Hospital",
+   "lat": 13.0641326,
+   "lon": 80.2705644,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6931658649",
+   "osm_type": "node",
+   "name": "V H M Hospitals Pvt Ltd",
+   "lat": 13.0462892,
+   "lon": 80.1979979,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6931772941",
+   "osm_type": "node",
+   "name": "Robin and Robin Health Care",
+   "lat": 13.0807741,
+   "lon": 80.1989025,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6932068862",
+   "osm_type": "node",
+   "name": "West Madras Medical Centre",
+   "lat": 13.0850496,
+   "lon": 80.215956,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6932103990",
+   "osm_type": "node",
+   "name": "Kauvery Hospital, Chennai",
+   "lat": 13.0390564,
+   "lon": 80.2568208,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6932138889",
+   "osm_type": "node",
+   "name": "Rathi Med Speciality Hospital",
+   "lat": 13.0916495,
+   "lon": 80.2179844,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6932203729",
+   "osm_type": "node",
+   "name": "Santhi Hospital",
+   "lat": 12.9507835,
+   "lon": 80.255186,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6932740110",
+   "osm_type": "node",
+   "name": "Sunder Eye Hospital",
+   "lat": 13.08497,
+   "lon": 80.2159721,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6932938089",
+   "osm_type": "node",
+   "name": "Laksha Hospital",
+   "lat": 13.0435469,
+   "lon": 80.2636349,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6932938090",
+   "osm_type": "node",
+   "name": "Lake View Hospital, Tiruvallur",
+   "lat": 13.1368213,
+   "lon": 80.2087516,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6932966221",
+   "osm_type": "node",
+   "name": "Narayanaa Hospital",
+   "lat": 13.0893773,
+   "lon": 80.2547595,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6932999583",
+   "osm_type": "node",
+   "name": "NN Hospital",
+   "lat": 12.9300969,
+   "lon": 80.1188466,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933010451",
+   "osm_type": "node",
+   "name": "Janamma Hospital",
+   "lat": 13.0269457,
+   "lon": 80.2623196,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933016136",
+   "osm_type": "node",
+   "name": "Noble Hospital, Chennai",
+   "lat": 13.0821536,
+   "lon": 80.253244,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933038486",
+   "osm_type": "node",
+   "name": "J.K. Hospital, Chennai",
+   "lat": 13.1354513,
+   "lon": 80.2934799,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933038566",
+   "osm_type": "node",
+   "name": "Indira Eye Hospital",
+   "lat": 13.0222055,
+   "lon": 80.2622388,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933038567",
+   "osm_type": "node",
+   "name": "Indian Hospitals",
+   "lat": 13.0766658,
+   "lon": 80.2057502,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933130958",
+   "osm_type": "node",
+   "name": "Diabetes Research Centre and M.V.Hospital For Diabetes",
+   "lat": 13.1119458,
+   "lon": 80.2952072,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933279103",
+   "osm_type": "node",
+   "name": "Vasan Eye Care Hospital, Neelankarai",
+   "lat": 12.9504267,
+   "lon": 80.2551001,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933370913",
+   "osm_type": "node",
+   "name": "Apollo First Medical Foundation",
+   "lat": 13.0776912,
+   "lon": 80.2459216,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933510851",
+   "osm_type": "node",
+   "name": "Josephs Nursing Home",
+   "lat": 13.0739408,
+   "lon": 80.2357346,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933510862",
+   "osm_type": "node",
+   "name": "Jip Diabetic and Heart Care Centre",
+   "lat": 12.9548325,
+   "lon": 80.141636,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933510877",
+   "osm_type": "node",
+   "name": "Jayam Polyclinc",
+   "lat": 12.9958562,
+   "lon": 80.2603345,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933514287",
+   "osm_type": "node",
+   "name": "Jayadev Polyclinic Hospital",
+   "lat": 13.0778545,
+   "lon": 80.2415295,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933514313",
+   "osm_type": "node",
+   "name": "Jawahar Hospital, Kanchipuram",
+   "lat": 12.9335502,
+   "lon": 80.123004,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933522070",
+   "osm_type": "node",
+   "name": "Kummaran Eye Speciality Centre",
+   "lat": 13.0600349,
+   "lon": 80.2302911,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933523232",
+   "osm_type": "node",
+   "name": "Kvt Health Centre",
+   "lat": 13.1282303,
+   "lon": 80.2421558,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933737012",
+   "osm_type": "node",
+   "name": "Ezhil Hospital",
+   "lat": 13.1302259,
+   "lon": 80.2916855,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933748976",
+   "osm_type": "node",
+   "name": "Essvee Hospital",
+   "lat": 13.1232006,
+   "lon": 80.1461421,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933757130",
+   "osm_type": "node",
+   "name": "Premier Health Center",
+   "lat": 13.0842489,
+   "lon": 80.220851,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933794368",
+   "osm_type": "node",
+   "name": "Vasantha Subramanian Hospitals Pvt Ltd",
+   "lat": 13.0731975,
+   "lon": 80.2527237,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933797537",
+   "osm_type": "node",
+   "name": "Vasan Eye Care Hospital, Tiruvallur",
+   "lat": 13.0498729,
+   "lon": 80.0922444,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933802716",
+   "osm_type": "node",
+   "name": "Vasan Eye Care Hospital, Tondiarpet",
+   "lat": 13.1109009,
+   "lon": 80.2812195,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933828333",
+   "osm_type": "node",
+   "name": "Madras Poly Clinic and R.R. Scan",
+   "lat": 13.0461063,
+   "lon": 80.2220044,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933831617",
+   "osm_type": "node",
+   "name": "Vasan Eye Care Hospital, Valasaravakkam",
+   "lat": 13.0411063,
+   "lon": 80.1747546,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933833923",
+   "osm_type": "node",
+   "name": "Life Medhospital",
+   "lat": 13.0535505,
+   "lon": 80.2576911,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933869777",
+   "osm_type": "node",
+   "name": "K.M. Hospitals, Chennai",
+   "lat": 13.0884107,
+   "lon": 80.2421169,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933875088",
+   "osm_type": "node",
+   "name": "Zubeda Hospitals Ltd.",
+   "lat": 13.0741955,
+   "lon": 80.2357775,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933910999",
+   "osm_type": "node",
+   "name": "RR Multispeciality Hospital",
+   "lat": 13.0584745,
+   "lon": 80.2740124,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6933998001",
+   "osm_type": "node",
+   "name": "Dr.Manju Kulkarni Hospital",
+   "lat": 13.0743836,
+   "lon": 80.2367672,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934018868",
+   "osm_type": "node",
+   "name": "S.V. Bone And Joint Hospital",
+   "lat": 13.0473239,
+   "lon": 80.2241461,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934031649",
+   "osm_type": "node",
+   "name": "Sri G.M. Hospital",
+   "lat": 12.9652266,
+   "lon": 80.1927643,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934036697",
+   "osm_type": "node",
+   "name": "Sri Eshodha Hospital",
+   "lat": 13.0981213,
+   "lon": 80.2362643,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934061609",
+   "osm_type": "node",
+   "name": "Srichakara Multispeciality Hospital",
+   "lat": 12.97853,
+   "lon": 80.1851381,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934098007",
+   "osm_type": "node",
+   "name": "Abhijay Hospital",
+   "lat": 13.1160177,
+   "lon": 80.2328438,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934139598",
+   "osm_type": "node",
+   "name": "Arvind Sai Eye Hospital",
+   "lat": 12.9731392,
+   "lon": 80.1371252,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934146446",
+   "osm_type": "node",
+   "name": "Sinus And Nose Hospital - Mylapore, Chennai",
+   "lat": 13.0350623,
+   "lon": 80.2778479,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934155951",
+   "osm_type": "node",
+   "name": "Sindu Hospital",
+   "lat": 12.9206582,
+   "lon": 80.1434009,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934163318",
+   "osm_type": "node",
+   "name": "Sibi Hospital",
+   "lat": 12.9697917,
+   "lon": 80.1904562,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934186203",
+   "osm_type": "node",
+   "name": "Sri Venkateshwara`s C.M. Hospital",
+   "lat": 12.9857914,
+   "lon": 80.185987,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934246102",
+   "osm_type": "node",
+   "name": "Srinivas Priya Hospital (P) Ltd",
+   "lat": 13.1100467,
+   "lon": 80.2466847,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934270989",
+   "osm_type": "node",
+   "name": "Anjakha Hospital",
+   "lat": 12.9637407,
+   "lon": 80.1880047,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934271042",
+   "osm_type": "node",
+   "name": "M.S.M. Skin and Hair Care Clinic",
+   "lat": 12.9521441,
+   "lon": 80.1438126,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934271069",
+   "osm_type": "node",
+   "name": "M.R. Hospital, Chennai",
+   "lat": 13.0725279,
+   "lon": 80.2195783,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934271075",
+   "osm_type": "node",
+   "name": "M. N. Orthopaedic Hospital",
+   "lat": 13.0810328,
+   "lon": 80.2336653,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934271106",
+   "osm_type": "node",
+   "name": "M V Hospital For Diabetes Pvt Ltd",
+   "lat": 13.1121574,
+   "lon": 80.2956927,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934271111",
+   "osm_type": "node",
+   "name": "M N Eye Hospital",
+   "lat": 12.996767,
+   "lon": 80.2603599,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934301423",
+   "osm_type": "node",
+   "name": "A.V. Hospital, Chennai",
+   "lat": 13.1170802,
+   "lon": 80.2864189,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934325848",
+   "osm_type": "node",
+   "name": "N.R. Hospital",
+   "lat": 13.1122162,
+   "lon": 80.2309737,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934325849",
+   "osm_type": "node",
+   "name": "N.R. Medical Home Private Limited",
+   "lat": 13.0965878,
+   "lon": 80.2597135,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934325866",
+   "osm_type": "node",
+   "name": "Nagamani Hospitals Private Limited",
+   "lat": 13.117412,
+   "lon": 80.289427,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934325876",
+   "osm_type": "node",
+   "name": "Nalamm Hospital Pvt Ltd",
+   "lat": 13.1184216,
+   "lon": 80.2610184,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934325882",
+   "osm_type": "node",
+   "name": "Nandalala Medical Foundation",
+   "lat": 13.0328516,
+   "lon": 80.2615173,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934326572",
+   "osm_type": "node",
+   "name": "Sri Kumaran Health Centre",
+   "lat": 13.1308907,
+   "lon": 80.2138799,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340601",
+   "osm_type": "node",
+   "name": "Nandhini Hospital",
+   "lat": 12.9784706,
+   "lon": 80.2247932,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340623",
+   "osm_type": "node",
+   "name": "Navasuja Sankara Nethralaya",
+   "lat": 13.0265108,
+   "lon": 80.2607878,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340638",
+   "osm_type": "node",
+   "name": "Neomed Hospital - Chennai",
+   "lat": 13.083452,
+   "lon": 80.2030747,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340658",
+   "osm_type": "node",
+   "name": "New Balaji Hospital, Chennai",
+   "lat": 13.0316469,
+   "lon": 80.2311185,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340659",
+   "osm_type": "node",
+   "name": "New Hope Indian Specilaity Hospital",
+   "lat": 13.0777579,
+   "lon": 80.2414826,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340664",
+   "osm_type": "node",
+   "name": "New Hope Medical Centre Pvt. Ltd",
+   "lat": 13.0776821,
+   "lon": 80.2415201,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340665",
+   "osm_type": "node",
+   "name": "Nichani Health Centre",
+   "lat": 13.111251,
+   "lon": 80.2940284,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340710",
+   "osm_type": "node",
+   "name": "Om Shakthi Hospital",
+   "lat": 13.1184222,
+   "lon": 80.1507749,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340749",
+   "osm_type": "node",
+   "name": "Orthopedic and Specialities Hospital",
+   "lat": 13.0390564,
+   "lon": 80.2086724,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340766",
+   "osm_type": "node",
+   "name": "Padmapriya Hospital Pvt. Ltd.",
+   "lat": 12.9996223,
+   "lon": 80.2537027,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340781",
+   "osm_type": "node",
+   "name": "Palani Balaji Fertility Centre",
+   "lat": 13.0122123,
+   "lon": 80.2235084,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340782",
+   "osm_type": "node",
+   "name": "Pallava Hospital",
+   "lat": 13.0420391,
+   "lon": 80.2126005,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934340789",
+   "osm_type": "node",
+   "name": "Pankajam Memorial Hospital",
+   "lat": 12.9801472,
+   "lon": 80.1835965,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934347087",
+   "osm_type": "node",
+   "name": "Apollo Childrens Hospital",
+   "lat": 13.060131,
+   "lon": 80.2523656,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934347093",
+   "osm_type": "node",
+   "name": "Anuradha Maternity Centre",
+   "lat": 13.0356881,
+   "lon": 80.2337551,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934407803",
+   "osm_type": "node",
+   "name": "Shri Balaji Hospital - Chennai",
+   "lat": 13.0919709,
+   "lon": 80.2511633,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934884999",
+   "osm_type": "node",
+   "name": "Teja Hospital",
+   "lat": 13.1220029,
+   "lon": 80.1469266,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934897845",
+   "osm_type": "node",
+   "name": "Tamil Nadu Urological Research Centre",
+   "lat": 13.0710341,
+   "lon": 80.222632,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6934903332",
+   "osm_type": "node",
+   "name": "Sss Hospital",
+   "lat": 13.1577727,
+   "lon": 80.3018933,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6935159758",
+   "osm_type": "node",
+   "name": "Thirimoorthys Heart Care Hospital",
+   "lat": 12.9673347,
+   "lon": 80.1867983,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6935224404",
+   "osm_type": "node",
+   "name": "Thulasi Krishna Nursing Home, Kodambakkam",
+   "lat": 13.0517176,
+   "lon": 80.2300054,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6935224405",
+   "osm_type": "node",
+   "name": "Sugam Hospital, Tiruvallur",
+   "lat": 13.1652175,
+   "lon": 80.3032967,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6935272552",
+   "osm_type": "node",
+   "name": "Dr. Agarwal's Eye Hospital",
+   "lat": 13.074266,
+   "lon": 80.2382156,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6935274089",
+   "osm_type": "node",
+   "name": "Selvarangam Hospital",
+   "lat": 13.0850183,
+   "lon": 80.2244673,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936134766",
+   "osm_type": "node",
+   "name": "Hospital #6936134766",
+   "lat": 12.9498348,
+   "lon": 80.1690781,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936134771",
+   "osm_type": "node",
+   "name": "Sankara Nethralaya, Chennai",
+   "lat": 13.0670837,
+   "lon": 80.2505444,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936244762",
+   "osm_type": "node",
+   "name": "Royal Hospital - Chennai",
+   "lat": 13.0449677,
+   "lon": 80.1846506,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936264375",
+   "osm_type": "node",
+   "name": "Viganesh Hospital",
+   "lat": 13.0309126,
+   "lon": 80.1715896,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936271569",
+   "osm_type": "node",
+   "name": "Sri Lakshmi Multi Speciality Hospital Pvt Ltd",
+   "lat": 12.9640779,
+   "lon": 80.2461429,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936275517",
+   "osm_type": "node",
+   "name": "Dr Agarwal Eye Hospital Ltd",
+   "lat": 13.1135903,
+   "lon": 80.2270764,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936294078",
+   "osm_type": "node",
+   "name": "Karthik Hospital",
+   "lat": 13.1665521,
+   "lon": 80.3043053,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936315219",
+   "osm_type": "node",
+   "name": "Spandana Surgical Centre",
+   "lat": 13.0834455,
+   "lon": 80.1749497,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936316468",
+   "osm_type": "node",
+   "name": "Tosh Hospitals Private Limited",
+   "lat": 13.0827016,
+   "lon": 80.2424652,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936339695",
+   "osm_type": "node",
+   "name": "Sundaram Cancer Centre",
+   "lat": 13.07604,
+   "lon": 80.2366224,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936339711",
+   "osm_type": "node",
+   "name": "R.R. Eye Instutute and Laser Foundation",
+   "lat": 13.0483992,
+   "lon": 80.2040416,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936339822",
+   "osm_type": "node",
+   "name": "Avm Medical Ent Research Foundation Pvt Ltd",
+   "lat": 13.0441485,
+   "lon": 80.2637114,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936356289",
+   "osm_type": "node",
+   "name": "Aditya Hospital, Chennai",
+   "lat": 13.0806801,
+   "lon": 80.2486159,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936359923",
+   "osm_type": "node",
+   "name": "Laser and Laparascopic Hospital",
+   "lat": 13.0430125,
+   "lon": 80.2371521,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936359940",
+   "osm_type": "node",
+   "name": "Lakshmi Maternity Hospital",
+   "lat": 12.9938673,
+   "lon": 80.2528444,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936359972",
+   "osm_type": "node",
+   "name": "Kumaran Hospital Pvt.Ltd.",
+   "lat": 13.0790289,
+   "lon": 80.2490893,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936369001",
+   "osm_type": "node",
+   "name": "D R J Hospital P. Ltd.",
+   "lat": 13.1217887,
+   "lon": 80.1996361,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936386662",
+   "osm_type": "node",
+   "name": "Dr Agarwals Eye Hospital Ltd, Chennai",
+   "lat": 13.0381353,
+   "lon": 80.1619336,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936391765",
+   "osm_type": "node",
+   "name": "Apollo Specialty Hospitals Private Limited",
+   "lat": 13.0177957,
+   "lon": 80.2711008,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936411410",
+   "osm_type": "node",
+   "name": "Deepam Eye Hospital",
+   "lat": 13.0877615,
+   "lon": 80.2423476,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936415699",
+   "osm_type": "node",
+   "name": "Dr. A. Ramachandran's Diabetes Hospital",
+   "lat": 13.0685338,
+   "lon": 80.2579902,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936434314",
+   "osm_type": "node",
+   "name": "Srushti Hospital, Kanchipuram",
+   "lat": 13.0353484,
+   "lon": 80.1822808,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936469837",
+   "osm_type": "node",
+   "name": "Veecare Eye Hospital",
+   "lat": 13.0843952,
+   "lon": 80.2182426,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936663153",
+   "osm_type": "node",
+   "name": "Velachery K S Hospital",
+   "lat": 12.9763914,
+   "lon": 80.2114016,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936669886",
+   "osm_type": "node",
+   "name": "K.J. Hospital",
+   "lat": 13.0790015,
+   "lon": 80.25267,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936681265",
+   "osm_type": "node",
+   "name": "Sathya Physiotherapy Centre",
+   "lat": 13.0440365,
+   "lon": 80.2336198,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936684311",
+   "osm_type": "node",
+   "name": "Kensington Hospital",
+   "lat": 13.0788382,
+   "lon": 80.2469368,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936684328",
+   "osm_type": "node",
+   "name": "Ponmalligai Hospital Pvt Ltd",
+   "lat": 12.9925116,
+   "lon": 80.2061465,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936684391",
+   "osm_type": "node",
+   "name": "Pdr Othopaedic Hospital",
+   "lat": 13.0389519,
+   "lon": 80.2290894,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936695126",
+   "osm_type": "node",
+   "name": "E V Kalyani Medical Centre",
+   "lat": 13.0427786,
+   "lon": 80.2706811,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936695172",
+   "osm_type": "node",
+   "name": "Yogi Vedha Kumari Hospital",
+   "lat": 13.0269877,
+   "lon": 80.2631588,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936695177",
+   "osm_type": "node",
+   "name": "Xcellent Care Superspeciality Hospital",
+   "lat": 12.9833895,
+   "lon": 80.2181782,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936695178",
+   "osm_type": "node",
+   "name": "Women and Children Foundation",
+   "lat": 13.0478465,
+   "lon": 80.2329075,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936695215",
+   "osm_type": "node",
+   "name": "Subhiksha Hospital",
+   "lat": 12.9740991,
+   "lon": 80.1387607,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936695226",
+   "osm_type": "node",
+   "name": "Sudha Hospital, Chennai",
+   "lat": 13.0791504,
+   "lon": 80.2541493,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936696196",
+   "osm_type": "node",
+   "name": "V.K. Hospital",
+   "lat": 13.0816938,
+   "lon": 80.2522811,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936696229",
+   "osm_type": "node",
+   "name": "U.K. Hospitals Pvt. Ltd.",
+   "lat": 13.0838857,
+   "lon": 80.2252632,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936696239",
+   "osm_type": "node",
+   "name": "Trust Hospital, Chennai",
+   "lat": 13.0892193,
+   "lon": 80.2415402,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936696240",
+   "osm_type": "node",
+   "name": "Titan Eye",
+   "lat": 13.082343,
+   "lon": 80.2076291,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936708005",
+   "osm_type": "node",
+   "name": "Sai Ortho Care Hospital",
+   "lat": 13.0332775,
+   "lon": 80.2371645,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936708989",
+   "osm_type": "node",
+   "name": "Sooriya Hospital",
+   "lat": 13.0481888,
+   "lon": 80.2035199,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936709086",
+   "osm_type": "node",
+   "name": "Centre For Blood Disorders",
+   "lat": 13.0496502,
+   "lon": 80.2410582,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936738654",
+   "osm_type": "node",
+   "name": "Roselin Gandhi Hospital",
+   "lat": 13.1166714,
+   "lon": 80.2803303,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936874933",
+   "osm_type": "node",
+   "name": "Paterson Cancer Center / Vijaya Health Centre Premises",
+   "lat": 13.0475826,
+   "lon": 80.2069719,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936953154",
+   "osm_type": "node",
+   "name": "Fertility Research Centre",
+   "lat": 13.0558855,
+   "lon": 80.2481343,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936976871",
+   "osm_type": "node",
+   "name": "Spot Hospital",
+   "lat": 13.047269,
+   "lon": 80.2187347,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6936994823",
+   "osm_type": "node",
+   "name": "B B Hospital",
+   "lat": 13.1184203,
+   "lon": 80.204346,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6937055902",
+   "osm_type": "node",
+   "name": "Appasamy Krishna Hospital and Medical Research Centre",
+   "lat": 12.9758647,
+   "lon": 80.2205016,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6937067452",
+   "osm_type": "node",
+   "name": "Medindia Hospitals, Chennai",
+   "lat": 13.0606718,
+   "lon": 80.2432201,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6937109075",
+   "osm_type": "node",
+   "name": "Aakash Hospital, Tiruvallur",
+   "lat": 13.1694824,
+   "lon": 80.304324,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6937111102",
+   "osm_type": "node",
+   "name": "K.M. Multi Speciality Hospital",
+   "lat": 13.1450072,
+   "lon": 80.2398249,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6937320470",
+   "osm_type": "node",
+   "name": "Rudhra-Chella Clinicare`N`Cure Services",
+   "lat": 13.1228878,
+   "lon": 80.293498,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6937351599",
+   "osm_type": "node",
+   "name": "K.K.R. ENT Hospital and Research Institute(P) Ltd",
+   "lat": 13.0781955,
+   "lon": 80.2452886,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6937398987",
+   "osm_type": "node",
+   "name": "Roy's Heart Foundation",
+   "lat": 13.0345893,
+   "lon": 80.1836944,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6937434309",
+   "osm_type": "node",
+   "name": "Srinivasa Hospital P P N, Chennai",
+   "lat": 13.0503377,
+   "lon": 80.2299377,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6937467152",
+   "osm_type": "node",
+   "name": "Gastro Cre Hospital",
+   "lat": 13.0394065,
+   "lon": 80.2507684,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6937497904",
+   "osm_type": "node",
+   "name": "Aaditya Kamaraja Eye Hospital",
+   "lat": 13.0463676,
+   "lon": 80.1865241,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6937630622",
+   "osm_type": "node",
+   "name": "Kasthuri Hospital, Chennai",
+   "lat": 12.9269402,
+   "lon": 80.1146503,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6950288001",
+   "osm_type": "node",
+   "name": "Sahishnatha Indtitute Of Maternal And Child Health",
+   "lat": 12.9531897,
+   "lon": 80.2541614,
+   "amenity": "hospital"
+  },
+  {
+   "id": "6950427127",
+   "osm_type": "node",
+   "name": "Immanuel Hosptal",
+   "lat": 13.1162117,
+   "lon": 80.1065513,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7181684162",
+   "osm_type": "node",
+   "name": "Siva E N T Hospital",
+   "lat": 13.0619796,
+   "lon": 80.2741693,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7181711080",
+   "osm_type": "node",
+   "name": "Vinayagam Laser Hospital, Chennai",
+   "lat": 13.0476113,
+   "lon": 80.2650954,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7181721033",
+   "osm_type": "node",
+   "name": "Dr Agarwals Eye Hospital, Triplicane",
+   "lat": 13.0524884,
+   "lon": 80.2736449,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7181722911",
+   "osm_type": "node",
+   "name": "Dr.Agarwal's Eye Hospital Ltd., Gopala Puram",
+   "lat": 13.0432085,
+   "lon": 80.259169,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7181748147",
+   "osm_type": "node",
+   "name": "Bharani Hospital",
+   "lat": 13.0380111,
+   "lon": 80.2013205,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7181795816",
+   "osm_type": "node",
+   "name": "Vasantha Hospital",
+   "lat": 13.1738112,
+   "lon": 80.294082,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7210884259",
+   "osm_type": "node",
+   "name": "Fortis Vadapalani Hospital",
+   "lat": 13.0475131,
+   "lon": 80.2042733,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7210895386",
+   "osm_type": "node",
+   "name": "Tamil Nadu Urological Research Centre Best Kidney Stone Clinic",
+   "lat": 13.0748708,
+   "lon": 80.2147555,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7210899888",
+   "osm_type": "node",
+   "name": "Sree Sanjeevi Rayan Hospital",
+   "lat": 13.1992282,
+   "lon": 80.1786155,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7210911300",
+   "osm_type": "node",
+   "name": "Sri Ranga Hospitals",
+   "lat": 13.0290525,
+   "lon": 80.2636265,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7210948177",
+   "osm_type": "node",
+   "name": "Chamiers Day Care Center",
+   "lat": 13.0297278,
+   "lon": 80.2446245,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7213394742",
+   "osm_type": "node",
+   "name": "London Harley Street Women And Fertility Centre",
+   "lat": 12.9609724,
+   "lon": 80.2421492,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7213449202",
+   "osm_type": "node",
+   "name": "Gas Hospital",
+   "lat": 13.003026,
+   "lon": 80.2540981,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7213492568",
+   "osm_type": "node",
+   "name": "Dr.Bala Subramanian",
+   "lat": 13.0465056,
+   "lon": 80.2423799,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252256158",
+   "osm_type": "node",
+   "name": "Madhavaram Government Hospital",
+   "lat": 13.163539,
+   "lon": 80.2430669,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252256167",
+   "osm_type": "node",
+   "name": "Govt Hospital, Alamathi",
+   "lat": 13.2097678,
+   "lon": 80.1121208,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252256177",
+   "osm_type": "node",
+   "name": "Swasthik Health Care center",
+   "lat": 13.1297134,
+   "lon": 80.2506039,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252256184",
+   "osm_type": "node",
+   "name": "NRV Hospital",
+   "lat": 13.13468,
+   "lon": 80.243196,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252256194",
+   "osm_type": "node",
+   "name": "Sugam Hospital",
+   "lat": 13.1685958,
+   "lon": 80.3042862,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252256215",
+   "osm_type": "node",
+   "name": "Government Hospital Kadhavoor",
+   "lat": 13.1783047,
+   "lon": 80.0612608,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333314",
+   "osm_type": "node",
+   "name": "Govt Kilpauk Medical College Hospital",
+   "lat": 13.07832,
+   "lon": 80.243753,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333318",
+   "osm_type": "node",
+   "name": "Rasi Hospital",
+   "lat": 13.12038,
+   "lon": 80.285818,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333320",
+   "osm_type": "node",
+   "name": "Government Maternity And Child Hospital",
+   "lat": 13.0991743,
+   "lon": 80.2301988,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333321",
+   "osm_type": "node",
+   "name": "Cloudnine Hospital - Chennai",
+   "lat": 13.0433937,
+   "lon": 80.2461174,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333330",
+   "osm_type": "node",
+   "name": "Shifa Hospital And Reasearch Centre",
+   "lat": 13.061988,
+   "lon": 80.2745135,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333337",
+   "osm_type": "node",
+   "name": "Govt. Stanley Hospital",
+   "lat": 13.10618,
+   "lon": 80.286804,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333341",
+   "osm_type": "node",
+   "name": "Subam Specialities Hospitals",
+   "lat": 13.0469783,
+   "lon": 80.1895003,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333346",
+   "osm_type": "node",
+   "name": "Srisaihospital With Matrinity Facility",
+   "lat": 13.0692631,
+   "lon": 80.1799109,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333347",
+   "osm_type": "node",
+   "name": "Govt Peripheral Hospital Periyar Nagar",
+   "lat": 13.1153048,
+   "lon": 80.2233851,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333349",
+   "osm_type": "node",
+   "name": "Be Well Hospital",
+   "lat": 13.0431134,
+   "lon": 80.2453103,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333352",
+   "osm_type": "node",
+   "name": "Hera Hospital",
+   "lat": 13.0508643,
+   "lon": 80.1922458,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333354",
+   "osm_type": "node",
+   "name": "Government Unani Hospital",
+   "lat": 13.1129012,
+   "lon": 80.2957982,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333356",
+   "osm_type": "node",
+   "name": "Meenakshi Hospital & Childrens Hospital",
+   "lat": 13.0586646,
+   "lon": 80.2428501,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333369",
+   "osm_type": "node",
+   "name": "Tanker Dialysis Foundation Unit",
+   "lat": 13.09041,
+   "lon": 80.175293,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333371",
+   "osm_type": "node",
+   "name": "Hiba Hospital",
+   "lat": 13.0616195,
+   "lon": 80.275793,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333372",
+   "osm_type": "node",
+   "name": "A.R.A Hospital For Women",
+   "lat": 13.0508818,
+   "lon": 80.2735131,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333375",
+   "osm_type": "node",
+   "name": "Priyas Medical Centre",
+   "lat": 13.0594024,
+   "lon": 80.1954415,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333378",
+   "osm_type": "node",
+   "name": "Dr. Rai Memorial Medical Centre",
+   "lat": 13.044837,
+   "lon": 80.2475507,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333380",
+   "osm_type": "node",
+   "name": "Medway Hospitals",
+   "lat": 13.0535971,
+   "lon": 80.2275376,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333381",
+   "osm_type": "node",
+   "name": "Seven Wells Hospital",
+   "lat": 13.0993782,
+   "lon": 80.2825418,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333383",
+   "osm_type": "node",
+   "name": "Government Hospital",
+   "lat": 13.068807,
+   "lon": 80.2672078,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333388",
+   "osm_type": "node",
+   "name": "Standard Hospital",
+   "lat": 13.0524675,
+   "lon": 80.1898468,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333389",
+   "osm_type": "node",
+   "name": "Chennai Corporation Hospital",
+   "lat": 13.1142928,
+   "lon": 80.2844517,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333390",
+   "osm_type": "node",
+   "name": "Guru Raghavendra Hospital",
+   "lat": 13.0410091,
+   "lon": 80.1964532,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333392",
+   "osm_type": "node",
+   "name": "Varadarajapuram Government Hospitals",
+   "lat": 13.1126809,
+   "lon": 80.153358,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333394",
+   "osm_type": "node",
+   "name": "Seethapathy clinic & Hospital",
+   "lat": 13.0487028,
+   "lon": 80.2645448,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333396",
+   "osm_type": "node",
+   "name": "Kvt Health Speciality Hospital",
+   "lat": 13.1267531,
+   "lon": 80.2489796,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333397",
+   "osm_type": "node",
+   "name": "Sakthi Hospital &Reasearch Centre Helath Care Organization",
+   "lat": 13.0572714,
+   "lon": 80.2757357,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333398",
+   "osm_type": "node",
+   "name": "Women And Children Foundation Hospitals T-Nagar",
+   "lat": 13.0480821,
+   "lon": 80.2329957,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333399",
+   "osm_type": "node",
+   "name": "Dr.Rai Cbcc Centre",
+   "lat": 13.05562,
+   "lon": 80.124419,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333402",
+   "osm_type": "node",
+   "name": "Annai multispeciality hospital",
+   "lat": 13.0538856,
+   "lon": 80.1927125,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333403",
+   "osm_type": "node",
+   "name": "Firm Hospital",
+   "lat": 13.0916464,
+   "lon": 80.2139939,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333405",
+   "osm_type": "node",
+   "name": "Thiruninravur Government Hospital",
+   "lat": 13.11573,
+   "lon": 80.026717,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333406",
+   "osm_type": "node",
+   "name": "The Best Hospital Private Ltd",
+   "lat": 13.0535089,
+   "lon": 80.2195494,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333407",
+   "osm_type": "node",
+   "name": "Chennai Corporation Hospital",
+   "lat": 13.0887,
+   "lon": 80.256712,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333409",
+   "osm_type": "node",
+   "name": "Triplicane Government Hospital",
+   "lat": 13.060986,
+   "lon": 80.2747981,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7252333416",
+   "osm_type": "node",
+   "name": "Government Hospital For Ladies And Children",
+   "lat": 13.0590564,
+   "lon": 80.1928218,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7255706468",
+   "osm_type": "node",
+   "name": "SIMS Hospital",
+   "lat": 13.0561828,
+   "lon": 80.2478331,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257289020",
+   "osm_type": "node",
+   "name": "Samyuktaa Maternity Hospital",
+   "lat": 12.9174209,
+   "lon": 80.0801055,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257289034",
+   "osm_type": "node",
+   "name": "Christhudass Hospital",
+   "lat": 12.8515647,
+   "lon": 80.0666869,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257289045",
+   "osm_type": "node",
+   "name": "K.R. Hospital",
+   "lat": 12.842395,
+   "lon": 80.0576052,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257289060",
+   "osm_type": "node",
+   "name": "Tagore Medical College Hospital",
+   "lat": 12.8601332,
+   "lon": 80.1358744,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257289090",
+   "osm_type": "node",
+   "name": "Shri Isari Velan Hospital",
+   "lat": 12.846693,
+   "lon": 80.1972613,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257289121",
+   "osm_type": "node",
+   "name": "Vn Allergy & Asthma Research Centre",
+   "lat": 12.9275229,
+   "lon": 80.1125421,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257289123",
+   "osm_type": "node",
+   "name": "Suraj Hospital",
+   "lat": 12.9107782,
+   "lon": 80.1967559,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257289126",
+   "osm_type": "node",
+   "name": "Bethesda Medical Mission Hospital",
+   "lat": 12.92622,
+   "lon": 80.102998,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421533",
+   "osm_type": "node",
+   "name": "Sri Muthukumaran Medical College Hospital & Research Institute",
+   "lat": 13.01822,
+   "lon": 80.108873,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421540",
+   "osm_type": "node",
+   "name": "Sunrays Laproscopic Centre",
+   "lat": 13.0319129,
+   "lon": 80.2099892,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421544",
+   "osm_type": "node",
+   "name": "Sriramachandra Hospital",
+   "lat": 13.0374439,
+   "lon": 80.1444537,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421549",
+   "osm_type": "node",
+   "name": "Chinna Porur Government Hospital",
+   "lat": 13.0369528,
+   "lon": 80.169935,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421555",
+   "osm_type": "node",
+   "name": "Arun Hospital",
+   "lat": 12.9408644,
+   "lon": 80.1828683,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421557",
+   "osm_type": "node",
+   "name": "Motherhood Hospital",
+   "lat": 13.0312006,
+   "lon": 80.2511993,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421559",
+   "osm_type": "node",
+   "name": "Government Hospital, Adyar",
+   "lat": 12.9979497,
+   "lon": 80.2562121,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421563",
+   "osm_type": "node",
+   "name": "Shree Eye & Maternity Hospital",
+   "lat": 12.9521921,
+   "lon": 80.1442251,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421569",
+   "osm_type": "node",
+   "name": "Gunasekaran Hospitals Pvt.Ltd",
+   "lat": 13.0374624,
+   "lon": 80.2389389,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421573",
+   "osm_type": "node",
+   "name": "Government Hospital, Tambaram",
+   "lat": 12.94505,
+   "lon": 80.13456,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421582",
+   "osm_type": "node",
+   "name": "Vijayam Hospital & Fertility Centre",
+   "lat": 12.95866,
+   "lon": 80.187198,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421583",
+   "osm_type": "node",
+   "name": "Kumaran Specialities Hospital",
+   "lat": 13.03968,
+   "lon": 80.21204,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421586",
+   "osm_type": "node",
+   "name": "Arokiya hospital",
+   "lat": 13.0374234,
+   "lon": 80.190944,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421589",
+   "osm_type": "node",
+   "name": "Parvathy Hospital",
+   "lat": 13.036525,
+   "lon": 80.1567342,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421593",
+   "osm_type": "node",
+   "name": "Genesis Womens Hospital",
+   "lat": 13.034922,
+   "lon": 80.2465468,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421596",
+   "osm_type": "node",
+   "name": "Radhatri Nethralaya",
+   "lat": 13.0342203,
+   "lon": 80.2398192,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421601",
+   "osm_type": "node",
+   "name": "Kavery Hospital",
+   "lat": 13.038362,
+   "lon": 80.2572398,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421602",
+   "osm_type": "node",
+   "name": "Kanamapet Government Hospital",
+   "lat": 13.0298989,
+   "lon": 80.2261208,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421613",
+   "osm_type": "node",
+   "name": "Government Hospital Alandur",
+   "lat": 13.0048164,
+   "lon": 80.2025432,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421615",
+   "osm_type": "node",
+   "name": "Janani Hospital",
+   "lat": 13.0313233,
+   "lon": 80.1909256,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7257421619",
+   "osm_type": "node",
+   "name": "T.K.R. Hospital",
+   "lat": 12.9342227,
+   "lon": 80.1807557,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7320948885",
+   "osm_type": "node",
+   "name": "Hospital #7320948885",
+   "lat": 13.0753606,
+   "lon": 80.21879,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7652446229",
+   "osm_type": "node",
+   "name": "Taj Hospital",
+   "lat": 13.0239396,
+   "lon": 80.116819,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7652449746",
+   "osm_type": "node",
+   "name": "Malar Clinic",
+   "lat": 12.9645886,
+   "lon": 80.1958518,
+   "amenity": "hospital"
+  },
+  {
+   "id": "765605778",
+   "osm_type": "way",
+   "name": "Gleneagles Global Heath City",
+   "lat": 12.8981219,
+   "lon": 80.2061579,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702357",
+   "osm_type": "node",
+   "name": "Prasad Multispeciality Hospital",
+   "lat": 13.156154,
+   "lon": 80.301391,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702358",
+   "osm_type": "node",
+   "name": "Uma Hospital",
+   "lat": 13.1345397,
+   "lon": 80.2058879,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702361",
+   "osm_type": "node",
+   "name": "M N Eye Hospital",
+   "lat": 13.2786682,
+   "lon": 80.2608979,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702363",
+   "osm_type": "node",
+   "name": "ESI Hospital, Minjur",
+   "lat": 13.2793062,
+   "lon": 80.2577503,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702367",
+   "osm_type": "node",
+   "name": "Suman Hospital",
+   "lat": 13.1503301,
+   "lon": 80.2984201,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702393",
+   "osm_type": "node",
+   "name": "Sankara Eye Hospital",
+   "lat": 13.165259,
+   "lon": 80.25871,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702395",
+   "osm_type": "node",
+   "name": "G S Hospital",
+   "lat": 13.1537616,
+   "lon": 80.3006482,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702396",
+   "osm_type": "node",
+   "name": "Welcare Hospital",
+   "lat": 13.3306875,
+   "lon": 80.1887374,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702399",
+   "osm_type": "node",
+   "name": "Md Hussain Hospital",
+   "lat": 13.1702776,
+   "lon": 80.193567,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702406",
+   "osm_type": "node",
+   "name": "Esha Hospital",
+   "lat": 13.1521728,
+   "lon": 80.3002146,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702409",
+   "osm_type": "node",
+   "name": "Annai Hospital",
+   "lat": 13.1486276,
+   "lon": 80.2982812,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702419",
+   "osm_type": "node",
+   "name": "Sekar Hospital",
+   "lat": 13.1523333,
+   "lon": 80.2998808,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702420",
+   "osm_type": "node",
+   "name": "St. Anthony's Hospital",
+   "lat": 13.161861,
+   "lon": 80.204431,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7818702424",
+   "osm_type": "node",
+   "name": "Dr.Bala Lakshmi Hospital",
+   "lat": 13.329233,
+   "lon": 80.187201,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7819840741",
+   "osm_type": "node",
+   "name": "DPS Hospital",
+   "lat": 13.0509177,
+   "lon": 80.0994192,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7819840743",
+   "osm_type": "node",
+   "name": "Cure Well Hospital",
+   "lat": 13.044839,
+   "lon": 80.078007,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7819840745",
+   "osm_type": "node",
+   "name": "Kannimaram Hospital",
+   "lat": 13.0471845,
+   "lon": 80.184358,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7819840748",
+   "osm_type": "node",
+   "name": "Vasanthi Dental Hospital",
+   "lat": 13.0401817,
+   "lon": 80.1803453,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7819840767",
+   "osm_type": "node",
+   "name": "Aravind Eye Hospital",
+   "lat": 13.0532913,
+   "lon": 80.1249542,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7819840775",
+   "osm_type": "node",
+   "name": "Be Well Hospital",
+   "lat": 13.0506409,
+   "lon": 80.0986929,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7819840785",
+   "osm_type": "node",
+   "name": "Sri Jayendra Saraswati Ayurveda Hospital",
+   "lat": 13.0426113,
+   "lon": 80.0723617,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7819840797",
+   "osm_type": "node",
+   "name": "Meenakshi Mission Hospital",
+   "lat": 13.0472622,
+   "lon": 80.1815603,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7819840803",
+   "osm_type": "node",
+   "name": "Ramdas Hospital",
+   "lat": 13.0502479,
+   "lon": 80.0910986,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7819840806",
+   "osm_type": "node",
+   "name": "Shanthi Hospital",
+   "lat": 13.0470409,
+   "lon": 80.1841129,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820652147",
+   "osm_type": "node",
+   "name": "ESI Hospital",
+   "lat": 12.8875617,
+   "lon": 80.0237609,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820652164",
+   "osm_type": "node",
+   "name": "Robust Health Care Centre",
+   "lat": 12.8870998,
+   "lon": 80.0250194,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820652166",
+   "osm_type": "node",
+   "name": "Rehoboth Healthcare Centre",
+   "lat": 12.949675,
+   "lon": 80.036597,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820652169",
+   "osm_type": "node",
+   "name": "Saravana Hospital",
+   "lat": 12.8870832,
+   "lon": 80.0243038,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820652193",
+   "osm_type": "node",
+   "name": "Saradha Hospital",
+   "lat": 12.8875885,
+   "lon": 80.0243868,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874203",
+   "osm_type": "node",
+   "name": "Arokya Annai Hospital",
+   "lat": 12.8467495,
+   "lon": 80.0869154,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874217",
+   "osm_type": "node",
+   "name": "Sri Meenachi Hospital",
+   "lat": 12.850128,
+   "lon": 80.140347,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874220",
+   "osm_type": "node",
+   "name": "Nithya Gurru Hospital",
+   "lat": 12.867641,
+   "lon": 80.0760446,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874223",
+   "osm_type": "node",
+   "name": "Thangam Hospital",
+   "lat": 12.8400457,
+   "lon": 80.0560074,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874227",
+   "osm_type": "node",
+   "name": "Suriya Ayurveda Hospital",
+   "lat": 12.8588635,
+   "lon": 80.0560942,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874232",
+   "osm_type": "node",
+   "name": "Rishika Ortho, Spine and Joint Speciality Centre",
+   "lat": 12.8441025,
+   "lon": 80.0587314,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874240",
+   "osm_type": "node",
+   "name": "Sri Kamatchi Hospital",
+   "lat": 12.9050035,
+   "lon": 80.0929742,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874248",
+   "osm_type": "node",
+   "name": "Magna Open Health Service",
+   "lat": 12.8576412,
+   "lon": 80.0694728,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874249",
+   "osm_type": "node",
+   "name": "Mahesh Hospital",
+   "lat": 12.9178607,
+   "lon": 80.0590957,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874260",
+   "osm_type": "node",
+   "name": "Saradha Hospital",
+   "lat": 12.9080949,
+   "lon": 80.0926779,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874263",
+   "osm_type": "node",
+   "name": "Arokia Annai Hospital",
+   "lat": 12.8678478,
+   "lon": 80.0648625,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874268",
+   "osm_type": "node",
+   "name": "Deepam Hospital",
+   "lat": 12.8471514,
+   "lon": 80.0632047,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874273",
+   "osm_type": "node",
+   "name": "Kathir Memorial Hospital",
+   "lat": 12.84935,
+   "lon": 80.141738,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874280",
+   "osm_type": "node",
+   "name": "K.S. Child Care Hospital",
+   "lat": 12.8427807,
+   "lon": 80.0574582,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874285",
+   "osm_type": "node",
+   "name": "Sri Multi Speciality Homeopathy Clinic",
+   "lat": 12.8820866,
+   "lon": 80.0765632,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874287",
+   "osm_type": "node",
+   "name": "Sri Raghav Child Care Centre",
+   "lat": 12.911081,
+   "lon": 80.0964005,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874288",
+   "osm_type": "node",
+   "name": "Thalir Hospital",
+   "lat": 12.8662405,
+   "lon": 80.0780594,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7820874289",
+   "osm_type": "node",
+   "name": "Hosanna Hospital",
+   "lat": 12.8694008,
+   "lon": 80.0829085,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906812",
+   "osm_type": "node",
+   "name": "Sanjeevi's Ayush Hospital",
+   "lat": 12.9285127,
+   "lon": 80.1139064,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906814",
+   "osm_type": "node",
+   "name": "AG Multi Speciality Hospital",
+   "lat": 12.9252184,
+   "lon": 80.1125391,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906817",
+   "osm_type": "node",
+   "name": "N S Hospital",
+   "lat": 12.9274606,
+   "lon": 80.1143405,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906820",
+   "osm_type": "node",
+   "name": "Dr. Sathish Kumar Institute Of Child Health and Hospital for Children",
+   "lat": 12.9372891,
+   "lon": 80.1390198,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906825",
+   "osm_type": "node",
+   "name": "Peeram Hospital Private Limited",
+   "lat": 12.9349952,
+   "lon": 80.1257351,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906832",
+   "osm_type": "node",
+   "name": "Saaol Heart Centre",
+   "lat": 12.9361226,
+   "lon": 80.1238348,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906834",
+   "osm_type": "node",
+   "name": "PK Multi Speciality Hospital",
+   "lat": 12.929311,
+   "lon": 80.118892,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906836",
+   "osm_type": "node",
+   "name": "Jyothi Siddha Ayurveda Hospital",
+   "lat": 12.9305296,
+   "lon": 80.1185855,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906837",
+   "osm_type": "node",
+   "name": "LPR Hospital",
+   "lat": 12.923229,
+   "lon": 80.097237,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906842",
+   "osm_type": "node",
+   "name": "Sarjana Hospital",
+   "lat": 12.9264853,
+   "lon": 80.1026633,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906853",
+   "osm_type": "node",
+   "name": "Sree Devi Hospital",
+   "lat": 12.9293353,
+   "lon": 80.1131889,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906855",
+   "osm_type": "node",
+   "name": "Jawahar Hospital",
+   "lat": 12.9227892,
+   "lon": 80.1281937,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906857",
+   "osm_type": "node",
+   "name": "Ramana Child Hospital",
+   "lat": 12.9340178,
+   "lon": 80.1236737,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906858",
+   "osm_type": "node",
+   "name": "Arya Vaidya Shala",
+   "lat": 12.9239283,
+   "lon": 80.1280388,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906859",
+   "osm_type": "node",
+   "name": "Dr. Mehta Hospital",
+   "lat": 12.9323992,
+   "lon": 80.1195168,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906860",
+   "osm_type": "node",
+   "name": "Seshagiri Hospital",
+   "lat": 12.9301271,
+   "lon": 80.1195747,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906861",
+   "osm_type": "node",
+   "name": "Udhayam Maternity and General Hospital",
+   "lat": 12.9292541,
+   "lon": 80.117767,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906862",
+   "osm_type": "node",
+   "name": "Children Care Centre",
+   "lat": 12.9261301,
+   "lon": 80.1059731,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906863",
+   "osm_type": "node",
+   "name": "Madhu Hospital",
+   "lat": 12.9253206,
+   "lon": 80.1270372,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906864",
+   "osm_type": "node",
+   "name": "Vithagan Health Care Hospital",
+   "lat": 12.9234022,
+   "lon": 80.1292693,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906866",
+   "osm_type": "node",
+   "name": "Arul Hospital",
+   "lat": 12.925426,
+   "lon": 80.10622,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906868",
+   "osm_type": "node",
+   "name": "A.G Hospital",
+   "lat": 12.9264826,
+   "lon": 80.1117834,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906869",
+   "osm_type": "node",
+   "name": "Apollo Hospital",
+   "lat": 12.9243823,
+   "lon": 80.1061223,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906871",
+   "osm_type": "node",
+   "name": "Parvathy Ortho Hospital",
+   "lat": 12.9264209,
+   "lon": 80.1078215,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906876",
+   "osm_type": "node",
+   "name": "Rainbow Women and Children's Hospital",
+   "lat": 12.9255619,
+   "lon": 80.1141393,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906879",
+   "osm_type": "node",
+   "name": "Elmer Kidney Care",
+   "lat": 12.927288,
+   "lon": 80.112985,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906887",
+   "osm_type": "node",
+   "name": "Sri Jayam Hospital",
+   "lat": 12.9279511,
+   "lon": 80.1152234,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906889",
+   "osm_type": "node",
+   "name": "Raindew Hospital",
+   "lat": 12.9249694,
+   "lon": 80.1121876,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906892",
+   "osm_type": "node",
+   "name": "M.J. Hospital",
+   "lat": 12.9225987,
+   "lon": 80.1280627,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906894",
+   "osm_type": "node",
+   "name": "Sudar Hospital",
+   "lat": 12.9302816,
+   "lon": 80.1175824,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906895",
+   "osm_type": "node",
+   "name": "Sai Vijay Ayurvedic Herbal Health Care",
+   "lat": 12.9233238,
+   "lon": 80.1270401,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906903",
+   "osm_type": "node",
+   "name": "Manimegalai Hospital",
+   "lat": 12.9370716,
+   "lon": 80.1394473,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906906",
+   "osm_type": "node",
+   "name": "Rajarajan Venkateshan Hospital",
+   "lat": 12.9261078,
+   "lon": 80.1060872,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906907",
+   "osm_type": "node",
+   "name": "Dhanwanthralaya Ayurveda Speciality Hospital",
+   "lat": 12.9309721,
+   "lon": 80.1071121,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7821906908",
+   "osm_type": "node",
+   "name": "Dhanwantralaya",
+   "lat": 12.926297,
+   "lon": 80.11211,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822259984",
+   "osm_type": "node",
+   "name": "Deepam Rehabilitation Centre",
+   "lat": 12.9163865,
+   "lon": 80.1789307,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822259986",
+   "osm_type": "node",
+   "name": "HCL Health Care",
+   "lat": 12.9044723,
+   "lon": 80.216804,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822259987",
+   "osm_type": "node",
+   "name": "Ganesh Hospital",
+   "lat": 12.9082585,
+   "lon": 80.1570082,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822259988",
+   "osm_type": "node",
+   "name": "Subasree Hospital",
+   "lat": 12.916822,
+   "lon": 80.1940932,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822259992",
+   "osm_type": "node",
+   "name": "Centre For Vision and Eye Surgery",
+   "lat": 12.8948311,
+   "lon": 80.2233057,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822259995",
+   "osm_type": "node",
+   "name": "Shri Sai Children's Hospital and Dental Clinic",
+   "lat": 12.912214,
+   "lon": 80.229384,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260001",
+   "osm_type": "node",
+   "name": "Sri Balaji Hospital",
+   "lat": 12.9178242,
+   "lon": 80.190331,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260004",
+   "osm_type": "node",
+   "name": "S.V. Hospital",
+   "lat": 12.9069075,
+   "lon": 80.2026845,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260005",
+   "osm_type": "node",
+   "name": "Bethel Hospital",
+   "lat": 12.9114303,
+   "lon": 80.1563114,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260007",
+   "osm_type": "node",
+   "name": "Sai Babaji's Accupuncture Centre",
+   "lat": 12.9186472,
+   "lon": 80.1712083,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260009",
+   "osm_type": "node",
+   "name": "SV Hospital",
+   "lat": 12.9319677,
+   "lon": 80.2326252,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260011",
+   "osm_type": "node",
+   "name": "Shanthi General Hospital",
+   "lat": 12.9233066,
+   "lon": 80.153003,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260016",
+   "osm_type": "node",
+   "name": "Karthick Children's Hospital",
+   "lat": 12.9123221,
+   "lon": 80.192466,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260017",
+   "osm_type": "node",
+   "name": "Arun Hospital",
+   "lat": 12.9149784,
+   "lon": 80.1948032,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260018",
+   "osm_type": "node",
+   "name": "Radial Ortho Speciality Hospital",
+   "lat": 12.9131978,
+   "lon": 80.1915965,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260021",
+   "osm_type": "node",
+   "name": "Jayam Hospital",
+   "lat": 12.9498749,
+   "lon": 80.2381651,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260025",
+   "osm_type": "node",
+   "name": "Maternity and Child Care Hospital",
+   "lat": 12.9164866,
+   "lon": 80.1896622,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260027",
+   "osm_type": "node",
+   "name": "Sanjeevi's Ayurveda Therapy Centre",
+   "lat": 12.9087161,
+   "lon": 80.1571623,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260032",
+   "osm_type": "node",
+   "name": "Shri Balaji Diabetes Hospital",
+   "lat": 12.9150069,
+   "lon": 80.1929516,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260033",
+   "osm_type": "node",
+   "name": "Dhanvantri Multi Speciality",
+   "lat": 12.9402236,
+   "lon": 80.2412342,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260038",
+   "osm_type": "node",
+   "name": "Annai Teresa Hospital",
+   "lat": 12.9184999,
+   "lon": 80.1892056,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260040",
+   "osm_type": "node",
+   "name": "Government Hospital",
+   "lat": 12.9073656,
+   "lon": 80.1571273,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260043",
+   "osm_type": "node",
+   "name": "Prayoga Hospital",
+   "lat": 12.918236,
+   "lon": 80.1525123,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260044",
+   "osm_type": "node",
+   "name": "Swaram Hospital and Speciality Clinic",
+   "lat": 12.9011793,
+   "lon": 80.2286,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260051",
+   "osm_type": "node",
+   "name": "C-Dot Hospital",
+   "lat": 12.9072738,
+   "lon": 80.2027359,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260054",
+   "osm_type": "node",
+   "name": "KL Hospital",
+   "lat": 12.9006729,
+   "lon": 80.2283278,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260055",
+   "osm_type": "node",
+   "name": "Mugavari Eye Hospital and Research Institute",
+   "lat": 12.9167105,
+   "lon": 80.1921463,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822260056",
+   "osm_type": "node",
+   "name": "Global Hospital",
+   "lat": 12.9060064,
+   "lon": 80.2072713,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543395",
+   "osm_type": "node",
+   "name": "Avinash Ortho Hospital",
+   "lat": 12.9383762,
+   "lon": 80.1725401,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543399",
+   "osm_type": "node",
+   "name": "Kavitha Ortho and Multi Speciality Hospital",
+   "lat": 12.9502691,
+   "lon": 80.1513316,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543402",
+   "osm_type": "node",
+   "name": "Dr. Gomathi Hospital",
+   "lat": 12.955108,
+   "lon": 80.131944,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543406",
+   "osm_type": "node",
+   "name": "Ray's Head, Neck Care Centre-ENT and Dental Clinic",
+   "lat": 12.9549234,
+   "lon": 80.1340441,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543416",
+   "osm_type": "node",
+   "name": "Sri Santhanakrishna Padmavati Health Care and Research Centre",
+   "lat": 12.9462077,
+   "lon": 80.1399766,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543423",
+   "osm_type": "node",
+   "name": "Sri Venkateshwara Hospital",
+   "lat": 12.9540623,
+   "lon": 80.1339845,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543424",
+   "osm_type": "node",
+   "name": "Dr. Velmurugan Hospital",
+   "lat": 12.9296419,
+   "lon": 80.2029589,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543426",
+   "osm_type": "node",
+   "name": "Sri Ram Hospital",
+   "lat": 12.9499064,
+   "lon": 80.1349811,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543429",
+   "osm_type": "node",
+   "name": "Kidney Hospital and Diagnostic Centre",
+   "lat": 12.952496,
+   "lon": 80.137893,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543430",
+   "osm_type": "node",
+   "name": "AM Hospital",
+   "lat": 12.9344546,
+   "lon": 80.1819961,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543432",
+   "osm_type": "node",
+   "name": "TB Hospital",
+   "lat": 12.9448167,
+   "lon": 80.1303935,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543433",
+   "osm_type": "node",
+   "name": "HCG Cancer Centre",
+   "lat": 12.9575434,
+   "lon": 80.143138,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543434",
+   "osm_type": "node",
+   "name": "Sayee Hospitals",
+   "lat": 12.9521949,
+   "lon": 80.1432074,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543438",
+   "osm_type": "node",
+   "name": "Inbam Hospital",
+   "lat": 12.9339688,
+   "lon": 80.2041509,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543439",
+   "osm_type": "node",
+   "name": "Thanushika Hospital",
+   "lat": 12.9503116,
+   "lon": 80.1513212,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543444",
+   "osm_type": "node",
+   "name": "Hindusthan Hospital",
+   "lat": 12.9393514,
+   "lon": 80.1806898,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543448",
+   "osm_type": "node",
+   "name": "Puthur Kattu",
+   "lat": 12.9478556,
+   "lon": 80.1370503,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543452",
+   "osm_type": "node",
+   "name": "RKP Hospital",
+   "lat": 12.9379829,
+   "lon": 80.1799993,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543455",
+   "osm_type": "node",
+   "name": "Muthu Multi Speciality Hospital and Pharmacy",
+   "lat": 12.928263,
+   "lon": 80.200805,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543459",
+   "osm_type": "node",
+   "name": "Kokila Siddha Hospital",
+   "lat": 12.960669,
+   "lon": 80.139703,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543469",
+   "osm_type": "node",
+   "name": "Thomas Health Care Centre",
+   "lat": 12.9544931,
+   "lon": 80.1439701,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543471",
+   "osm_type": "node",
+   "name": "Raj Joty Eye Hospital",
+   "lat": 12.935221,
+   "lon": 80.181802,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543477",
+   "osm_type": "node",
+   "name": "Sun Hospital",
+   "lat": 12.9537198,
+   "lon": 80.143246,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543484",
+   "osm_type": "node",
+   "name": "Apollo Hospitals",
+   "lat": 12.9520555,
+   "lon": 80.1372784,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543489",
+   "osm_type": "node",
+   "name": "Shailaja Hospital",
+   "lat": 12.9531004,
+   "lon": 80.1440661,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543490",
+   "osm_type": "node",
+   "name": "Dhanwantari Hospital",
+   "lat": 12.9452437,
+   "lon": 80.140022,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543491",
+   "osm_type": "node",
+   "name": "Dr. Ashok Kumar Children's Hospital",
+   "lat": 12.954659,
+   "lon": 80.134998,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543498",
+   "osm_type": "node",
+   "name": "Venus Accupoint",
+   "lat": 12.9422406,
+   "lon": 80.1381022,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543500",
+   "osm_type": "node",
+   "name": "Saraswathy Hospital",
+   "lat": 12.9425452,
+   "lon": 80.1405737,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543501",
+   "osm_type": "node",
+   "name": "V Cure Hospital",
+   "lat": 12.9280452,
+   "lon": 80.199546,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543502",
+   "osm_type": "node",
+   "name": "Al Elaj Accupressure and Health Centre",
+   "lat": 12.9569609,
+   "lon": 80.1424509,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543505",
+   "osm_type": "node",
+   "name": "V.S. Hospital",
+   "lat": 12.933726,
+   "lon": 80.1811973,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7822543510",
+   "osm_type": "node",
+   "name": "Daisy Hospitals",
+   "lat": 12.9576893,
+   "lon": 80.1429026,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212559",
+   "osm_type": "node",
+   "name": "Shakthi Hospital",
+   "lat": 12.9753651,
+   "lon": 80.2543198,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212561",
+   "osm_type": "node",
+   "name": "Chennai Emergency Care Centre",
+   "lat": 12.9712805,
+   "lon": 80.132333,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212562",
+   "osm_type": "node",
+   "name": "JIP Hospital",
+   "lat": 12.9719872,
+   "lon": 80.1407516,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212567",
+   "osm_type": "node",
+   "name": "Dr. Habeb Child Care Hospital",
+   "lat": 12.9668133,
+   "lon": 80.144778,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212569",
+   "osm_type": "node",
+   "name": "Sri Jaya Hospital",
+   "lat": 12.9981038,
+   "lon": 80.0955575,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212570",
+   "osm_type": "node",
+   "name": "Hale and Healthy Hospitals",
+   "lat": 12.9757686,
+   "lon": 80.2590077,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212573",
+   "osm_type": "node",
+   "name": "Rathna Hospital",
+   "lat": 13.0087475,
+   "lon": 80.1937172,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212575",
+   "osm_type": "node",
+   "name": "Deen Hospital",
+   "lat": 13.034339,
+   "lon": 80.1104925,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212576",
+   "osm_type": "node",
+   "name": "S.S. Hospital",
+   "lat": 13.0036449,
+   "lon": 80.2030844,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212577",
+   "osm_type": "node",
+   "name": "Sivanthi Heart Care",
+   "lat": 12.997158,
+   "lon": 80.0965483,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212578",
+   "osm_type": "node",
+   "name": "Gunam Hospital",
+   "lat": 12.9789547,
+   "lon": 80.0536595,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212579",
+   "osm_type": "node",
+   "name": "Dhanraj Hospital",
+   "lat": 13.0017797,
+   "lon": 80.2033269,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212581",
+   "osm_type": "node",
+   "name": "Nalam Hospital",
+   "lat": 13.0164671,
+   "lon": 80.1772853,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212587",
+   "osm_type": "node",
+   "name": "Chennai Hospital",
+   "lat": 12.973474,
+   "lon": 80.1307991,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212603",
+   "osm_type": "node",
+   "name": "Deenan Health Care",
+   "lat": 12.9738819,
+   "lon": 80.1315486,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212607",
+   "osm_type": "node",
+   "name": "Promed Hospital",
+   "lat": 12.9751423,
+   "lon": 80.2582571,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212608",
+   "osm_type": "node",
+   "name": "Dr. JRK Hospital",
+   "lat": 12.9971757,
+   "lon": 80.0978782,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212610",
+   "osm_type": "node",
+   "name": "Happy Clinic Hospital",
+   "lat": 12.9693629,
+   "lon": 80.2566138,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212616",
+   "osm_type": "node",
+   "name": "Shadithya Hospital",
+   "lat": 12.9718921,
+   "lon": 80.1445381,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212623",
+   "osm_type": "node",
+   "name": "Jaya Sri Hospital",
+   "lat": 13.0027883,
+   "lon": 80.207025,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212624",
+   "osm_type": "node",
+   "name": "Kedar Hospital",
+   "lat": 13.0441663,
+   "lon": 80.1364773,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212630",
+   "osm_type": "node",
+   "name": "Sai Nursing Home and Maternity Hospital",
+   "lat": 13.0372175,
+   "lon": 80.1136836,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212631",
+   "osm_type": "node",
+   "name": "Kaanthi Makapperu Hospital",
+   "lat": 13.003406,
+   "lon": 80.2063632,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212633",
+   "osm_type": "node",
+   "name": "Medforte Health Care",
+   "lat": 12.9700475,
+   "lon": 80.1499015,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823212640",
+   "osm_type": "node",
+   "name": "Contonment Board General Hospital",
+   "lat": 12.97059,
+   "lon": 80.148318,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415020",
+   "osm_type": "node",
+   "name": "Corporation Hospital",
+   "lat": 12.9915347,
+   "lon": 80.2615046,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415021",
+   "osm_type": "node",
+   "name": "Relief Dental Hospitals",
+   "lat": 12.978253,
+   "lon": 80.258947,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415033",
+   "osm_type": "node",
+   "name": "Accu Hospital",
+   "lat": 13.041251,
+   "lon": 80.267354,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415037",
+   "osm_type": "node",
+   "name": "Kalyani Hospital",
+   "lat": 13.0512111,
+   "lon": 80.273209,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415048",
+   "osm_type": "node",
+   "name": "Triveni Hospital",
+   "lat": 13.0385371,
+   "lon": 80.2581929,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415049",
+   "osm_type": "node",
+   "name": "SMK Hospital",
+   "lat": 12.986383,
+   "lon": 80.260187,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415056",
+   "osm_type": "node",
+   "name": "Uma Sankaran Siddha Hospital",
+   "lat": 12.9916719,
+   "lon": 80.2624479,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415059",
+   "osm_type": "node",
+   "name": "Vasantha Hospital",
+   "lat": 13.0490602,
+   "lon": 80.2747953,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415061",
+   "osm_type": "node",
+   "name": "Orthomed Hospital",
+   "lat": 13.0454703,
+   "lon": 80.2668731,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415065",
+   "osm_type": "node",
+   "name": "Mint Hospitals",
+   "lat": 13.0013494,
+   "lon": 80.258796,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415083",
+   "osm_type": "node",
+   "name": "Saanvi Fertility Centre Urology and Stone Centre",
+   "lat": 13.0436591,
+   "lon": 80.2639406,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415084",
+   "osm_type": "node",
+   "name": "The Crescent Hospital",
+   "lat": 13.0528771,
+   "lon": 80.2727865,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415087",
+   "osm_type": "node",
+   "name": "Syma Hospital",
+   "lat": 13.0546321,
+   "lon": 80.2774772,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415088",
+   "osm_type": "node",
+   "name": "Sri Parthasarathy Hospital",
+   "lat": 13.0547617,
+   "lon": 80.2756509,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823415091",
+   "osm_type": "node",
+   "name": "Ashwini Hospital",
+   "lat": 12.9890173,
+   "lon": 80.2599586,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776196",
+   "osm_type": "node",
+   "name": "R.S. Hospital",
+   "lat": 13.0549375,
+   "lon": 80.2068588,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776197",
+   "osm_type": "node",
+   "name": "Arun Vijaya Hospitals",
+   "lat": 13.038873,
+   "lon": 80.192755,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776209",
+   "osm_type": "node",
+   "name": "C.M. Hospital",
+   "lat": 13.0553167,
+   "lon": 80.2012868,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776213",
+   "osm_type": "node",
+   "name": "Shali Day & Night Hospital",
+   "lat": 13.051996,
+   "lon": 80.204702,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776215",
+   "osm_type": "node",
+   "name": "Koncept Hospitals",
+   "lat": 13.051051,
+   "lon": 80.243818,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776217",
+   "osm_type": "node",
+   "name": "Diawin Multi Speciality Siddha Hospital",
+   "lat": 13.0520108,
+   "lon": 80.2076585,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776221",
+   "osm_type": "node",
+   "name": "G G Hospital",
+   "lat": 13.0554543,
+   "lon": 80.2477343,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776223",
+   "osm_type": "node",
+   "name": "K R S Hospitals",
+   "lat": 13.0616711,
+   "lon": 80.2434943,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776225",
+   "osm_type": "node",
+   "name": "Sterling Hospitals",
+   "lat": 13.0616367,
+   "lon": 80.243704,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776227",
+   "osm_type": "node",
+   "name": "Lily Shantha Hospital",
+   "lat": 13.0516365,
+   "lon": 80.1939117,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776231",
+   "osm_type": "node",
+   "name": "Dr. Maibbar Hospital",
+   "lat": 13.0594426,
+   "lon": 80.2459459,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776233",
+   "osm_type": "node",
+   "name": "Swastik Hospital",
+   "lat": 13.0539266,
+   "lon": 80.1991968,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776246",
+   "osm_type": "node",
+   "name": "Standard Hospital",
+   "lat": 13.0526943,
+   "lon": 80.1899425,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776250",
+   "osm_type": "node",
+   "name": "MM Hospital",
+   "lat": 13.0527721,
+   "lon": 80.191781,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776253",
+   "osm_type": "node",
+   "name": "Arun Hospital",
+   "lat": 13.0514652,
+   "lon": 80.2031882,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7823776254",
+   "osm_type": "node",
+   "name": "Krishna Geetham Vaidyasala",
+   "lat": 13.0538214,
+   "lon": 80.1989274,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965206",
+   "osm_type": "node",
+   "name": "Agm Hospital",
+   "lat": 13.0802093,
+   "lon": 80.2522439,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965209",
+   "osm_type": "node",
+   "name": "Dr. Sambandam Eye Hospital",
+   "lat": 13.0886474,
+   "lon": 80.2416011,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965211",
+   "osm_type": "node",
+   "name": "Sugumar Hospital",
+   "lat": 13.0828855,
+   "lon": 80.2709938,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965213",
+   "osm_type": "node",
+   "name": "Ranjith Hospital",
+   "lat": 13.0888843,
+   "lon": 80.2418555,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965216",
+   "osm_type": "node",
+   "name": "Mythili Hospitals",
+   "lat": 13.0704319,
+   "lon": 80.2421491,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965221",
+   "osm_type": "node",
+   "name": "Santosham Chest Hospital",
+   "lat": 13.0746638,
+   "lon": 80.2537976,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965222",
+   "osm_type": "node",
+   "name": "Tune 32 Hospital",
+   "lat": 13.0715459,
+   "lon": 80.2622655,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965223",
+   "osm_type": "node",
+   "name": "Pandalai Hospital",
+   "lat": 13.0771575,
+   "lon": 80.2450769,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965225",
+   "osm_type": "node",
+   "name": "Centre For Gastro Esophageal Disorders",
+   "lat": 13.0786423,
+   "lon": 80.2540859,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965227",
+   "osm_type": "node",
+   "name": "Be Well Hospital",
+   "lat": 13.0807479,
+   "lon": 80.2340062,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965229",
+   "osm_type": "node",
+   "name": "Puttur Kattu Hospital",
+   "lat": 13.0812406,
+   "lon": 80.2506114,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965232",
+   "osm_type": "node",
+   "name": "An-Noor Eye Hospital",
+   "lat": 13.0849581,
+   "lon": 80.2669979,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965237",
+   "osm_type": "node",
+   "name": "Herbzalive Ayurveda Hospital",
+   "lat": 13.0793874,
+   "lon": 80.2473996,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965238",
+   "osm_type": "node",
+   "name": "Meta Hospital",
+   "lat": 13.0826737,
+   "lon": 80.2705905,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965240",
+   "osm_type": "node",
+   "name": "Dr. H. Yogish Hospital",
+   "lat": 13.0737332,
+   "lon": 80.2268354,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965241",
+   "osm_type": "node",
+   "name": "Neuro Hospital",
+   "lat": 13.0713435,
+   "lon": 80.2625981,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965243",
+   "osm_type": "node",
+   "name": "Murugan Hospitals",
+   "lat": 13.0833684,
+   "lon": 80.234299,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965244",
+   "osm_type": "node",
+   "name": "Amrit Hospital",
+   "lat": 13.0811868,
+   "lon": 80.2520834,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965245",
+   "osm_type": "node",
+   "name": "Mercury Hospital",
+   "lat": 13.071832,
+   "lon": 80.260048,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965246",
+   "osm_type": "node",
+   "name": "Naz Unani Hospital",
+   "lat": 13.0850158,
+   "lon": 80.2699983,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965249",
+   "osm_type": "node",
+   "name": "S.K. Selvam Hospital",
+   "lat": 13.0761303,
+   "lon": 80.2694819,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965252",
+   "osm_type": "node",
+   "name": "Apollo Hospital",
+   "lat": 13.0825738,
+   "lon": 80.2710331,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965254",
+   "osm_type": "node",
+   "name": "Kola Saraswathi Agarwal Samaj Health Centre",
+   "lat": 13.0813334,
+   "lon": 80.2553965,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965258",
+   "osm_type": "node",
+   "name": "Demo Hospital",
+   "lat": 13.0844036,
+   "lon": 80.2454945,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965259",
+   "osm_type": "node",
+   "name": "Gremaltes Hospital",
+   "lat": 13.0793157,
+   "lon": 80.2290477,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965260",
+   "osm_type": "node",
+   "name": "Srl Hospital",
+   "lat": 13.0814203,
+   "lon": 80.2333756,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965262",
+   "osm_type": "node",
+   "name": "Periyar Maniammai Hospital",
+   "lat": 13.0811497,
+   "lon": 80.2620778,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965264",
+   "osm_type": "node",
+   "name": "Red Cross Hospital",
+   "lat": 13.074301,
+   "lon": 80.267569,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7824965266",
+   "osm_type": "node",
+   "name": "Ponmalligai Hospitals",
+   "lat": 13.0768584,
+   "lon": 80.2339377,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825002779",
+   "osm_type": "node",
+   "name": "V S Hospital",
+   "lat": 13.1216771,
+   "lon": 80.2236766,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825002781",
+   "osm_type": "node",
+   "name": "Iyyappa Multi Speciality Hospitals",
+   "lat": 13.1160443,
+   "lon": 80.2454243,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825002782",
+   "osm_type": "node",
+   "name": "GK Hospital",
+   "lat": 13.113594,
+   "lon": 80.2394367,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009786",
+   "osm_type": "node",
+   "name": "Dr. Kleela Hospital",
+   "lat": 13.1155627,
+   "lon": 80.2457851,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009787",
+   "osm_type": "node",
+   "name": "Bluemed Healthcare",
+   "lat": 13.1297562,
+   "lon": 80.2172747,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009790",
+   "osm_type": "node",
+   "name": "St. Joseph Cluny Hospital",
+   "lat": 13.1204837,
+   "lon": 80.2243993,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009792",
+   "osm_type": "node",
+   "name": "Dr. A C Aruldas Hospital",
+   "lat": 13.1102652,
+   "lon": 80.2418486,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009797",
+   "osm_type": "node",
+   "name": "Bharathiraja Hospitals",
+   "lat": 13.1300779,
+   "lon": 80.216941,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009798",
+   "osm_type": "node",
+   "name": "Kolathur Multi Speciality and Research Centre",
+   "lat": 13.1222839,
+   "lon": 80.2160951,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009799",
+   "osm_type": "node",
+   "name": "Arul Childs Hospital",
+   "lat": 13.1185,
+   "lon": 80.2258076,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009803",
+   "osm_type": "node",
+   "name": "KCK Hospital",
+   "lat": 13.129071,
+   "lon": 80.2159086,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009805",
+   "osm_type": "node",
+   "name": "Sugar Hospital",
+   "lat": 13.121994,
+   "lon": 80.2236309,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009807",
+   "osm_type": "node",
+   "name": "Retteri Kumaran Hospital",
+   "lat": 13.129869,
+   "lon": 80.214109,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009815",
+   "osm_type": "node",
+   "name": "Government Hospital",
+   "lat": 13.1093369,
+   "lon": 80.2312849,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009816",
+   "osm_type": "node",
+   "name": "K.H.M. Hospital",
+   "lat": 13.129327,
+   "lon": 80.2152624,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009817",
+   "osm_type": "node",
+   "name": "Sankar Eye Hospital",
+   "lat": 13.1131038,
+   "lon": 80.2404022,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009819",
+   "osm_type": "node",
+   "name": "Niranjana Hospital",
+   "lat": 13.1101477,
+   "lon": 80.2244516,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009820",
+   "osm_type": "node",
+   "name": "Parvatham Hospital",
+   "lat": 13.1148422,
+   "lon": 80.2441515,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009823",
+   "osm_type": "node",
+   "name": "U.S. Hospital",
+   "lat": 13.1263043,
+   "lon": 80.2192658,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7825009824",
+   "osm_type": "node",
+   "name": "Bharani Hospital",
+   "lat": 13.1106227,
+   "lon": 80.2374461,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7843239851",
+   "osm_type": "node",
+   "name": "Sir Ivan Stedford Hospital",
+   "lat": 13.1247933,
+   "lon": 80.1435476,
+   "amenity": "hospital"
+  },
+  {
+   "id": "7953367285",
+   "osm_type": "node",
+   "name": "Hospital #7953367285",
+   "lat": 13.1183857,
+   "lon": 80.2606286,
+   "amenity": "hospital"
+  },
+  {
+   "id": "8099947735",
+   "osm_type": "node",
+   "name": "K.M. Nursing Home",
+   "lat": 13.0371216,
+   "lon": 80.2013389,
+   "amenity": "hospital"
+  },
+  {
+   "id": "8105683179",
+   "osm_type": "node",
+   "name": "Military Hospital",
+   "lat": 13.0117736,
+   "lon": 80.1941708,
+   "amenity": "hospital"
+  },
+  {
+   "id": "8108467017",
+   "osm_type": "node",
+   "name": "உழைப்பாளி மருத்துவமனை",
+   "lat": 13.0487242,
+   "lon": 80.2036274,
+   "amenity": "hospital"
+  },
+  {
+   "id": "8108591031",
+   "osm_type": "node",
+   "name": "KS Bone and Joint Clinic - Ortho",
+   "lat": 13.026029,
+   "lon": 80.212368,
+   "amenity": "hospital"
+  },
+  {
+   "id": "8111861614",
+   "osm_type": "node",
+   "name": "Shens Multi-Speciality Hospital",
+   "lat": 13.0318828,
+   "lon": 80.2103124,
+   "amenity": "hospital"
+  },
+  {
+   "id": "8197934476",
+   "osm_type": "node",
+   "name": "Sanjeevani Ayurvedic Hospital",
+   "lat": 12.9120483,
+   "lon": 80.2489789,
+   "amenity": "hospital"
+  },
+  {
+   "id": "8639896900",
+   "osm_type": "node",
+   "name": "Prashanth Hospitals",
+   "lat": 12.9784544,
+   "lon": 80.2214698,
+   "amenity": "hospital"
+  },
+  {
+   "id": "8869350452",
+   "osm_type": "node",
+   "name": "Hospital #8869350452",
+   "lat": 13.0381458,
+   "lon": 80.1619363,
+   "amenity": "hospital"
+  },
+  {
+   "id": "8935514615",
+   "osm_type": "node",
+   "name": "Geri care hospital",
+   "lat": 13.0439323,
+   "lon": 80.2407095,
+   "amenity": "hospital"
+  },
+  {
+   "id": "907941478",
+   "osm_type": "way",
+   "name": "Tiruvottiyur Government Hospital",
+   "lat": 13.1576042,
+   "lon": 80.3012556,
+   "amenity": "hospital"
+  },
+  {
+   "id": "907941484",
+   "osm_type": "way",
+   "name": "Hospital #907941484",
+   "lat": 13.1485646,
+   "lon": 80.2994665,
+   "amenity": "hospital"
+  },
+  {
+   "id": "940932459",
+   "osm_type": "way",
+   "name": "Hospital #940932459",
+   "lat": 12.9694332,
+   "lon": 80.1851055,
+   "amenity": "hospital"
+  },
+  {
+   "id": "941471945",
+   "osm_type": "node",
+   "name": "Appasamy Hospital",
+   "lat": 13.0750445,
+   "lon": 80.2151198,
+   "amenity": "hospital"
+  },
+  {
+   "id": "941611681",
+   "osm_type": "node",
+   "name": "Appasamy Hospital",
+   "lat": 13.073239,
+   "lon": 80.2148826,
+   "amenity": "hospital"
+  },
+  {
+   "id": "941621037",
+   "osm_type": "node",
+   "name": "Appolo Clinic",
+   "lat": 13.0892073,
+   "lon": 80.2178866,
+   "amenity": "hospital"
+  },
+  {
+   "id": "9444720904",
+   "osm_type": "node",
+   "name": "4 Squares Dentistry",
+   "lat": 12.9214652,
+   "lon": 80.1651302,
+   "amenity": "hospital"
+  },
+  {
+   "id": "9591995528",
+   "osm_type": "node",
+   "name": "S B Hospital",
+   "lat": 12.8461109,
+   "lon": 80.2263842,
+   "amenity": "hospital"
+  },
+  {
+   "id": "9717766098",
+   "osm_type": "node",
+   "name": "Chamdhi Netralayam Eye Hospital",
+   "lat": 13.2086279,
+   "lon": 80.1698455,
+   "amenity": "hospital"
+  },
+  {
+   "id": "983957837",
+   "osm_type": "node",
+   "name": "Sankara Eye Hospital, Kanchipuram",
+   "lat": 12.965059,
+   "lon": 80.128212,
+   "amenity": "hospital"
+  },
+  {
+   "id": "9980280804",
+   "osm_type": "node",
+   "name": "Shreyas hospital",
+   "lat": 13.1266701,
+   "lon": 80.2014392,
+   "amenity": "hospital"
+  },
+  {
+   "id": "1188619727",
+   "osm_type": "way",
+   "name": "Shelter for Homeless Men",
+   "lat": 13.088091,
+   "lon": 80.2842174,
+   "amenity": "social_facility"
+  },
+  {
+   "id": "12458756396",
+   "osm_type": "node",
+   "name": "Housing Board",
+   "lat": 13.1901112,
+   "lon": 80.3131683,
+   "amenity": "social_facility"
+  },
+  {
+   "id": "12458759001",
+   "osm_type": "node",
+   "name": "Asbestos Sheet Houses",
+   "lat": 13.1938086,
+   "lon": 80.3139191,
+   "amenity": "social_facility"
+  },
+  {
+   "id": "12458790374",
+   "osm_type": "node",
+   "name": "பெண்கள் தங்கும் விடுதி, ரெக்கோபாத் ‌கல்வ அறக்கட்டளை ி",
+   "lat": 13.1784816,
+   "lon": 80.308474,
+   "amenity": "social_facility"
+  },
+  {
+   "id": "13348619101",
+   "osm_type": "node",
+   "name": "Aatral Arangam",
+   "lat": 13.0106078,
+   "lon": 80.2329665,
+   "amenity": "social_facility"
+  },
+  {
+   "id": "13740210601",
+   "osm_type": "node",
+   "name": "The Malayalee Club",
+   "lat": 13.0732623,
+   "lon": 80.2470063,
+   "amenity": "social_facility"
+  },
+  {
+   "id": "1508224685",
+   "osm_type": "way",
+   "name": "Indian Council for Child Welfare",
+   "lat": 13.0811954,
+   "lon": 80.2208195,
+   "amenity": "social_facility"
+  },
+  {
+   "id": "23186325",
+   "osm_type": "way",
+   "name": "Anjuman Orphanage",
+   "lat": 13.0445699,
+   "lon": 80.2457577,
+   "amenity": "social_facility"
+  },
+  {
+   "id": "3488025507",
+   "osm_type": "node",
+   "name": "Andhra Social & Cultural Association",
+   "lat": 13.0440387,
+   "lon": 80.2429829,
+   "amenity": "social_facility"
+  },
+  {
+   "id": "8669165842",
+   "osm_type": "node",
+   "name": "Shelter Home for Urban Homeless",
+   "lat": 12.9586134,
+   "lon": 80.1872722,
+   "amenity": "social_facility"
+  },
+  {
+   "id": "922534630",
+   "osm_type": "way",
+   "name": "Government of Tamil Nadu",
+   "lat": 12.9698139,
+   "lon": 80.1869896,
+   "amenity": "social_facility"
+  }
+ ]
+}
