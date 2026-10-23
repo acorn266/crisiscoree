@@ -1,4 +1,6 @@
-function AlertPanel({ alerts, loading, onAlertFocus }) {
+import { isValidLatLng } from '../utils/geo';
+
+function AlertPanel({ alerts, loading, unavailable = false, onAlertFocus }) {
   if (loading) {
     return (
       <div className="card alerts-panel">
@@ -7,6 +9,18 @@ function AlertPanel({ alerts, loading, onAlertFocus }) {
           <span className="status-pill">Loading...</span>
         </div>
         <p className="panel-note">Monitoring for detected high-severity events...</p>
+      </div>
+    );
+  }
+
+  if (unavailable) {
+    return (
+      <div className="card alerts-panel">
+        <div className="section-header compact">
+          <h2>🚨 ALERTS</h2>
+          <span className="status-pill">Unavailable</span>
+        </div>
+        <p className="panel-note">Alert data could not be loaded. Use Refresh Data to try again.</p>
       </div>
     );
   }
@@ -39,7 +53,7 @@ function AlertPanel({ alerts, loading, onAlertFocus }) {
             : alert.disaster_type === 'drought' ? '🌵'
             : '⚠';
 
-          const hasLocation = alert.lat != null && alert.lon != null;
+          const hasLocation = isValidLatLng(alert.lat, alert.lon);
 
           const handleClick = () => {
             if (hasLocation && onAlertFocus) {

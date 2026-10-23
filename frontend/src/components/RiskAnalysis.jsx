@@ -1,5 +1,3 @@
-import React from 'react';
-
 function severityTone(severity) {
   if (!severity) return 'unavailable';
   const s = severity.toUpperCase();

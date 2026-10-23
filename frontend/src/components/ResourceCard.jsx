@@ -1,15 +1,18 @@
+import { isValidLatLng } from '../utils/geo';
+
 function ResourceCard({ resource, onFocusMap }) {
+  const canFocus = Boolean(onFocusMap) && isValidLatLng(resource.lat, resource.lon);
   const handleClick = () => {
-    if (onFocusMap && resource.lat != null && resource.lon != null) {
-      onFocusMap([resource.lat, resource.lon], 13);
+    if (canFocus) {
+      onFocusMap([resource.lat, resource.lon], 15);
     }
   };
 
   return (
-    <article 
+    <article
       className="card resource-card"
       onClick={handleClick}
-      style={{ cursor: onFocusMap && resource.lat != null ? 'pointer' : 'default' }}
+      style={{ cursor: canFocus ? 'pointer' : 'default' }}
     >
       <div className="resource-icon" aria-hidden="true">{resource.icon}</div>
 
@@ -17,7 +20,7 @@ function ResourceCard({ resource, onFocusMap }) {
         <h3>{resource.title}</h3>
         <p>{resource.summary}</p>
         <span className="resource-distance">{resource.distance}</span>
-        {resource.lat != null && (
+        {canFocus && (
           <small style={{ display: 'block', marginTop: '4px', opacity: 0.7, cursor: 'pointer' }}>
             Click to focus on map →
           </small>

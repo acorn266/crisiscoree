@@ -2,7 +2,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
-from fastapi import FastAPI, Query, Request
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
@@ -50,9 +50,9 @@ app.add_middleware(
 # ============================================================================
 
 class FloodAnalysisRequest(BaseModel):
-    lat: float
-    lon: float
-    buffer_deg: Optional[float] = 0.15
+    lat: float = Field(..., ge=-90, le=90)
+    lon: float = Field(..., ge=-180, le=180)
+    buffer_deg: Optional[float] = Field(0.15, gt=0, le=1.0)
 
 
 class FloodAnalysisResponse(BaseModel):
@@ -258,37 +258,43 @@ def get_india_disasters(refresh: bool = Query(False)):
 
 @app.get("/api/weather")
 def weather(
-    lat: Optional[float] = Query(None),
-    lon: Optional[float] = Query(None),
+    lat: Optional[float] = Query(None, ge=-90, le=90),
+    lon: Optional[float] = Query(None, ge=-180, le=180),
 ):
     return get_weather(lat, lon)
 
 
 @app.get("/api/hospitals")
 def hospitals(
-    lat: float = Query(...),
-    lon: float = Query(...),
+    lat: float = Query(..., ge=-90, le=90),
+    lon: float = Query(..., ge=-180, le=180),
 ):
     return get_hospitals(lat, lon)
 
 
 @app.get("/api/shelters")
 def shelters(
-    lat: float = Query(...),
-    lon: float = Query(...),
+    lat: float = Query(..., ge=-90, le=90),
+    lon: float = Query(..., ge=-180, le=180),
 ):
     return get_shelters(lat, lon)
 
+def _check_bbox(south: float, west: float, north: float, east: float) -> None:
+    if south >= north or west >= east:
+        raise HTTPException(status_code=422, detail="Invalid bounding box: need south < north and west < east")
+
+
 @app.get("/api/hospitals/map")
 def hospitals_map(
-    south: float = Query(...),
-    west: float = Query(...),
-    north: float = Query(...),
-    east: float = Query(...),
+    south: float = Query(..., ge=-90, le=90),
+    west: float = Query(..., ge=-180, le=180),
+    north: float = Query(..., ge=-90, le=90),
+    east: float = Query(..., ge=-180, le=180),
 ):
     """Return hospitals inside the current map viewport."""
     from services.resource_service import get_hospitals_in_bbox
 
+    _check_bbox(south, west, north, east)
     return get_hospitals_in_bbox(
         south=south,
         west=west,
@@ -299,14 +305,15 @@ def hospitals_map(
 
 @app.get("/api/shelters/map")
 def shelters_map(
-    south: float = Query(...),
-    west: float = Query(...),
-    north: float = Query(...),
-    east: float = Query(...),
+    south: float = Query(..., ge=-90, le=90),
+    west: float = Query(..., ge=-180, le=180),
+    north: float = Query(..., ge=-90, le=90),
+    east: float = Query(..., ge=-180, le=180),
 ):
     """Return shelters inside the current map viewport."""
     from services.resource_service import get_shelters_in_bbox
 
+    _check_bbox(south, west, north, east)
     return get_shelters_in_bbox(
         south=south,
         west=west,
@@ -335,8 +342,8 @@ def resolve_lat_lon(lat: Optional[float], lon: Optional[float], city: Optional[s
 
 @app.get("/api/ai-risk")
 def get_ai_risk(
-    lat: Optional[float] = Query(None),
-    lon: Optional[float] = Query(None),
+    lat: Optional[float] = Query(None, ge=-90, le=90),
+    lon: Optional[float] = Query(None, ge=-180, le=180),
     city: Optional[str] = Query(None),
 ):
     resolved_lat, resolved_lon, city_name = resolve_lat_lon(lat, lon, city)
@@ -472,8 +479,8 @@ def get_ai_risk(
 
 @app.get("/api/ai-context")
 def get_ai_context(
-    lat: Optional[float] = Query(None),
-    lon: Optional[float] = Query(None),
+    lat: Optional[float] = Query(None, ge=-90, le=90),
+    lon: Optional[float] = Query(None, ge=-180, le=180),
     city: Optional[str] = Query(None),
 ):
     resolved_lat, resolved_lon, _ = resolve_lat_lon(lat, lon, city)
@@ -483,8 +490,8 @@ def get_ai_context(
 
 @app.get("/api/risk")
 def overall_risk(
-    lat: Optional[float] = Query(None),
-    lon: Optional[float] = Query(None),
+    lat: Optional[float] = Query(None, ge=-90, le=90),
+    lon: Optional[float] = Query(None, ge=-180, le=180),
     city: Optional[str] = Query(None),
 ):
     """Expose AI overall risk for general compatibility."""

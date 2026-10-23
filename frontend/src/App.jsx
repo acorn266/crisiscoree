@@ -91,6 +91,7 @@ function App() {
         { enableHighAccuracy: true, timeout: 8000 },
       );
     } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time initial load on mount
       loadData(false, INDIA_CENTER.lat, INDIA_CENTER.lon);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -185,7 +186,7 @@ function App() {
             lat: nearestHospital?.lat,
             lon: nearestHospital?.lon,
           }}
-          onFocusMap={(coords, zoom) => setMapFocusTarget(coords)}
+          onFocusMap={(coords, zoom) => setMapFocusTarget({ coords, zoom })}
         />
         <ResourceCard
           resource={{
@@ -199,7 +200,7 @@ function App() {
             lat: nearestShelter?.lat,
             lon: nearestShelter?.lon,
           }}
-          onFocusMap={(coords, zoom) => setMapFocusTarget(coords)}
+          onFocusMap={(coords, zoom) => setMapFocusTarget({ coords, zoom })}
         />
         <ResourceCard
           resource={{
@@ -207,9 +208,11 @@ function App() {
             title: '🚨 Emergency Alerts',
             summary: loading
               ? 'Loading alerts...'
-              : alerts.length === 0
-                ? 'No active alerts'
-                : `${alerts.length} active alert${alerts.length > 1 ? 's' : ''}`,
+              : !disasters
+                ? 'Alert data unavailable'
+                : alerts.length === 0
+                  ? 'No active alerts'
+                  : `${alerts.length} active alert${alerts.length > 1 ? 's' : ''}`,
             distance: 'From real events →',
             icon: '🚨',
           }}
@@ -220,7 +223,8 @@ function App() {
         <AlertPanel
           alerts={alerts}
           loading={loading}
-          onAlertFocus={(lat, lon) => setMapFocusTarget([lat, lon])}
+          unavailable={!loading && !disasters}
+          onAlertFocus={(lat, lon) => setMapFocusTarget({ coords: [lat, lon], zoom: 8 })}
         />
       </section>
 

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   MapContainer,
   TileLayer,
@@ -20,6 +20,7 @@ import {
   getHospitalsInMap,
   getSheltersInMap,
 } from '../services/api';
+import { isValidLatLng } from '../utils/geo';
 
 const INDIA_CENTER = [20.5937, 78.9629];
 const INDIA_BOUNDS = L.latLngBounds([6.5, 68.1], [35.5, 97.4]);
@@ -63,13 +64,6 @@ const droughtIcon = L.divIcon({
   iconAnchor: [12, 12],
 });
 
-const heatIcon = L.divIcon({
-  className: 'custom-div-icon heat-icon',
-  html: '<span>🔥</span>',
-  iconSize: [24, 24],
-  iconAnchor: [12, 12],
-});
-
 const cycloneIcon = L.divIcon({
   className: 'custom-div-icon cyclone-icon',
   html: '<span>🌀</span>',
@@ -85,13 +79,28 @@ function IndiaFitBounds() {
   return null;
 }
 
-function MapFocusTarget({ target, zoom }) {
+// target: { coords: [lat, lon], zoom } — a new object each click, so re-clicking refocuses
+function MapFocusTarget({ target, defaultZoom }) {
   const map = useMap();
   useEffect(() => {
-    if (target) {
-      map.setView(target, zoom || 13);
-    }
-  }, [map, target, zoom]);
+    if (!target) return;
+    const [lat, lon] = target.coords ?? [];
+    if (!isValidLatLng(lat, lon)) return;
+    map.setView([lat, lon], target.zoom ?? defaultZoom);
+    // The alerts/resources lists sit below the map — bring the map into view
+    // Instant scroll: smooth scrolling is a no-op in some embedded browsers
+    map.getContainer().scrollIntoView?.({ block: 'center' });
+  }, [map, target, defaultZoom]);
+  return null;
+}
+
+function MapResizeHandler() {
+  const map = useMap();
+  useEffect(() => {
+    const handler = () => map.invalidateSize();
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, [map]);
   return null;
 }
 
@@ -109,8 +118,10 @@ function MapResourceLoader({ onResourcesLoaded }) {
 
   useEffect(() => {
     let cancelled = false;
+    let requestId = 0;
 
     const loadResources = async () => {
+      const thisRequest = ++requestId;
       // Don't query Overpass while viewing the entire country.
       // Wait until the user zooms into a useful region.
       if (map.getZoom() < 7) {
@@ -131,7 +142,7 @@ function MapResourceLoader({ onResourcesLoaded }) {
           getSheltersInMap(south, west, north, east),
         ]);
 
-        if (!cancelled) {
+        if (!cancelled && thisRequest === requestId) {
           onResourcesLoaded(
             hospitalData.hospitals ?? [],
             shelterData.shelters ?? []
@@ -140,7 +151,7 @@ function MapResourceLoader({ onResourcesLoaded }) {
       } catch (err) {
         console.error('Map resource loading failed:', err);
 
-        if (!cancelled) {
+        if (!cancelled && thisRequest === requestId) {
           onResourcesLoaded([], []);
         }
       }
@@ -174,17 +185,6 @@ function eqColor(mag) {
   return '#35d07f';
 }
 
-function isValidLatLng(lat, lon) {
-  return (
-    typeof lat === 'number' &&
-    typeof lon === 'number' &&
-    !Number.isNaN(lat) &&
-    !Number.isNaN(lon) &&
-    lat >= -90 && lat <= 90 &&
-    lon >= -180 && lon <= 180
-  );
-}
-
 function DisasterMap({
   disasters,
   hospitals = [],
@@ -205,13 +205,29 @@ function DisasterMap({
   const [floodError, setFloodError] = useState(null);
   const [locateError, setLocateError] = useState(null);
 
-  const floods = disasters?.floods ?? [];
-  const earthquakes = disasters?.earthquakes ?? [];
-  const droughts = disasters?.droughts ?? [];
-  const heatwaves = disasters?.heatwaves ?? [];
-  const cyclones = disasters?.cyclones ?? [];
+  const { floods, earthquakes, droughts, heatwaves, cyclones } = useMemo(() => ({
+    floods: disasters?.floods ?? [],
+    earthquakes: disasters?.earthquakes ?? [],
+    droughts: disasters?.droughts ?? [],
+    heatwaves: disasters?.heatwaves ?? [],
+    cyclones: disasters?.cyclones ?? [],
+  }), [disasters]);
+
+  // The backend reports a single "unavailable" flood entry when satellite detection is off
+  const satelliteFloodEnabled = !(floods.length === 1 && floods[0]?.status === 'unavailable');
+
+  // Toasts clear themselves so they don't cover the map during a demo
+  useEffect(() => {
+    if (!floodError && !locateError) return undefined;
+    const id = setTimeout(() => {
+      setFloodError(null);
+      setLocateError(null);
+    }, 6000);
+    return () => clearTimeout(id);
+  }, [floodError, locateError]);
 
   const handleFloodAnalysis = useCallback(async (lat, lon) => {
+    if (!isValidLatLng(lat, lon)) return;
     setFloodAnalyzing(true);
     setFloodError(null);
     setFloodClickData(null);
@@ -296,16 +312,6 @@ function DisasterMap({
     }
   }, [floods, earthquakes, droughts, heatwaves, cyclones]);
 
-  function MapResizeHandler() {
-    const map = useMap();
-    useEffect(() => {
-      const handler = () => map.invalidateSize();
-      window.addEventListener('resize', handler);
-      return () => window.removeEventListener('resize', handler);
-    }, [map]);
-    return null;
-  }
-
   return (
     <div className={`map-shell ${isFullscreen ? 'map-fullscreen' : ''}`} ref={mapShellRef}>
       <div className="map-toolbar">
@@ -336,9 +342,9 @@ function DisasterMap({
         ref={leafletMapRef}
       >
         <IndiaFitBounds />
-        <MapFocusTarget target={mapFocusTarget} zoom={mapFocusZoom} />
+        <MapFocusTarget target={mapFocusTarget} defaultZoom={mapFocusZoom} />
         <MapResizeHandler />
-        <MapClickHandler onMapClick={handleFloodAnalysis} />
+        {satelliteFloodEnabled && <MapClickHandler onMapClick={handleFloodAnalysis} />}
         <MapResourceLoader
           onResourcesLoaded={onMapResourcesLoaded}
         />
@@ -368,7 +374,7 @@ function DisasterMap({
                       </Popup>
                     </Polygon>
                   ) : (
-                    f.lat != null && f.lon != null ? (
+                    isValidLatLng(f.lat, f.lon) ? (
                       <Marker
                       key={key}
                       position={[f.lat, f.lon]}
@@ -405,7 +411,7 @@ function DisasterMap({
                         </Popup>
                       </Polygon>
                     )}
-                    {f.flood_detected && (
+                    {f.flood_detected && isValidLatLng(f.lat, f.lon) && (
                       <Marker position={[f.lat, f.lon]} icon={floodIcon}>
                         <Popup>
                           <strong>FLOOD DETECTED — {f.region}</strong><br />
@@ -532,7 +538,7 @@ function DisasterMap({
           </LayersControl.Overlay>
         </LayersControl>
 
-        {userLocation && (
+        {isValidLatLng(userLocation?.[0], userLocation?.[1]) && (
           <Marker position={userLocation} icon={userIcon}>
             <Popup>
               <strong>Your Location</strong><br />
@@ -541,7 +547,7 @@ function DisasterMap({
           </Marker>
         )}
 
-        {floodClickBounds && floodClickData?.success && (
+        {floodClickBounds && floodClickData?.success && isValidLatLng(floodClickData.lat, floodClickData.lon) && (
           <Rectangle
             bounds={floodClickBounds}
             pathOptions={{
@@ -577,7 +583,7 @@ function DisasterMap({
           </Rectangle>
         )}
 
-        {floodClickData?.flood_detected && (
+        {floodClickData?.flood_detected && isValidLatLng(floodClickData.lat, floodClickData.lon) && (
           <Marker position={[floodClickData.lat, floodClickData.lon]} icon={floodIcon}>
             <Popup>
               <strong>FLOOD DETECTED (click analysis)</strong><br />
