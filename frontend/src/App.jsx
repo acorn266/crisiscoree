@@ -6,6 +6,7 @@ import RiskAnalysis from './components/RiskAnalysis';
 import AlertPanel from './components/AlertPanel';
 import ResourceCard from './components/ResourceCard';
 import ChatAssistant from './components/ChatAssistant';
+import { savedDataNote } from './utils/savedData';
 import {
   getIndiaDisasters,
   getWeather,
@@ -23,12 +24,16 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [hospitals, setHospitals] = useState([]);
   const [shelters, setShelters] = useState([]);
+  const [hospitalNote, setHospitalNote] = useState(null);
+  const [shelterNote, setShelterNote] = useState(null);
   const [mapHospitals, setMapHospitals] = useState([]);
   const [mapShelters, setMapShelters] = useState([]);
+  const [mapResourceNote, setMapResourceNote] = useState(null);
   const handleMapResourcesLoaded = useCallback(
-  (newHospitals, newShelters) => {
+  (newHospitals, newShelters, note = null) => {
     setMapHospitals(newHospitals);
     setMapShelters(newShelters);
+    setMapResourceNote(note);
   },
   []
 );
@@ -57,8 +62,14 @@ function App() {
 
       setResourcesLoading(true);
       Promise.allSettled([
-        track('hospitals', getHospitals(coords.lat, coords.lon), (d) => setHospitals(d?.hospitals ?? [])),
-        track('shelters', getShelters(coords.lat, coords.lon), (d) => setShelters(d?.shelters ?? [])),
+        track('hospitals', getHospitals(coords.lat, coords.lon), (d) => {
+          setHospitals(d?.hospitals ?? []);
+          setHospitalNote(savedDataNote(d));
+        }),
+        track('shelters', getShelters(coords.lat, coords.lon), (d) => {
+          setShelters(d?.shelters ?? []);
+          setShelterNote(savedDataNote(d));
+        }),
       ]).then(() => setResourcesLoading(false));
 
       await Promise.allSettled([
@@ -167,6 +178,7 @@ function App() {
             mapFocusTarget={mapFocusTarget}
             mapFocusZoom={13}
             onMapResourcesLoaded={handleMapResourcesLoaded}
+            resourceNote={mapResourceNote}
           />
         </div>
 
@@ -185,6 +197,7 @@ function App() {
             icon: '🏥',
             lat: nearestHospital?.lat,
             lon: nearestHospital?.lon,
+            note: nearestHospital ? hospitalNote : null,
           }}
           onFocusMap={(coords, zoom) => setMapFocusTarget({ coords, zoom })}
         />
@@ -199,6 +212,7 @@ function App() {
             icon: '🏠',
             lat: nearestShelter?.lat,
             lon: nearestShelter?.lon,
+            note: nearestShelter ? shelterNote : null,
           }}
           onFocusMap={(coords, zoom) => setMapFocusTarget({ coords, zoom })}
         />

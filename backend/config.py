@@ -19,6 +19,9 @@ OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY", "").strip()
 WEATHER_CACHE_TTL_SECONDS = int(os.getenv("WEATHER_CACHE_TTL", "600"))
 WEATHER_MAX_WORKERS = int(os.getenv("WEATHER_MAX_WORKERS", "8"))
 
+# Live hospital/shelter lookups (Overpass) give up after this many seconds and use saved snapshots
+OVERPASS_LIVE_BUDGET_SECONDS = float(os.getenv("OVERPASS_LIVE_BUDGET_SECONDS", "5"))
+
 # Satellite flood detection (Google Earth Engine) is optional and off by default
 FLOOD_DETECTION_ENABLED = _env_bool("FLOOD_DETECTION_ENABLED", False)
 

@@ -1,11 +1,19 @@
-"""Hospital and shelter lookup via OpenStreetMap Overpass API."""
+"""Hospital and shelter lookup via OpenStreetMap Overpass API.
+
+Live Overpass is tried first within a short time budget. If it fails, results come
+from saved OpenStreetMap snapshots (backend/data/resource_snapshots/*.json, created by
+scripts/fetch_resource_snapshots.py) for the nearest demo area, marked
+data_source="snapshot" so the UI can say it is saved data.
+"""
 import json
 import math
-from typing import Any, Dict, List, Optional
+import time
+from pathlib import Path
+from typing import Any, Callable, Dict, List, Optional
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from config import CACHE_TTL_SECONDS
+from config import CACHE_TTL_SECONDS, OVERPASS_LIVE_BUDGET_SECONDS
 from services.cache_utils import get_cached, set_cached
 
 # Free public Overpass instances, tried in order until one answers
@@ -14,15 +22,32 @@ OVERPASS_URLS = [
     "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
     "https://overpass.kumi.systems/api/interpreter",
 ]
-OVERPASS_TIMEOUT_SECONDS = 15
-# Failed lookups are cached briefly so a dead mirror doesn't slow every page load
+# Failed (or snapshot-served) lookups are cached briefly, then live is retried
 FAILED_LOOKUP_TTL_SECONDS = 120
 
+SNAPSHOT_DIR = Path(__file__).resolve().parent.parent / "data" / "resource_snapshots"
+# Point lookups only use a snapshot whose area centre is this close
+SNAPSHOT_MAX_DISTANCE_KM = 100
+
+POINT_RADIUS_M = 10000
+POINT_LIMIT = 30
+BBOX_LIMIT = 100
+SHELTER_AMENITIES = ("social_facility", "community_centre")
+SHELTER_NAME_HINTS = ("shelter", "relief", "refuge", "emergency")
+
+
+# ---------------------------------------------------------------------------
+# Live Overpass
+# ---------------------------------------------------------------------------
 
 def _overpass_post(query: str) -> Dict[str, Any]:
-    """POST a query to the first Overpass mirror that responds; raises if all fail."""
+    """POST to the first mirror that answers within the overall live budget; raises if none do."""
+    deadline = time.monotonic() + OVERPASS_LIVE_BUDGET_SECONDS
     last_error: Exception = RuntimeError("no Overpass endpoints configured")
     for url in OVERPASS_URLS:
+        remaining = deadline - time.monotonic()
+        if remaining < 1:
+            break
         try:
             req = Request(
                 url,
@@ -33,7 +58,7 @@ def _overpass_post(query: str) -> Dict[str, Any]:
                 },
                 method="POST",
             )
-            with urlopen(req, timeout=OVERPASS_TIMEOUT_SECONDS) as resp:
+            with urlopen(req, timeout=remaining) as resp:
                 return json.loads(resp.read().decode("utf-8"))
         except Exception as e:
             print(f"[Overpass] {url} failed: {type(e).__name__}: {e}")
@@ -41,15 +66,121 @@ def _overpass_post(query: str) -> Dict[str, Any]:
     raise last_error
 
 
-def _cached_lookup(cache_key: str, fetch) -> Dict[str, Any]:
-    cached = get_cached(cache_key, CACHE_TTL_SECONDS)
-    if cached is not None:
-        return cached
-    result = fetch()
-    ttl = CACHE_TTL_SECONDS if result.get("status") == "ok" else FAILED_LOOKUP_TTL_SECONDS
-    set_cached(cache_key, result, ttl)
-    return result
+def _amenity_filter(amenities) -> str:
+    if len(amenities) == 1:
+        return f'["amenity"="{amenities[0]}"]'
+    return f'["amenity"~"^({"|".join(amenities)})$"]'
 
+
+def _parse_elements(data: Dict[str, Any]) -> List[Dict[str, Any]]:
+    items = []
+    for el in data.get("elements", []):
+        el_lat = el.get("lat") or (el.get("center") or {}).get("lat")
+        el_lon = el.get("lon") or (el.get("center") or {}).get("lon")
+        tags = el.get("tags", {})
+        amenity = tags.get("amenity")
+        if el_lat is None or el_lon is None or not amenity:
+            continue
+        items.append({
+            "id": str(el.get("id")),
+            "name": tags.get("name") or tags.get("operator") or f"{amenity.replace('_', ' ').title()} #{el.get('id')}",
+            "lat": el_lat,
+            "lon": el_lon,
+            "amenity": amenity,
+        })
+    return items
+
+
+def _live_around(lat: float, lon: float, amenities) -> Optional[List[Dict[str, Any]]]:
+    f = _amenity_filter(amenities)
+    query = f"""
+    [out:json][timeout:{int(OVERPASS_LIVE_BUDGET_SECONDS) + 5}];
+    (
+      node{f}(around:{POINT_RADIUS_M},{lat},{lon});
+      way{f}(around:{POINT_RADIUS_M},{lat},{lon});
+    );
+    out center 60;
+    """
+    try:
+        return _parse_elements(_overpass_post(query))
+    except Exception as e:
+        print(f"[Overpass] {'/'.join(amenities)} near {lat:.2f},{lon:.2f} failed: {type(e).__name__}: {e}")
+        return None
+
+
+def _live_bbox(south: float, west: float, north: float, east: float, amenities) -> Optional[List[Dict[str, Any]]]:
+    f = _amenity_filter(amenities)
+    query = f"""
+    [out:json][timeout:{int(OVERPASS_LIVE_BUDGET_SECONDS) + 5}];
+    (
+      node{f}({south},{west},{north},{east});
+      way{f}({south},{west},{north},{east});
+    );
+    out center {BBOX_LIMIT * len(amenities)};
+    """
+    try:
+        return _parse_elements(_overpass_post(query))
+    except Exception as e:
+        print(f"[Overpass BBOX] {'/'.join(amenities)} lookup failed: {type(e).__name__}: {e}")
+        return None
+
+
+# ---------------------------------------------------------------------------
+# Saved snapshots (real OpenStreetMap data saved by scripts/fetch_resource_snapshots.py)
+# ---------------------------------------------------------------------------
+
+_snapshots: Optional[List[Dict[str, Any]]] = None
+
+
+def _load_snapshots() -> List[Dict[str, Any]]:
+    global _snapshots
+    if _snapshots is None:
+        loaded = []
+        for path in sorted(SNAPSHOT_DIR.glob("*.json")):
+            try:
+                loaded.append(json.loads(path.read_text(encoding="utf-8")))
+            except (OSError, ValueError) as e:
+                print(f"[Snapshot] could not read {path.name}: {e}")
+        _snapshots = loaded
+        print(f"[Snapshot] loaded {len(loaded)} saved area(s): {[s.get('area') for s in loaded]}")
+    return _snapshots
+
+
+def _snapshot_meta(snapshot: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "data_source": "snapshot",
+        "snapshot_area": snapshot.get("area"),
+        "snapshot_date": snapshot.get("fetched_at"),
+        "message": f"Live map data unavailable; showing saved OpenStreetMap data for {snapshot.get('area')}",
+    }
+
+
+def _snapshot_near(lat: float, lon: float) -> Optional[Dict[str, Any]]:
+    best, best_dist = None, None
+    for snap in _load_snapshots():
+        c = snap.get("center") or {}
+        if c.get("lat") is None or c.get("lon") is None:
+            continue
+        d = _haversine_km(lat, lon, c["lat"], c["lon"])
+        if d <= SNAPSHOT_MAX_DISTANCE_KM and (best_dist is None or d < best_dist):
+            best, best_dist = snap, d
+    return best
+
+
+def _snapshots_in_bbox(south: float, west: float, north: float, east: float) -> List[Dict[str, Any]]:
+    hits = []
+    for snap in _load_snapshots():
+        b = snap.get("bbox") or {}
+        if not b:
+            continue
+        if b["south"] <= north and b["north"] >= south and b["west"] <= east and b["east"] >= west:
+            hits.append(snap)
+    return hits
+
+
+# ---------------------------------------------------------------------------
+# Shared helpers
+# ---------------------------------------------------------------------------
 
 def _haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     r = 6371
@@ -62,218 +193,115 @@ def _haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     return r * 2 * math.asin(math.sqrt(a))
 
 
-def _overpass_query(lat: float, lon: float, amenity: str, radius_m: int = 10000) -> List[Dict]:
-    query = f"""
-    [out:json][timeout:15];
-    (
-      node["amenity"="{amenity}"](around:{radius_m},{lat},{lon});
-      way["amenity"="{amenity}"](around:{radius_m},{lat},{lon});
-    );
-    out center 30;
-    """
-    try:
-        data = _overpass_post(query)
-    except Exception as e:
-        print(f"[Overpass] {amenity} lookup failed: {type(e).__name__}: {e}")
-        return []
-
-    results = []
-    for el in data.get("elements", []):
-        el_lat = el.get("lat") or (el.get("center") or {}).get("lat")
-        el_lon = el.get("lon") or (el.get("center") or {}).get("lon")
-        if el_lat is None or el_lon is None:
-            continue
-        tags = el.get("tags", {})
-        name = tags.get("name") or tags.get("operator") or f"{amenity.title()} #{el.get('id')}"
-        dist = _haversine_km(lat, lon, el_lat, el_lon)
-        results.append({
-            "id": str(el.get("id")),
-            "name": name,
-            "lat": el_lat,
-            "lon": el_lon,
-            "distance_km": round(dist, 1),
-            "amenity": amenity,
-            "source": "OpenStreetMap",
-        })
-
-    results.sort(key=lambda x: x["distance_km"])
-    return results
-
-def _overpass_bbox_query(
-    south: float,
-    west: float,
-    north: float,
-    east: float,
-    amenity: str,
-    limit: int = 100,
-) -> List[Dict]:
-
-    query = f"""
-    [out:json][timeout:15];
-    (
-      node["amenity"="{amenity}"]({south},{west},{north},{east});
-      way["amenity"="{amenity}"]({south},{west},{north},{east});
-    );
-    out center {limit};
-    """
-
-    try:
-        data = _overpass_post(query)
-
-        results = []
-
-        for el in data.get("elements", []):
-            el_lat = el.get("lat") or (el.get("center") or {}).get("lat")
-            el_lon = el.get("lon") or (el.get("center") or {}).get("lon")
-
-            if el_lat is None or el_lon is None:
-                continue
-
-            tags = el.get("tags", {})
-
-            name = (
-                tags.get("name")
-                or tags.get("operator")
-                or f"{amenity.title()} #{el.get('id')}"
-            )
-
-            results.append({
-                "id": str(el.get("id")),
-                "name": name,
-                "lat": el_lat,
-                "lon": el_lon,
-                "amenity": amenity,
-                "source": "OpenStreetMap",
-            })
-
-        return results
-
-    except Exception as e:
-        print(
-            f"[Overpass BBOX] {amenity} lookup failed: "
-            f"{type(e).__name__}: {e}"
-        )
-        return []
-
-def get_hospitals_in_bbox(
-    south: float,
-    west: float,
-    north: float,
-    east: float,
-) -> Dict[str, Any]:
-
-    cache_key = (
-        f"hospitals_bbox_"
-        f"{south:.2f}_{west:.2f}_{north:.2f}_{east:.2f}"
-    )
-
-    def fetch():
-        items = _overpass_bbox_query(
-            south=south,
-            west=west,
-            north=north,
-            east=east,
-            amenity="hospital",
-            limit=100,
-        )
-
-        return {
-            "status": "ok" if items else "unavailable",
-            "count": len(items),
-            "hospitals": items,
-            "source": "OpenStreetMap",
-        }
-
-    return _cached_lookup(cache_key, fetch)
+def _cached_lookup(cache_key: str, fetch: Callable[[], Dict[str, Any]]) -> Dict[str, Any]:
+    cached = get_cached(cache_key, CACHE_TTL_SECONDS)
+    if cached is not None:
+        return cached
+    result = fetch()
+    live_ok = result.get("status") == "ok" and result.get("data_source") == "live"
+    set_cached(cache_key, result, CACHE_TTL_SECONDS if live_ok else FAILED_LOOKUP_TTL_SECONDS)
+    return result
 
 
-def get_shelters_in_bbox(
-    south: float,
-    west: float,
-    north: float,
-    east: float,
-) -> Dict[str, Any]:
+def _with_source(item: Dict[str, Any], data_source: str) -> Dict[str, Any]:
+    return {**item, "source": "OpenStreetMap", "data_source": data_source}
 
-    cache_key = (
-        f"shelters_bbox_"
-        f"{south:.2f}_{west:.2f}_{north:.2f}_{east:.2f}"
-    )
 
-    def fetch():
+def _nearest(items: List[Dict[str, Any]], lat: float, lon: float, limit: int) -> List[Dict[str, Any]]:
+    out = [
+        {**i, "distance_km": round(_haversine_km(lat, lon, i["lat"], i["lon"]), 1)}
+        for i in items
+    ]
+    out.sort(key=lambda x: x["distance_km"])
+    return out[:limit]
 
-        # Search several OSM amenity types that may represent
-        # emergency/community shelter locations.
-        shelter_items = []
 
-        for amenity in ["social_facility", "community_centre"]:
-            items = _overpass_bbox_query(
-                south=south,
-                west=west,
-                north=north,
-                east=east,
-                amenity=amenity,
-                limit=100,
-            )
+def _in_bbox(items, south, west, north, east):
+    return [i for i in items if south <= i["lat"] <= north and west <= i["lon"] <= east]
 
-            for item in items:
-                name = item.get("name", "").lower()
 
-                if (
-                    "shelter" in name
-                    or "relief" in name
-                    or "refuge" in name
-                    or "emergency" in name
-                    or amenity == "community_centre"
-                ):
-                    shelter_items.append(item)
+def _is_bbox_shelter(item: Dict[str, Any]) -> bool:
+    name = item.get("name", "").lower()
+    return item["amenity"] == "community_centre" or any(h in name for h in SHELTER_NAME_HINTS)
 
-        # Remove duplicates.
-        unique = {}
-        for item in shelter_items:
-            unique[item["id"]] = item
 
-        shelter_items = list(unique.values())
+def _point_shelters(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    # Prefer facilities actually named as shelters; otherwise community centres
+    named = [i for i in items if i["amenity"] == "social_facility" and "shelter" in i.get("name", "").lower()]
+    return named or [i for i in items if i["amenity"] == "community_centre"]
 
-        return {
-            "status": "ok" if shelter_items else "unavailable",
-            "count": len(shelter_items),
-            "shelters": shelter_items,
-            "source": "OpenStreetMap",
-        }
 
-    return _cached_lookup(cache_key, fetch)
+def _result(key: str, items: List[Dict[str, Any]], data_source: str, meta: Optional[Dict[str, Any]] = None):
+    return {
+        "status": "ok" if items else "unavailable",
+        "count": len(items),
+        key: [_with_source(i, data_source) for i in items],
+        "source": "OpenStreetMap",
+        "data_source": data_source if items else "none",
+        **(meta or {}),
+    }
+
+
+# ---------------------------------------------------------------------------
+# Public API
+# ---------------------------------------------------------------------------
+
+def _point_lookup(key: str, lat: float, lon: float, amenities, select) -> Dict[str, Any]:
+    live = _live_around(lat, lon, amenities)
+    if live is not None:
+        items = select(live)
+        if items:
+            return _result(key, _nearest(items, lat, lon, POINT_LIMIT), "live")
+    snap = _snapshot_near(lat, lon)
+    if snap is not None:
+        items = select([i for i in snap["items"] if i["amenity"] in amenities])
+        if items:
+            return _result(key, _nearest(items, lat, lon, POINT_LIMIT), "snapshot", _snapshot_meta(snap))
+    return _result(key, [], "none")
+
+
+def _bbox_lookup(key: str, south, west, north, east, amenities, select) -> Dict[str, Any]:
+    live = _live_bbox(south, west, north, east, amenities)
+    if live is not None:
+        items = [i for i in live if select(i)]
+        if items:
+            return _result(key, items[:BBOX_LIMIT], "live")
+    snaps = _snapshots_in_bbox(south, west, north, east)
+    items = []
+    for snap in snaps:
+        items += [
+            i for i in _in_bbox(snap["items"], south, west, north, east)
+            if i["amenity"] in amenities and select(i)
+        ]
+    if items:
+        unique = list({i["id"]: i for i in items}.values())[:BBOX_LIMIT]
+        return _result(key, unique, "snapshot", _snapshot_meta(snaps[0]))
+    return _result(key, [], "none")
 
 
 def get_hospitals(lat: float, lon: float) -> Dict[str, Any]:
-    cache_key = f"hospitals_{lat:.2f}_{lon:.2f}"
-
-    def fetch():
-        items = _overpass_query(lat, lon, "hospital")
-        return {
-            "status": "ok" if items else "unavailable",
-            "count": len(items),
-            "hospitals": items,
-            "source": "OpenStreetMap",
-        }
-
-    return _cached_lookup(cache_key, fetch)
+    return _cached_lookup(
+        f"hospitals_{lat:.2f}_{lon:.2f}",
+        lambda: _point_lookup("hospitals", lat, lon, ("hospital",), lambda items: items),
+    )
 
 
 def get_shelters(lat: float, lon: float) -> Dict[str, Any]:
-    cache_key = f"shelters_{lat:.2f}_{lon:.2f}"
+    return _cached_lookup(
+        f"shelters_{lat:.2f}_{lon:.2f}",
+        lambda: _point_lookup("shelters", lat, lon, SHELTER_AMENITIES, _point_shelters),
+    )
 
-    def fetch():
-        # OSM uses various tags for emergency shelters
-        items = _overpass_query(lat, lon, "social_facility")
-        shelter_items = [i for i in items if "shelter" in i.get("name", "").lower()]
-        if not shelter_items:
-            items = _overpass_query(lat, lon, "community_centre")
-            shelter_items = items
-        return {
-            "status": "ok" if shelter_items else "unavailable",
-            "count": len(shelter_items),
-            "shelters": shelter_items,
-            "source": "OpenStreetMap",
-        }
 
-    return _cached_lookup(cache_key, fetch)
+def get_hospitals_in_bbox(south: float, west: float, north: float, east: float) -> Dict[str, Any]:
+    return _cached_lookup(
+        f"hospitals_bbox_{south:.2f}_{west:.2f}_{north:.2f}_{east:.2f}",
+        lambda: _bbox_lookup("hospitals", south, west, north, east, ("hospital",), lambda i: True),
+    )
+
+
+def get_shelters_in_bbox(south: float, west: float, north: float, east: float) -> Dict[str, Any]:
+    return _cached_lookup(
+        f"shelters_bbox_{south:.2f}_{west:.2f}_{north:.2f}_{east:.2f}",
+        lambda: _bbox_lookup("shelters", south, west, north, east, SHELTER_AMENITIES, _is_bbox_shelter),
+    )

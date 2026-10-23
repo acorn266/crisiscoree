@@ -267,6 +267,23 @@ input {
   color: #664d03;
 }
 
+.saved-data-note {
+  display: block;
+  margin-top: 4px;
+  color: #ffb340;
+  font-size: 11px;
+}
+
+.map-data-note {
+  margin-top: 8px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #ffb340;
+  background: rgba(16, 21, 31, 0.9);
+  color: #ffb340;
+  font-size: 11px;
+}
+
 .map-toast-error {
   background: #f8d7da;
   border: 1px solid #f5c6cb;

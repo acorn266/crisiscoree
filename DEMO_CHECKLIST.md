@@ -95,7 +95,9 @@ Invoke-RestMethod -Method Post -Uri http://localhost:8000/api/chat -ContentType 
 5. **Risk Analysis panel** — per-hazard AI scores with "Why?" explanations. Scores are capped by
    IMD-style physical thresholds (e.g. no heatwave alarm below 35 °C), and the reason is shown.
 6. **Hospitals & Shelters** — turn on the 🏥/🏠 layers and zoom into a city (zoom level 7+).
-   Data comes from OpenStreetMap's free Overpass servers (see Troubleshooting).
+   Data comes live from OpenStreetMap's free Overpass servers; if they don't answer within 5 s,
+   saved OpenStreetMap snapshots are used for Bengaluru, Mumbai, Delhi, Chennai, Kolkata,
+   Hyderabad and Nagpur, with a small "Saved data" note. **Demo inside one of these cities.**
 7. **AI Assistant** — click a sample question chip, then type your own.
 8. **↻ Refresh Data** — reloads all sources (weather is served from a 10-minute cache).
 
@@ -120,7 +122,8 @@ The chat allows 10 messages per minute per user.
 |---|---|
 | Red banner "Could not load: …" | Backend not running or still starting. Start Terminal 1, then click **↻ Refresh Data**. |
 | Weather "Data unavailable" | `OPENWEATHER_API_KEY` missing/invalid in `backend\.env`, or a brand-new key not yet active. Restart the backend after editing `.env`. |
-| Nearest Hospital/Shelter "Data unavailable", no 🏥/🏠 markers | Free public Overpass (OpenStreetMap) servers are overloaded — common and outside our control. Failures are retried after 2 minutes; zoom into a big city and try again. |
+| Hospital/shelter card or map shows "ⓘ Saved data for <city> …" | Expected fallback: live Overpass (OpenStreetMap) didn't answer within 5 s, so the backend served the saved snapshot for the nearest demo city. Live is retried automatically after 2 minutes. |
+| Nearest Hospital/Shelter "Data unavailable", no 🏥/🏠 markers | Live Overpass is down **and** the location is more than 100 km from a saved demo city (Bengaluru, Mumbai, Delhi, Chennai, Kolkata, Hyderabad, Nagpur). Zoom into one of those cities. |
 | Chat replies with "offline safety guide" notice | No `GEMINI_API_KEY`, Gemini free quota reached, or slow network. The answers are still correct safety guidance. |
 | Chat says "You're sending messages quickly" | Per-user rate limit (10/min). Wait the number of seconds shown. |
 | Flood layer shows nothing / "unavailable" | Expected: satellite flood detection (Google Earth Engine) is disabled for the demo. |
@@ -129,7 +132,21 @@ The chat allows 10 messages per minute per user.
 
 ---
 
-## 6. Optional: satellite flood detection
+## 6. Refreshing the saved hospital/shelter snapshots
+
+Snapshots live in `backend\data\resource_snapshots\*.json` — real OpenStreetMap data
+(© OpenStreetMap contributors, ODbL), each covering ~28 km around the city centre.
+To refresh them (takes a few minutes; retries across free mirrors):
+```powershell
+cd backend
+.\venv\Scripts\python.exe scripts\fetch_resource_snapshots.py           # all 7 cities
+.\venv\Scripts\python.exe scripts\fetch_resource_snapshots.py mumbai    # just one
+```
+Restart the backend afterwards so it loads the new files.
+
+---
+
+## 7. Optional: satellite flood detection
 
 Off by default. To enable (needs a free Google Earth Engine account):
 ```powershell

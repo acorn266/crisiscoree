@@ -21,6 +21,7 @@ import {
   getSheltersInMap,
 } from '../services/api';
 import { isValidLatLng } from '../utils/geo';
+import { savedDataNote } from '../utils/savedData';
 
 const INDIA_CENTER = [20.5937, 78.9629];
 const INDIA_BOUNDS = L.latLngBounds([6.5, 68.1], [35.5, 97.4]);
@@ -145,7 +146,8 @@ function MapResourceLoader({ onResourcesLoaded }) {
         if (!cancelled && thisRequest === requestId) {
           onResourcesLoaded(
             hospitalData.hospitals ?? [],
-            shelterData.shelters ?? []
+            shelterData.shelters ?? [],
+            savedDataNote(hospitalData) ?? savedDataNote(shelterData)
           );
         }
       } catch (err) {
@@ -195,6 +197,7 @@ function DisasterMap({
   loading,
   mapFocusTarget = null,
   mapFocusZoom = 13,
+  resourceNote = null,
 }) {
   const mapShellRef = useRef(null);
   const leafletMapRef = useRef(null);
@@ -516,7 +519,7 @@ function DisasterMap({
                   <Popup>
                     <strong>🏥 {h.name}</strong><br />
                     Distance: {h.distance_km} km<br />
-                    <small>Source: OpenStreetMap</small>
+                    <small>Source: OpenStreetMap{h.data_source === 'snapshot' ? ' (saved data)' : ''}</small>
                   </Popup>
                 </Marker>
               ))}
@@ -530,7 +533,7 @@ function DisasterMap({
                   <Popup>
                     <strong>🏠 {s.name}</strong><br />
                     Distance: {s.distance_km} km<br />
-                    <small>Source: OpenStreetMap</small>
+                    <small>Source: OpenStreetMap{s.data_source === 'snapshot' ? ' (saved data)' : ''}</small>
                   </Popup>
                 </Marker>
               ))}
@@ -611,6 +614,7 @@ function DisasterMap({
         </div>
       )}
 
+      {resourceNote && <div className="map-data-note">🏥🏠 {resourceNote}</div>}
       <MapLegend />
     </div>
   );
