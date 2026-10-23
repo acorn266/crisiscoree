@@ -1,5 +1,4 @@
 function RiskCards({ weather, risk, alertsCount, loading }) {
-  console.log("RISK DATA:", risk);
   const weatherDisplay = weather?.status === 'ok'
     ? `${Math.round(weather.temperature)}°C`
     : 'Data unavailable';

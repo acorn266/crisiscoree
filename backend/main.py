@@ -404,12 +404,29 @@ def get_ai_risk(
     # 5. Predict risks using the trained engine
     ai_engine = get_ai_risk_engine()
     
+    # Weather-driven models score empty features as extreme anomalies (false CRITICAL),
+    # so only run them when real weather (or satellite data, for floods) is available.
+    weather_ok = weather.get("status") == "ok"
+    satellite_ok = bool(flood_sat_data and flood_sat_data.get("success"))
+
+    def _predict(disaster_type, feats, has_data):
+        if not has_data:
+            return {
+                "score": None,
+                "level": "UNAVAILABLE",
+                "confidence": 0,
+                "factors": [],
+                "available": False,
+                "reason": "Live weather data unavailable for this location",
+            }
+        return ai_engine.predict_risk(disaster_type, feats)
+
     risks = {
-        "flood": ai_engine.predict_risk("flood", flood_feats),
+        "flood": _predict("flood", flood_feats, weather_ok or satellite_ok),
         "earthquake": ai_engine.predict_risk("earthquake", eq_feats),
-        "heatwave": ai_engine.predict_risk("heatwave", heat_feats),
-        "drought": ai_engine.predict_risk("drought", drought_feats),
-        "cyclone": ai_engine.predict_risk("cyclone", cyclone_feats),
+        "heatwave": _predict("heatwave", heat_feats, weather_ok),
+        "drought": _predict("drought", drought_feats, weather_ok),
+        "cyclone": _predict("cyclone", cyclone_feats, weather_ok),
     }
     
     # 6. Aggregate overall risk score

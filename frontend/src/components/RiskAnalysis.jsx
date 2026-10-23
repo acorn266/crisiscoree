@@ -72,7 +72,9 @@ function RiskRow({ name, category }) {
         </>
       ) : (
         <div className="risk-no-score" style={{ fontSize: '0.8rem', color: '#5b6973', marginTop: '6px', fontStyle: 'italic' }}>
-          — Data limited. {name === 'Drought' ? 'Limited by absence of long-term drought baseline.' : 'Insufficient features for anomaly detection.'}
+          — Data limited. {category?.reason && category.available === false
+            ? category.reason
+            : name === 'Drought' ? 'Limited by absence of long-term drought baseline.' : 'Insufficient features for anomaly detection.'}
         </div>
       )}
     </div>

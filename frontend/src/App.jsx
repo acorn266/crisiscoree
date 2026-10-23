@@ -17,6 +17,7 @@ const INDIA_CENTER = { lat: 20.5937, lon: 78.9629 };
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [resourcesLoading, setResourcesLoading] = useState(true);
   const [disasters, setDisasters] = useState(null);
   const [weather, setWeather] = useState(null);
   const [hospitals, setHospitals] = useState([]);
@@ -45,21 +46,29 @@ function App() {
         lon: lon ?? userLocation?.[1] ?? INDIA_CENTER.lon,
       };
 
-      const [disasterData, weatherData, hospitalData, shelterData, riskData] = await Promise.all([
-        getIndiaDisasters(refresh),
-        getWeather(coords.lat, coords.lon),
-        getHospitals(coords.lat, coords.lon),
-        getShelters(coords.lat, coords.lon),
-        getRisk(refresh, coords.lat, coords.lon),
+      // Each source loads independently: one slow/failed call must not blank the dashboard.
+      // Hospitals/shelters (Overpass) can be slow, so they don't hold up the main loading state.
+      const failed = [];
+      const track = (label, promise, onSuccess) => promise.then(onSuccess).catch((err) => {
+        console.warn(`${label} failed:`, err);
+        failed.push(label);
+      });
+
+      setResourcesLoading(true);
+      Promise.allSettled([
+        track('hospitals', getHospitals(coords.lat, coords.lon), (d) => setHospitals(d?.hospitals ?? [])),
+        track('shelters', getShelters(coords.lat, coords.lon), (d) => setShelters(d?.shelters ?? [])),
+      ]).then(() => setResourcesLoading(false));
+
+      await Promise.allSettled([
+        track('disasters', getIndiaDisasters(refresh), setDisasters),
+        track('weather', getWeather(coords.lat, coords.lon), setWeather),
+        track('risk', getRisk(refresh, coords.lat, coords.lon), setAiRisk),
       ]);
 
-      setDisasters(disasterData);
-      setWeather(weatherData);
-      setHospitals(hospitalData.hospitals ?? []);
-      setShelters(shelterData.shelters ?? []);
-      setAiRisk(riskData);
-    } catch (err) {
-      setError(err.message || 'Failed to load disaster data');
+      if (failed.length > 0) {
+        setError(`Could not load: ${failed.join(', ')}`);
+      }
     } finally {
       setLoading(false);
     }
@@ -91,9 +100,11 @@ function App() {
     loadData(true, lat, lon);
   };
 
-  const alerts = (disasters?.alerts ?? []).filter(
-    (alert) => alert.severity === 'high' || alert.severity === 'critical'
-  );
+  // Backend severities: critical > high > medium (e.g. M4+ earthquakes) > low
+  const SEVERITY_RANK = { critical: 0, high: 1, medium: 2 };
+  const alerts = (disasters?.alerts ?? [])
+    .filter((alert) => alert.severity in SEVERITY_RANK)
+    .sort((a, b) => SEVERITY_RANK[a.severity] - SEVERITY_RANK[b.severity]);
   const risk = aiRisk ?? disasters?.risk ?? null;
   const nearestHospital = hospitals[0];
   const nearestShelter = shelters[0];
@@ -164,7 +175,7 @@ function App() {
             title: '🏥 Nearest Hospital',
             summary: nearestHospital
               ? nearestHospital.name
-              : loading ? 'Searching...' : 'Data unavailable',
+              : resourcesLoading ? 'Searching...' : 'Data unavailable',
             distance: nearestHospital ? `${nearestHospital.distance_km} km` : '--',
             icon: '🏥',
             lat: nearestHospital?.lat,
@@ -178,7 +189,7 @@ function App() {
             title: '🏠 Nearest Shelter',
             summary: nearestShelter
               ? nearestShelter.name
-              : loading ? 'Searching...' : 'Data unavailable',
+              : resourcesLoading ? 'Searching...' : 'Data unavailable',
             distance: nearestShelter ? `${nearestShelter.distance_km} km` : '--',
             icon: '🏠',
             lat: nearestShelter?.lat,
