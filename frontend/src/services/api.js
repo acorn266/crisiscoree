@@ -24,6 +24,10 @@ export async function getFloods(refresh = false) {
   return fetchJson(`/api/disasters/floods${refresh ? '?refresh=true' : ''}`);
 }
 
+export async function getOfficialAlerts() {
+  return fetchJson('/api/alerts/official');
+}
+
 export async function getWeather(lat, lon) {
   const params = new URLSearchParams();
   if (lat != null) params.set('lat', lat);

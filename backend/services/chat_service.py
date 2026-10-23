@@ -21,7 +21,8 @@ GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:ge
 
 MAX_MESSAGE_CHARS = 1000
 MAX_HISTORY_TURNS = 6
-MAX_CONTEXT_CHARS = 1500
+MAX_CONTEXT_CHARS = 6000
+MAX_CONTEXT_LIST_ITEMS = 10
 
 SYSTEM_PROMPT = """You are the CrisisCore AI Assistant, part of an India disaster-preparedness dashboard.
 Help people stay safe before, during and after floods, earthquakes, cyclones, fires, heatwaves and droughts.
@@ -31,7 +32,14 @@ Rules:
 - Put life-safety steps first. Mention India's emergency number 112 once, only when the question is about an emergency or a hazard in progress.
 - Use the live dashboard context only when the question is about current conditions; never invent alerts, readings or locations that are not in it.
 - If data is unavailable, say so and point to official sources: IMD (mausam.imd.gov.in), NDMA (ndma.gov.in), and local authorities.
-- Politely decline topics unrelated to safety, disasters, weather or emergency resources. Do not add this as a disclaimer to on-topic answers."""
+- Politely decline topics unrelated to safety, disasters, weather or emergency resources. Do not add this as a disclaimer to on-topic answers.
+
+Accuracy rules for the dashboard context:
+- Earthquakes: an earthquake is in India ONLY if the context lists it as inside India. Events in China, Tibet (Xizang), Nepal, Myanmar or other countries are outside India, even if they may be felt in India. Use the exact counts given; never contradict them.
+- Official warnings (NDMA SACHET / IMD / CWC / SDMA, GDACS) are authoritative. "Automated indicators" and "AI estimates" are CrisisCore calculations, not official forecasts; say so when you mention them.
+- A source listed as unavailable, loading or disabled means the data is missing, NOT that there is no danger. Never claim something is safe because data is missing.
+- Hospitals/shelters: say whether the information is live or from a saved snapshot, exactly as given. Never invent names, distances or phone numbers.
+- If the context does not contain the answer, say you do not have that information and point to official sources."""
 
 # ---------------------------------------------------------------------------
 # Offline fallback answers (NDMA-style guidance)
@@ -184,7 +192,9 @@ def _format_context(context: Optional[Dict[str, Any]]) -> str:
         if value is None or value == "" or value == []:
             continue
         if isinstance(value, list):
-            value = "; ".join(str(v) for v in value[:5])
+            items = [str(v) for v in value[:MAX_CONTEXT_LIST_ITEMS]]
+            lines.append(f"- {key}:" + "".join(f"\n    * {item}" for item in items))
+            continue
         lines.append(f"- {key}: {value}")
     return "\n".join(lines)[:MAX_CONTEXT_CHARS]
 

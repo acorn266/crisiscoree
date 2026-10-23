@@ -3,8 +3,9 @@ import { sendChat } from '../services/api';
 
 const SAMPLE_QUESTIONS = [
   'What should I do during an earthquake?',
-  'How do I prepare for a flood?',
-  'Is there any earthquake activity near India right now?',
+  'Are there any earthquakes inside India right now?',
+  'Are there any official flood warnings?',
+  'Where is the nearest hospital?',
   'What are the signs of heat stroke?',
 ];
 
@@ -17,6 +18,7 @@ function ChatAssistant({ context }) {
   const [input, setInput] = useState('');
   const [sending, setSending] = useState(false);
   const logRef = useRef(null);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     if (logRef.current) {
@@ -55,6 +57,7 @@ function ChatAssistant({ context }) {
       }]);
     } finally {
       setSending(false);
+      inputRef.current?.focus();
     }
   };
 
@@ -63,55 +66,78 @@ function ChatAssistant({ context }) {
     ask(input);
   };
 
-  return (
-    <section className="card assistant">
-      <div className="assistant-icon">🤖</div>
-      <div className="assistant-content">
-        <h2>CrisisCore AI Assistant</h2>
-        <p>
-          Ask about current disaster conditions, safety, emergency resources, or preparedness.
-          Answers use live dashboard data; built-in safety guidance is used if the AI is unavailable.
-        </p>
+  const lastSource = [...messages].reverse().find((m) => m.role === 'assistant')?.source;
 
-        {messages.length === 0 ? (
-          <div className="chat-suggestions">
-            {SAMPLE_QUESTIONS.map((q) => (
-              <button key={q} type="button" className="chat-chip" onClick={() => ask(q)} disabled={sending}>
-                {q}
-              </button>
-            ))}
-          </div>
-        ) : (
-          <div className="chat-log" ref={logRef} aria-live="polite">
-            {messages.map((m, i) => (
-              <div key={i} className={`chat-msg chat-msg-${m.role}`}>
-                {m.notice && <small className="chat-notice">ⓘ {m.notice}</small>}
-                <div className="chat-text">{m.text}</div>
-              </div>
-            ))}
-            {sending && (
-              <div className="chat-msg chat-msg-assistant">
-                <div className="chat-text chat-typing">Thinking…</div>
-              </div>
-            )}
+  return (
+    <section className="card chat-card" aria-label="CrisisCore AI Assistant">
+      <header className="chat-header">
+        <div className="chat-avatar" aria-hidden="true">🛡</div>
+        <div className="chat-heading">
+          <h2>CrisisCore AI Assistant</h2>
+          <p className="card-sub">
+            Answers use this dashboard&apos;s live data · Google Gemini (free tier) with a built-in offline safety guide
+          </p>
+        </div>
+        <div className="chat-header-side">
+          <span className={`data-tag ${lastSource === 'fallback' || lastSource === 'error' ? 'tag-saved' : 'tag-ai'}`}>
+            {lastSource === 'fallback' ? 'Offline guide' : lastSource === 'error' ? 'Offline' : 'Gemini'}
+          </span>
+          {messages.length > 0 && (
+            <button type="button" className="btn btn-ghost btn-small" onClick={() => setMessages([])} disabled={sending}>
+              Clear
+            </button>
+          )}
+        </div>
+      </header>
+
+      <div className="chat-log" ref={logRef} aria-live="polite">
+        {messages.length === 0 && (
+          <div className="chat-welcome">
+            <p>Ask about current alerts, safety steps, or the nearest emergency resources.</p>
+            <div className="chat-suggestions">
+              {SAMPLE_QUESTIONS.map((q) => (
+                <button key={q} type="button" className="chip chat-chip" onClick={() => ask(q)} disabled={sending}>
+                  {q}
+                </button>
+              ))}
+            </div>
           </div>
         )}
-
-        <form className="chat-input" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Ask: What should I do during an earthquake?"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            maxLength={1000}
-            disabled={sending}
-            aria-label="Ask the CrisisCore AI Assistant"
-          />
-          <button type="submit" disabled={sending || !input.trim()}>
-            {sending ? 'Asking…' : 'Ask AI'}
-          </button>
-        </form>
+        {messages.map((m, i) => (
+          <div key={i} className={`chat-row chat-row--${m.role}`}>
+            {m.role === 'assistant' && <div className="chat-bubble-avatar" aria-hidden="true">🛡</div>}
+            <div className={`chat-msg chat-msg-${m.role}`}>
+              {m.notice && <small className="chat-notice">ⓘ {m.notice}</small>}
+              <div className="chat-text">{m.text}</div>
+            </div>
+          </div>
+        ))}
+        {sending && (
+          <div className="chat-row chat-row--assistant">
+            <div className="chat-bubble-avatar" aria-hidden="true">🛡</div>
+            <div className="chat-msg chat-msg-assistant chat-typing" aria-label="Assistant is typing">
+              <span /><span /><span />
+            </div>
+          </div>
+        )}
       </div>
+
+      <form className="chat-input" onSubmit={handleSubmit}>
+        <input
+          ref={inputRef}
+          type="text"
+          placeholder="Ask about alerts, safety steps or nearby help…"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          maxLength={1000}
+          disabled={sending}
+          aria-label="Ask the CrisisCore AI Assistant"
+        />
+        <button type="submit" className="btn btn-primary" disabled={sending || !input.trim()}>
+          {sending ? 'Asking…' : 'Send'}
+        </button>
+      </form>
+      <p className="chat-disclaimer">AI answers can be wrong. In an emergency call <b>112</b> and follow official IMD / NDMA advisories.</p>
     </section>
   );
 }
